@@ -4,23 +4,27 @@ grammar bashGrammar;
 	parser
 */
 
-code		: 	bashScript* EOF;
+code				: 	bashScript* EOF;
 
-bashScript	:	(for_loop | assignment)+;
+bashScript			:	(for_loop | assignment | linux_command)+;
 
-for_loop 	:	FOR OPEN_FOR_BRACKET inside_for CLOSE_FOR_BRACKET space? DO space? assignment+ space? DONE space?;
+for_loop 			:	FOR OPEN_FOR_BRACKET inside_for CLOSE_FOR_BRACKET space? DO space? assignment+ space? DONE space?;
 
-inside_for	:	(assignment SEMICOLON comparison SEMICOLON increment);
+inside_for			:	(assignment SEMICOLON comparison SEMICOLON increment);
 
-assignment	:	VAR EQUALS (string | VAL | VAR) SEMICOLON? space?;
+assignment			:	VAR EQUALS (string | VAL | VAR) SEMICOLON? space?;
 
-comparison	:	VAR COMPARE VAL;
+linux_command		: 	COMMAND space? command_data+  SEMICOLON? space?;
 
-increment	:	VAR INCREMENT;
+command_data 		: 	(OTHER+ | string | VAR | VAL);
 
-space 		:	SPACE+;
+comparison			:	VAR COMPARE VAL;
 
-string 		:	(SINGLE_STRING | DOUBLE_STRING);
+increment			:	VAR INCREMENT;
+
+space 				:	SPACE+;
+
+string 				:	(SINGLE_STRING | DOUBLE_STRING);
 
 
 
@@ -44,6 +48,8 @@ DO 					: 'do';
 
 DONE 				: 'done';
 
+COMMAND 			: ('echo' | 'cat' | 'ls' | 'll');
+
 OPEN_FOR_BRACKET	: ('((' | '[[');
 
 CLOSE_FOR_BRACKET	: ('))' | ']]');
@@ -60,4 +66,5 @@ INCREMENT 			: ('++' | '--');
 
 COMPARE 			: ('<=' | '>=' | '<' | '>');
 
+OTHER 				: .	;
 

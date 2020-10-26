@@ -27,6 +27,26 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 */
 	void exitBashScript(bashGrammarParser.BashScriptContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#for_loop}.
+	 * @param ctx the parse tree
+	 */
+	void enterFor_loop(bashGrammarParser.For_loopContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#for_loop}.
+	 * @param ctx the parse tree
+	 */
+	void exitFor_loop(bashGrammarParser.For_loopContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#inside_for}.
+	 * @param ctx the parse tree
+	 */
+	void enterInside_for(bashGrammarParser.Inside_forContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#inside_for}.
+	 * @param ctx the parse tree
+	 */
+	void exitInside_for(bashGrammarParser.Inside_forContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#assignment}.
 	 * @param ctx the parse tree
 	 */
@@ -36,6 +56,26 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAssignment(bashGrammarParser.AssignmentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#comparison}.
+	 * @param ctx the parse tree
+	 */
+	void enterComparison(bashGrammarParser.ComparisonContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#comparison}.
+	 * @param ctx the parse tree
+	 */
+	void exitComparison(bashGrammarParser.ComparisonContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#increment}.
+	 * @param ctx the parse tree
+	 */
+	void enterIncrement(bashGrammarParser.IncrementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#increment}.
+	 * @param ctx the parse tree
+	 */
+	void exitIncrement(bashGrammarParser.IncrementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#space}.
 	 * @param ctx the parse tree

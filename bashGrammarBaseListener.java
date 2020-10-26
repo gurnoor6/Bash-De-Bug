@@ -39,6 +39,30 @@ public class bashGrammarBaseListener implements bashGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterFor_loop(bashGrammarParser.For_loopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFor_loop(bashGrammarParser.For_loopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterInside_for(bashGrammarParser.Inside_forContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitInside_for(bashGrammarParser.Inside_forContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterAssignment(bashGrammarParser.AssignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -46,6 +70,30 @@ public class bashGrammarBaseListener implements bashGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitAssignment(bashGrammarParser.AssignmentContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterComparison(bashGrammarParser.ComparisonContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitComparison(bashGrammarParser.ComparisonContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIncrement(bashGrammarParser.IncrementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIncrement(bashGrammarParser.IncrementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

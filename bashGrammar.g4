@@ -12,11 +12,11 @@ for_loop 			:	FOR OPEN_FOR_BRACKET inside_for CLOSE_FOR_BRACKET space? DO space?
 
 inside_for			:	(assignment SEMICOLON comparison SEMICOLON increment);
 
-assignment			:	VAR EQUALS (string | VAL | VAR) SEMICOLON? space?;
-
 linux_command		: 	COMMAND space? command_data+  SEMICOLON? space?;
 
-command_data 		: 	(OTHER+ | string | VAR | VAL);
+assignment			:	VAR EQUALS (string | VAL | VAR) SEMICOLON? space?;
+
+command_data 		: 	(OTHER+ | string | VAR | VAL | space);
 
 comparison			:	VAR COMPARE VAL;
 
@@ -48,7 +48,7 @@ DO 					: 'do';
 
 DONE 				: 'done';
 
-COMMAND 			: ('echo' | 'cat' | 'ls' | 'll');
+COMMAND 			: ('echo' | 'cat' | 'ls' | 'll' | 'time' | 'wget');
 
 OPEN_FOR_BRACKET	: ('((' | '[[');
 

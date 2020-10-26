@@ -47,16 +47,6 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 */
 	void exitInside_for(bashGrammarParser.Inside_forContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link bashGrammarParser#assignment}.
-	 * @param ctx the parse tree
-	 */
-	void enterAssignment(bashGrammarParser.AssignmentContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link bashGrammarParser#assignment}.
-	 * @param ctx the parse tree
-	 */
-	void exitAssignment(bashGrammarParser.AssignmentContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#linux_command}.
 	 * @param ctx the parse tree
 	 */
@@ -66,6 +56,16 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitLinux_command(bashGrammarParser.Linux_commandContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#assignment}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignment(bashGrammarParser.AssignmentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#assignment}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignment(bashGrammarParser.AssignmentContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#command_data}.
 	 * @param ctx the parse tree

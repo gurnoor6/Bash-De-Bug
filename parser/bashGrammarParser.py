@@ -12,7 +12,7 @@ else:
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\35")
-        buf.write("\u015b\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\u0156\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\3\2\7\2\"\n\2\f\2\16\2%\13\2")
         buf.write("\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\6\3/\n\3\r\3\16\3\60")
@@ -34,164 +34,159 @@ def serializedATN():
         buf.write("\5\7\u00d3\n\7\3\b\5\b\u00d6\n\b\3\b\6\b\u00d9\n\b\r\b")
         buf.write("\16\b\u00da\3\b\5\b\u00de\n\b\3\b\3\b\5\b\u00e2\n\b\3")
         buf.write("\b\3\b\3\b\3\b\3\b\3\b\3\b\6\b\u00eb\n\b\r\b\16\b\u00ec")
-        buf.write("\3\b\5\b\u00f0\n\b\3\t\3\t\5\t\u00f4\n\t\3\t\3\t\3\t\3")
-        buf.write("\t\3\t\3\t\3\t\7\t\u00fd\n\t\f\t\16\t\u0100\13\t\3\t\5")
-        buf.write("\t\u0103\n\t\3\t\5\t\u0106\n\t\3\n\3\n\3\n\3\n\3\n\3\n")
-        buf.write("\3\n\3\n\6\n\u0110\n\n\r\n\16\n\u0111\3\n\5\n\u0115\n")
-        buf.write("\n\3\n\5\n\u0118\n\n\3\13\3\13\5\13\u011c\n\13\3\13\3")
-        buf.write("\13\5\13\u0120\n\13\3\13\3\13\5\13\u0124\n\13\3\13\3\13")
-        buf.write("\3\13\3\13\3\13\3\13\6\13\u012c\n\13\r\13\16\13\u012d")
-        buf.write("\3\13\5\13\u0131\n\13\3\13\3\13\5\13\u0135\n\13\3\13\5")
-        buf.write("\13\u0138\n\13\3\f\3\f\3\f\3\f\3\f\3\f\3\f\5\f\u0141\n")
-        buf.write("\f\3\r\3\r\3\r\3\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16")
-        buf.write("\5\16\u014e\n\16\3\16\3\16\5\16\u0152\n\16\3\17\6\17\u0155")
-        buf.write("\n\17\r\17\16\17\u0156\3\20\3\20\3\20\6p\u0094\u00b3\u00fe")
-        buf.write("\2\21\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36\2\5\5\2\24")
-        buf.write("\24\26\26\34\34\4\2\27\27\32\32\3\2\4\5\2\u01b1\2#\3\2")
-        buf.write("\2\2\4.\3\2\2\2\69\3\2\2\2\b?\3\2\2\2\nY\3\2\2\2\f\u0084")
-        buf.write("\3\2\2\2\16\u00d5\3\2\2\2\20\u00f1\3\2\2\2\22\u0107\3")
-        buf.write("\2\2\2\24\u0119\3\2\2\2\26\u0140\3\2\2\2\30\u0142\3\2")
-        buf.write("\2\2\32\u0151\3\2\2\2\34\u0154\3\2\2\2\36\u0158\3\2\2")
-        buf.write("\2 \"\5\4\3\2! \3\2\2\2\"%\3\2\2\2#!\3\2\2\2#$\3\2\2\2")
-        buf.write("$&\3\2\2\2%#\3\2\2\2&\'\7\2\2\3\'\3\3\2\2\2(/\5\b\5\2")
-        buf.write(")/\5\22\n\2*/\5\20\t\2+/\5\34\17\2,/\5\24\13\2-/\5\f\7")
-        buf.write("\2.(\3\2\2\2.)\3\2\2\2.*\3\2\2\2.+\3\2\2\2.,\3\2\2\2.")
-        buf.write("-\3\2\2\2/\60\3\2\2\2\60.\3\2\2\2\60\61\3\2\2\2\61\5\3")
-        buf.write("\2\2\2\628\5\b\5\2\638\5\22\n\2\648\5\20\t\2\658\5\24")
-        buf.write("\13\2\668\5\f\7\2\67\62\3\2\2\2\67\63\3\2\2\2\67\64\3")
-        buf.write("\2\2\2\67\65\3\2\2\2\67\66\3\2\2\28;\3\2\2\29\67\3\2\2")
-        buf.write("\29:\3\2\2\2:=\3\2\2\2;9\3\2\2\2<>\5\34\17\2=<\3\2\2\2")
-        buf.write("=>\3\2\2\2>\7\3\2\2\2?A\7\r\2\2@B\5\34\17\2A@\3\2\2\2")
-        buf.write("AB\3\2\2\2BC\3\2\2\2CD\7\22\2\2DE\5\n\6\2EG\7\23\2\2F")
-        buf.write("H\5\34\17\2GF\3\2\2\2GH\3\2\2\2HJ\3\2\2\2IK\7\30\2\2J")
-        buf.write("I\3\2\2\2JK\3\2\2\2KM\3\2\2\2LN\5\34\17\2ML\3\2\2\2MN")
-        buf.write("\3\2\2\2NO\3\2\2\2OQ\7\16\2\2PR\5\34\17\2QP\3\2\2\2QR")
-        buf.write("\3\2\2\2RS\3\2\2\2ST\5\6\4\2TV\7\17\2\2UW\5\34\17\2VU")
-        buf.write("\3\2\2\2VW\3\2\2\2W\t\3\2\2\2XZ\5\22\n\2YX\3\2\2\2YZ\3")
-        buf.write("\2\2\2Z_\3\2\2\2[\\\7\3\2\2\\^\5\22\n\2][\3\2\2\2^a\3")
-        buf.write("\2\2\2_]\3\2\2\2_`\3\2\2\2`b\3\2\2\2a_\3\2\2\2bd\7\30")
-        buf.write("\2\2ce\5\34\17\2dc\3\2\2\2de\3\2\2\2eg\3\2\2\2fh\5\16")
-        buf.write("\b\2gf\3\2\2\2gh\3\2\2\2hp\3\2\2\2ik\7\31\2\2jl\5\34\17")
-        buf.write("\2kj\3\2\2\2kl\3\2\2\2lm\3\2\2\2mo\5\16\b\2ni\3\2\2\2")
-        buf.write("or\3\2\2\2pq\3\2\2\2pn\3\2\2\2qs\3\2\2\2rp\3\2\2\2su\7")
-        buf.write("\30\2\2tv\5\34\17\2ut\3\2\2\2uv\3\2\2\2vx\3\2\2\2wy\5")
-        buf.write("\32\16\2xw\3\2\2\2xy\3\2\2\2y~\3\2\2\2z{\7\3\2\2{}\5\32")
-        buf.write("\16\2|z\3\2\2\2}\u0080\3\2\2\2~|\3\2\2\2~\177\3\2\2\2")
-        buf.write("\177\u0082\3\2\2\2\u0080~\3\2\2\2\u0081\u0083\5\34\17")
-        buf.write("\2\u0082\u0081\3\2\2\2\u0082\u0083\3\2\2\2\u0083\13\3")
-        buf.write("\2\2\2\u0084\u0086\7\b\2\2\u0085\u0087\5\34\17\2\u0086")
-        buf.write("\u0085\3\2\2\2\u0086\u0087\3\2\2\2\u0087\u0088\3\2\2\2")
-        buf.write("\u0088\u008a\7\22\2\2\u0089\u008b\5\34\17\2\u008a\u0089")
-        buf.write("\3\2\2\2\u008a\u008b\3\2\2\2\u008b\u008c\3\2\2\2\u008c")
-        buf.write("\u0094\5\16\b\2\u008d\u008f\7\31\2\2\u008e\u0090\5\34")
-        buf.write("\17\2\u008f\u008e\3\2\2\2\u008f\u0090\3\2\2\2\u0090\u0091")
-        buf.write("\3\2\2\2\u0091\u0093\5\16\b\2\u0092\u008d\3\2\2\2\u0093")
-        buf.write("\u0096\3\2\2\2\u0094\u0095\3\2\2\2\u0094\u0092\3\2\2\2")
-        buf.write("\u0095\u0097\3\2\2\2\u0096\u0094\3\2\2\2\u0097\u0099\7")
-        buf.write("\23\2\2\u0098\u009a\5\34\17\2\u0099\u0098\3\2\2\2\u0099")
-        buf.write("\u009a\3\2\2\2\u009a\u009c\3\2\2\2\u009b\u009d\7\30\2")
-        buf.write("\2\u009c\u009b\3\2\2\2\u009c\u009d\3\2\2\2\u009d\u009f")
-        buf.write("\3\2\2\2\u009e\u00a0\5\34\17\2\u009f\u009e\3\2\2\2\u009f")
-        buf.write("\u00a0\3\2\2\2\u00a0\u00a1\3\2\2\2\u00a1\u00a3\7\t\2\2")
-        buf.write("\u00a2\u00a4\5\34\17\2\u00a3\u00a2\3\2\2\2\u00a3\u00a4")
-        buf.write("\3\2\2\2\u00a4\u00a5\3\2\2\2\u00a5\u00c8\5\6\4\2\u00a6")
-        buf.write("\u00a8\7\n\2\2\u00a7\u00a9\5\34\17\2\u00a8\u00a7\3\2\2")
-        buf.write("\2\u00a8\u00a9\3\2\2\2\u00a9\u00aa\3\2\2\2\u00aa\u00ac")
-        buf.write("\7\22\2\2\u00ab\u00ad\5\34\17\2\u00ac\u00ab\3\2\2\2\u00ac")
-        buf.write("\u00ad\3\2\2\2\u00ad\u00ae\3\2\2\2\u00ae\u00b3\5\16\b")
-        buf.write("\2\u00af\u00b0\7\31\2\2\u00b0\u00b2\5\16\b\2\u00b1\u00af")
-        buf.write("\3\2\2\2\u00b2\u00b5\3\2\2\2\u00b3\u00b4\3\2\2\2\u00b3")
-        buf.write("\u00b1\3\2\2\2\u00b4\u00b6\3\2\2\2\u00b5\u00b3\3\2\2\2")
-        buf.write("\u00b6\u00b8\7\23\2\2\u00b7\u00b9\5\34\17\2\u00b8\u00b7")
-        buf.write("\3\2\2\2\u00b8\u00b9\3\2\2\2\u00b9\u00bb\3\2\2\2\u00ba")
-        buf.write("\u00bc\7\30\2\2\u00bb\u00ba\3\2\2\2\u00bb\u00bc\3\2\2")
-        buf.write("\2\u00bc\u00be\3\2\2\2\u00bd\u00bf\5\34\17\2\u00be\u00bd")
-        buf.write("\3\2\2\2\u00be\u00bf\3\2\2\2\u00bf\u00c0\3\2\2\2\u00c0")
-        buf.write("\u00c2\7\t\2\2\u00c1\u00c3\5\34\17\2\u00c2\u00c1\3\2\2")
-        buf.write("\2\u00c2\u00c3\3\2\2\2\u00c3\u00c4\3\2\2\2\u00c4\u00c5")
-        buf.write("\5\6\4\2\u00c5\u00c7\3\2\2\2\u00c6\u00a6\3\2\2\2\u00c7")
-        buf.write("\u00ca\3\2\2\2\u00c8\u00c6\3\2\2\2\u00c8\u00c9\3\2\2\2")
-        buf.write("\u00c9\u00cb\3\2\2\2\u00ca\u00c8\3\2\2\2\u00cb\u00cd\7")
-        buf.write("\13\2\2\u00cc\u00ce\5\34\17\2\u00cd\u00cc\3\2\2\2\u00cd")
-        buf.write("\u00ce\3\2\2\2\u00ce\u00cf\3\2\2\2\u00cf\u00d0\5\6\4\2")
-        buf.write("\u00d0\u00d2\7\f\2\2\u00d1\u00d3\5\34\17\2\u00d2\u00d1")
-        buf.write("\3\2\2\2\u00d2\u00d3\3\2\2\2\u00d3\r\3\2\2\2\u00d4\u00d6")
-        buf.write("\5\34\17\2\u00d5\u00d4\3\2\2\2\u00d5\u00d6\3\2\2\2\u00d6")
-        buf.write("\u00d8\3\2\2\2\u00d7\u00d9\t\2\2\2\u00d8\u00d7\3\2\2\2")
-        buf.write("\u00d9\u00da\3\2\2\2\u00da\u00d8\3\2\2\2\u00da\u00db\3")
-        buf.write("\2\2\2\u00db\u00dd\3\2\2\2\u00dc\u00de\5\34\17\2\u00dd")
-        buf.write("\u00dc\3\2\2\2\u00dd\u00de\3\2\2\2\u00de\u00df\3\2\2\2")
-        buf.write("\u00df\u00e1\7\33\2\2\u00e0\u00e2\5\34\17\2\u00e1\u00e0")
-        buf.write("\3\2\2\2\u00e1\u00e2\3\2\2\2\u00e2\u00ea\3\2\2\2\u00e3")
-        buf.write("\u00eb\5\36\20\2\u00e4\u00eb\7\24\2\2\u00e5\u00eb\7\26")
-        buf.write("\2\2\u00e6\u00eb\7\34\2\2\u00e7\u00eb\7\25\2\2\u00e8\u00eb")
-        buf.write("\7\21\2\2\u00e9\u00eb\7\34\2\2\u00ea\u00e3\3\2\2\2\u00ea")
-        buf.write("\u00e4\3\2\2\2\u00ea\u00e5\3\2\2\2\u00ea\u00e6\3\2\2\2")
-        buf.write("\u00ea\u00e7\3\2\2\2\u00ea\u00e8\3\2\2\2\u00ea\u00e9\3")
-        buf.write("\2\2\2\u00eb\u00ec\3\2\2\2\u00ec\u00ea\3\2\2\2\u00ec\u00ed")
-        buf.write("\3\2\2\2\u00ed\u00ef\3\2\2\2\u00ee\u00f0\5\34\17\2\u00ef")
-        buf.write("\u00ee\3\2\2\2\u00ef\u00f0\3\2\2\2\u00f0\17\3\2\2\2\u00f1")
-        buf.write("\u00f3\7\20\2\2\u00f2\u00f4\5\34\17\2\u00f3\u00f2\3\2")
-        buf.write("\2\2\u00f3\u00f4\3\2\2\2\u00f4\u00fe\3\2\2\2\u00f5\u00fd")
-        buf.write("\7\24\2\2\u00f6\u00fd\7\26\2\2\u00f7\u00fd\7\34\2\2\u00f8")
-        buf.write("\u00fd\7\25\2\2\u00f9\u00fd\5\36\20\2\u00fa\u00fd\7\32")
-        buf.write("\2\2\u00fb\u00fd\7\35\2\2\u00fc\u00f5\3\2\2\2\u00fc\u00f6")
-        buf.write("\3\2\2\2\u00fc\u00f7\3\2\2\2\u00fc\u00f8\3\2\2\2\u00fc")
-        buf.write("\u00f9\3\2\2\2\u00fc\u00fa\3\2\2\2\u00fc\u00fb\3\2\2\2")
-        buf.write("\u00fd\u0100\3\2\2\2\u00fe\u00ff\3\2\2\2\u00fe\u00fc\3")
-        buf.write("\2\2\2\u00ff\u0102\3\2\2\2\u0100\u00fe\3\2\2\2\u0101\u0103")
-        buf.write("\7\30\2\2\u0102\u0101\3\2\2\2\u0102\u0103\3\2\2\2\u0103")
-        buf.write("\u0105\3\2\2\2\u0104\u0106\5\34\17\2\u0105\u0104\3\2\2")
-        buf.write("\2\u0105\u0106\3\2\2\2\u0106\21\3\2\2\2\u0107\u0108\7")
-        buf.write("\24\2\2\u0108\u010f\7\27\2\2\u0109\u0110\5\36\20\2\u010a")
-        buf.write("\u0110\7\26\2\2\u010b\u0110\7\24\2\2\u010c\u0110\7\25")
-        buf.write("\2\2\u010d\u0110\7\21\2\2\u010e\u0110\7\34\2\2\u010f\u0109")
-        buf.write("\3\2\2\2\u010f\u010a\3\2\2\2\u010f\u010b\3\2\2\2\u010f")
-        buf.write("\u010c\3\2\2\2\u010f\u010d\3\2\2\2\u010f\u010e\3\2\2\2")
-        buf.write("\u0110\u0111\3\2\2\2\u0111\u010f\3\2\2\2\u0111\u0112\3")
-        buf.write("\2\2\2\u0112\u0114\3\2\2\2\u0113\u0115\7\30\2\2\u0114")
-        buf.write("\u0113\3\2\2\2\u0114\u0115\3\2\2\2\u0115\u0117\3\2\2\2")
-        buf.write("\u0116\u0118\5\34\17\2\u0117\u0116\3\2\2\2\u0117\u0118")
-        buf.write("\3\2\2\2\u0118\23\3\2\2\2\u0119\u011b\7\22\2\2\u011a\u011c")
-        buf.write("\5\34\17\2\u011b\u011a\3\2\2\2\u011b\u011c\3\2\2\2\u011c")
-        buf.write("\u011d\3\2\2\2\u011d\u011f\7\24\2\2\u011e\u0120\5\34\17")
-        buf.write("\2\u011f\u011e\3\2\2\2\u011f\u0120\3\2\2\2\u0120\u0121")
-        buf.write("\3\2\2\2\u0121\u0123\t\3\2\2\u0122\u0124\5\34\17\2\u0123")
-        buf.write("\u0122\3\2\2\2\u0123\u0124\3\2\2\2\u0124\u012b\3\2\2\2")
-        buf.write("\u0125\u012c\5\36\20\2\u0126\u012c\7\26\2\2\u0127\u012c")
-        buf.write("\7\24\2\2\u0128\u012c\7\25\2\2\u0129\u012c\7\21\2\2\u012a")
-        buf.write("\u012c\7\34\2\2\u012b\u0125\3\2\2\2\u012b\u0126\3\2\2")
-        buf.write("\2\u012b\u0127\3\2\2\2\u012b\u0128\3\2\2\2\u012b\u0129")
-        buf.write("\3\2\2\2\u012b\u012a\3\2\2\2\u012c\u012d\3\2\2\2\u012d")
-        buf.write("\u012b\3\2\2\2\u012d\u012e\3\2\2\2\u012e\u0130\3\2\2\2")
-        buf.write("\u012f\u0131\5\34\17\2\u0130\u012f\3\2\2\2\u0130\u0131")
-        buf.write("\3\2\2\2\u0131\u0132\3\2\2\2\u0132\u0134\7\23\2\2\u0133")
-        buf.write("\u0135\7\30\2\2\u0134\u0133\3\2\2\2\u0134\u0135\3\2\2")
-        buf.write("\2\u0135\u0137\3\2\2\2\u0136\u0138\5\34\17\2\u0137\u0136")
-        buf.write("\3\2\2\2\u0137\u0138\3\2\2\2\u0138\25\3\2\2\2\u0139\u0141")
-        buf.write("\7\34\2\2\u013a\u0141\5\36\20\2\u013b\u0141\7\25\2\2\u013c")
-        buf.write("\u0141\7\24\2\2\u013d\u0141\7\26\2\2\u013e\u0141\5\34")
-        buf.write("\17\2\u013f\u0141\7\35\2\2\u0140\u0139\3\2\2\2\u0140\u013a")
-        buf.write("\3\2\2\2\u0140\u013b\3\2\2\2\u0140\u013c\3\2\2\2\u0140")
-        buf.write("\u013d\3\2\2\2\u0140\u013e\3\2\2\2\u0140\u013f\3\2\2\2")
-        buf.write("\u0141\27\3\2\2\2\u0142\u0143\7\24\2\2\u0143\u0144\7\33")
-        buf.write("\2\2\u0144\u0145\7\26\2\2\u0145\31\3\2\2\2\u0146\u0147")
-        buf.write("\7\24\2\2\u0147\u014d\7\32\2\2\u0148\u014e\7\34\2\2\u0149")
-        buf.write("\u014e\7\24\2\2\u014a\u014e\7\26\2\2\u014b\u014e\5\36")
-        buf.write("\20\2\u014c\u014e\7\25\2\2\u014d\u0148\3\2\2\2\u014d\u0149")
-        buf.write("\3\2\2\2\u014d\u014a\3\2\2\2\u014d\u014b\3\2\2\2\u014d")
-        buf.write("\u014c\3\2\2\2\u014d\u014e\3\2\2\2\u014e\u0152\3\2\2\2")
-        buf.write("\u014f\u0150\7\32\2\2\u0150\u0152\7\24\2\2\u0151\u0146")
-        buf.write("\3\2\2\2\u0151\u014f\3\2\2\2\u0152\33\3\2\2\2\u0153\u0155")
-        buf.write("\7\7\2\2\u0154\u0153\3\2\2\2\u0155\u0156\3\2\2\2\u0156")
-        buf.write("\u0154\3\2\2\2\u0156\u0157\3\2\2\2\u0157\35\3\2\2\2\u0158")
-        buf.write("\u0159\t\4\2\2\u0159\37\3\2\2\2F#.\60\679=AGJMQVY_dgk")
-        buf.write("pux~\u0082\u0086\u008a\u008f\u0094\u0099\u009c\u009f\u00a3")
-        buf.write("\u00a8\u00ac\u00b3\u00b8\u00bb\u00be\u00c2\u00c8\u00cd")
-        buf.write("\u00d2\u00d5\u00da\u00dd\u00e1\u00ea\u00ec\u00ef\u00f3")
-        buf.write("\u00fc\u00fe\u0102\u0105\u010f\u0111\u0114\u0117\u011b")
-        buf.write("\u011f\u0123\u012b\u012d\u0130\u0134\u0137\u0140\u014d")
-        buf.write("\u0151\u0156")
+        buf.write("\3\b\5\b\u00f0\n\b\3\t\3\t\5\t\u00f4\n\t\3\t\7\t\u00f7")
+        buf.write("\n\t\f\t\16\t\u00fa\13\t\3\t\5\t\u00fd\n\t\3\t\5\t\u0100")
+        buf.write("\n\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\6\n\u010a\n\n\r\n")
+        buf.write("\16\n\u010b\3\n\5\n\u010f\n\n\3\n\5\n\u0112\n\n\3\13\3")
+        buf.write("\13\5\13\u0116\n\13\3\13\3\13\5\13\u011a\n\13\3\13\3\13")
+        buf.write("\5\13\u011e\n\13\3\13\3\13\3\13\3\13\3\13\3\13\6\13\u0126")
+        buf.write("\n\13\r\13\16\13\u0127\3\13\5\13\u012b\n\13\3\13\3\13")
+        buf.write("\5\13\u012f\n\13\3\13\5\13\u0132\n\13\3\f\3\f\3\f\3\f")
+        buf.write("\3\f\3\f\3\f\3\f\5\f\u013c\n\f\3\r\3\r\3\r\3\r\3\16\3")
+        buf.write("\16\3\16\3\16\3\16\3\16\3\16\5\16\u0149\n\16\3\16\3\16")
+        buf.write("\5\16\u014d\n\16\3\17\6\17\u0150\n\17\r\17\16\17\u0151")
+        buf.write("\3\20\3\20\3\20\6p\u0094\u00b3\u00f8\2\21\2\4\6\b\n\f")
+        buf.write("\16\20\22\24\26\30\32\34\36\2\5\5\2\24\24\26\26\34\34")
+        buf.write("\4\2\27\27\32\32\3\2\4\5\2\u01a7\2#\3\2\2\2\4.\3\2\2\2")
+        buf.write("\69\3\2\2\2\b?\3\2\2\2\nY\3\2\2\2\f\u0084\3\2\2\2\16\u00d5")
+        buf.write("\3\2\2\2\20\u00f1\3\2\2\2\22\u0101\3\2\2\2\24\u0113\3")
+        buf.write("\2\2\2\26\u013b\3\2\2\2\30\u013d\3\2\2\2\32\u014c\3\2")
+        buf.write("\2\2\34\u014f\3\2\2\2\36\u0153\3\2\2\2 \"\5\4\3\2! \3")
+        buf.write("\2\2\2\"%\3\2\2\2#!\3\2\2\2#$\3\2\2\2$&\3\2\2\2%#\3\2")
+        buf.write("\2\2&\'\7\2\2\3\'\3\3\2\2\2(/\5\b\5\2)/\5\22\n\2*/\5\20")
+        buf.write("\t\2+/\5\34\17\2,/\5\24\13\2-/\5\f\7\2.(\3\2\2\2.)\3\2")
+        buf.write("\2\2.*\3\2\2\2.+\3\2\2\2.,\3\2\2\2.-\3\2\2\2/\60\3\2\2")
+        buf.write("\2\60.\3\2\2\2\60\61\3\2\2\2\61\5\3\2\2\2\628\5\b\5\2")
+        buf.write("\638\5\22\n\2\648\5\20\t\2\658\5\24\13\2\668\5\f\7\2\67")
+        buf.write("\62\3\2\2\2\67\63\3\2\2\2\67\64\3\2\2\2\67\65\3\2\2\2")
+        buf.write("\67\66\3\2\2\28;\3\2\2\29\67\3\2\2\29:\3\2\2\2:=\3\2\2")
+        buf.write("\2;9\3\2\2\2<>\5\34\17\2=<\3\2\2\2=>\3\2\2\2>\7\3\2\2")
+        buf.write("\2?A\7\r\2\2@B\5\34\17\2A@\3\2\2\2AB\3\2\2\2BC\3\2\2\2")
+        buf.write("CD\7\22\2\2DE\5\n\6\2EG\7\23\2\2FH\5\34\17\2GF\3\2\2\2")
+        buf.write("GH\3\2\2\2HJ\3\2\2\2IK\7\30\2\2JI\3\2\2\2JK\3\2\2\2KM")
+        buf.write("\3\2\2\2LN\5\34\17\2ML\3\2\2\2MN\3\2\2\2NO\3\2\2\2OQ\7")
+        buf.write("\16\2\2PR\5\34\17\2QP\3\2\2\2QR\3\2\2\2RS\3\2\2\2ST\5")
+        buf.write("\6\4\2TV\7\17\2\2UW\5\34\17\2VU\3\2\2\2VW\3\2\2\2W\t\3")
+        buf.write("\2\2\2XZ\5\22\n\2YX\3\2\2\2YZ\3\2\2\2Z_\3\2\2\2[\\\7\3")
+        buf.write("\2\2\\^\5\22\n\2][\3\2\2\2^a\3\2\2\2_]\3\2\2\2_`\3\2\2")
+        buf.write("\2`b\3\2\2\2a_\3\2\2\2bd\7\30\2\2ce\5\34\17\2dc\3\2\2")
+        buf.write("\2de\3\2\2\2eg\3\2\2\2fh\5\16\b\2gf\3\2\2\2gh\3\2\2\2")
+        buf.write("hp\3\2\2\2ik\7\31\2\2jl\5\34\17\2kj\3\2\2\2kl\3\2\2\2")
+        buf.write("lm\3\2\2\2mo\5\16\b\2ni\3\2\2\2or\3\2\2\2pq\3\2\2\2pn")
+        buf.write("\3\2\2\2qs\3\2\2\2rp\3\2\2\2su\7\30\2\2tv\5\34\17\2ut")
+        buf.write("\3\2\2\2uv\3\2\2\2vx\3\2\2\2wy\5\32\16\2xw\3\2\2\2xy\3")
+        buf.write("\2\2\2y~\3\2\2\2z{\7\3\2\2{}\5\32\16\2|z\3\2\2\2}\u0080")
+        buf.write("\3\2\2\2~|\3\2\2\2~\177\3\2\2\2\177\u0082\3\2\2\2\u0080")
+        buf.write("~\3\2\2\2\u0081\u0083\5\34\17\2\u0082\u0081\3\2\2\2\u0082")
+        buf.write("\u0083\3\2\2\2\u0083\13\3\2\2\2\u0084\u0086\7\b\2\2\u0085")
+        buf.write("\u0087\5\34\17\2\u0086\u0085\3\2\2\2\u0086\u0087\3\2\2")
+        buf.write("\2\u0087\u0088\3\2\2\2\u0088\u008a\7\22\2\2\u0089\u008b")
+        buf.write("\5\34\17\2\u008a\u0089\3\2\2\2\u008a\u008b\3\2\2\2\u008b")
+        buf.write("\u008c\3\2\2\2\u008c\u0094\5\16\b\2\u008d\u008f\7\31\2")
+        buf.write("\2\u008e\u0090\5\34\17\2\u008f\u008e\3\2\2\2\u008f\u0090")
+        buf.write("\3\2\2\2\u0090\u0091\3\2\2\2\u0091\u0093\5\16\b\2\u0092")
+        buf.write("\u008d\3\2\2\2\u0093\u0096\3\2\2\2\u0094\u0095\3\2\2\2")
+        buf.write("\u0094\u0092\3\2\2\2\u0095\u0097\3\2\2\2\u0096\u0094\3")
+        buf.write("\2\2\2\u0097\u0099\7\23\2\2\u0098\u009a\5\34\17\2\u0099")
+        buf.write("\u0098\3\2\2\2\u0099\u009a\3\2\2\2\u009a\u009c\3\2\2\2")
+        buf.write("\u009b\u009d\7\30\2\2\u009c\u009b\3\2\2\2\u009c\u009d")
+        buf.write("\3\2\2\2\u009d\u009f\3\2\2\2\u009e\u00a0\5\34\17\2\u009f")
+        buf.write("\u009e\3\2\2\2\u009f\u00a0\3\2\2\2\u00a0\u00a1\3\2\2\2")
+        buf.write("\u00a1\u00a3\7\t\2\2\u00a2\u00a4\5\34\17\2\u00a3\u00a2")
+        buf.write("\3\2\2\2\u00a3\u00a4\3\2\2\2\u00a4\u00a5\3\2\2\2\u00a5")
+        buf.write("\u00c8\5\6\4\2\u00a6\u00a8\7\n\2\2\u00a7\u00a9\5\34\17")
+        buf.write("\2\u00a8\u00a7\3\2\2\2\u00a8\u00a9\3\2\2\2\u00a9\u00aa")
+        buf.write("\3\2\2\2\u00aa\u00ac\7\22\2\2\u00ab\u00ad\5\34\17\2\u00ac")
+        buf.write("\u00ab\3\2\2\2\u00ac\u00ad\3\2\2\2\u00ad\u00ae\3\2\2\2")
+        buf.write("\u00ae\u00b3\5\16\b\2\u00af\u00b0\7\31\2\2\u00b0\u00b2")
+        buf.write("\5\16\b\2\u00b1\u00af\3\2\2\2\u00b2\u00b5\3\2\2\2\u00b3")
+        buf.write("\u00b4\3\2\2\2\u00b3\u00b1\3\2\2\2\u00b4\u00b6\3\2\2\2")
+        buf.write("\u00b5\u00b3\3\2\2\2\u00b6\u00b8\7\23\2\2\u00b7\u00b9")
+        buf.write("\5\34\17\2\u00b8\u00b7\3\2\2\2\u00b8\u00b9\3\2\2\2\u00b9")
+        buf.write("\u00bb\3\2\2\2\u00ba\u00bc\7\30\2\2\u00bb\u00ba\3\2\2")
+        buf.write("\2\u00bb\u00bc\3\2\2\2\u00bc\u00be\3\2\2\2\u00bd\u00bf")
+        buf.write("\5\34\17\2\u00be\u00bd\3\2\2\2\u00be\u00bf\3\2\2\2\u00bf")
+        buf.write("\u00c0\3\2\2\2\u00c0\u00c2\7\t\2\2\u00c1\u00c3\5\34\17")
+        buf.write("\2\u00c2\u00c1\3\2\2\2\u00c2\u00c3\3\2\2\2\u00c3\u00c4")
+        buf.write("\3\2\2\2\u00c4\u00c5\5\6\4\2\u00c5\u00c7\3\2\2\2\u00c6")
+        buf.write("\u00a6\3\2\2\2\u00c7\u00ca\3\2\2\2\u00c8\u00c6\3\2\2\2")
+        buf.write("\u00c8\u00c9\3\2\2\2\u00c9\u00cb\3\2\2\2\u00ca\u00c8\3")
+        buf.write("\2\2\2\u00cb\u00cd\7\13\2\2\u00cc\u00ce\5\34\17\2\u00cd")
+        buf.write("\u00cc\3\2\2\2\u00cd\u00ce\3\2\2\2\u00ce\u00cf\3\2\2\2")
+        buf.write("\u00cf\u00d0\5\6\4\2\u00d0\u00d2\7\f\2\2\u00d1\u00d3\5")
+        buf.write("\34\17\2\u00d2\u00d1\3\2\2\2\u00d2\u00d3\3\2\2\2\u00d3")
+        buf.write("\r\3\2\2\2\u00d4\u00d6\5\34\17\2\u00d5\u00d4\3\2\2\2\u00d5")
+        buf.write("\u00d6\3\2\2\2\u00d6\u00d8\3\2\2\2\u00d7\u00d9\t\2\2\2")
+        buf.write("\u00d8\u00d7\3\2\2\2\u00d9\u00da\3\2\2\2\u00da\u00d8\3")
+        buf.write("\2\2\2\u00da\u00db\3\2\2\2\u00db\u00dd\3\2\2\2\u00dc\u00de")
+        buf.write("\5\34\17\2\u00dd\u00dc\3\2\2\2\u00dd\u00de\3\2\2\2\u00de")
+        buf.write("\u00df\3\2\2\2\u00df\u00e1\7\33\2\2\u00e0\u00e2\5\34\17")
+        buf.write("\2\u00e1\u00e0\3\2\2\2\u00e1\u00e2\3\2\2\2\u00e2\u00ea")
+        buf.write("\3\2\2\2\u00e3\u00eb\5\36\20\2\u00e4\u00eb\7\24\2\2\u00e5")
+        buf.write("\u00eb\7\26\2\2\u00e6\u00eb\7\34\2\2\u00e7\u00eb\7\25")
+        buf.write("\2\2\u00e8\u00eb\7\21\2\2\u00e9\u00eb\7\34\2\2\u00ea\u00e3")
+        buf.write("\3\2\2\2\u00ea\u00e4\3\2\2\2\u00ea\u00e5\3\2\2\2\u00ea")
+        buf.write("\u00e6\3\2\2\2\u00ea\u00e7\3\2\2\2\u00ea\u00e8\3\2\2\2")
+        buf.write("\u00ea\u00e9\3\2\2\2\u00eb\u00ec\3\2\2\2\u00ec\u00ea\3")
+        buf.write("\2\2\2\u00ec\u00ed\3\2\2\2\u00ed\u00ef\3\2\2\2\u00ee\u00f0")
+        buf.write("\5\34\17\2\u00ef\u00ee\3\2\2\2\u00ef\u00f0\3\2\2\2\u00f0")
+        buf.write("\17\3\2\2\2\u00f1\u00f3\7\20\2\2\u00f2\u00f4\5\34\17\2")
+        buf.write("\u00f3\u00f2\3\2\2\2\u00f3\u00f4\3\2\2\2\u00f4\u00f8\3")
+        buf.write("\2\2\2\u00f5\u00f7\5\26\f\2\u00f6\u00f5\3\2\2\2\u00f7")
+        buf.write("\u00fa\3\2\2\2\u00f8\u00f9\3\2\2\2\u00f8\u00f6\3\2\2\2")
+        buf.write("\u00f9\u00fc\3\2\2\2\u00fa\u00f8\3\2\2\2\u00fb\u00fd\7")
+        buf.write("\30\2\2\u00fc\u00fb\3\2\2\2\u00fc\u00fd\3\2\2\2\u00fd")
+        buf.write("\u00ff\3\2\2\2\u00fe\u0100\5\34\17\2\u00ff\u00fe\3\2\2")
+        buf.write("\2\u00ff\u0100\3\2\2\2\u0100\21\3\2\2\2\u0101\u0102\7")
+        buf.write("\24\2\2\u0102\u0109\7\27\2\2\u0103\u010a\5\36\20\2\u0104")
+        buf.write("\u010a\7\26\2\2\u0105\u010a\7\24\2\2\u0106\u010a\7\25")
+        buf.write("\2\2\u0107\u010a\7\21\2\2\u0108\u010a\7\34\2\2\u0109\u0103")
+        buf.write("\3\2\2\2\u0109\u0104\3\2\2\2\u0109\u0105\3\2\2\2\u0109")
+        buf.write("\u0106\3\2\2\2\u0109\u0107\3\2\2\2\u0109\u0108\3\2\2\2")
+        buf.write("\u010a\u010b\3\2\2\2\u010b\u0109\3\2\2\2\u010b\u010c\3")
+        buf.write("\2\2\2\u010c\u010e\3\2\2\2\u010d\u010f\7\30\2\2\u010e")
+        buf.write("\u010d\3\2\2\2\u010e\u010f\3\2\2\2\u010f\u0111\3\2\2\2")
+        buf.write("\u0110\u0112\5\34\17\2\u0111\u0110\3\2\2\2\u0111\u0112")
+        buf.write("\3\2\2\2\u0112\23\3\2\2\2\u0113\u0115\7\22\2\2\u0114\u0116")
+        buf.write("\5\34\17\2\u0115\u0114\3\2\2\2\u0115\u0116\3\2\2\2\u0116")
+        buf.write("\u0117\3\2\2\2\u0117\u0119\7\24\2\2\u0118\u011a\5\34\17")
+        buf.write("\2\u0119\u0118\3\2\2\2\u0119\u011a\3\2\2\2\u011a\u011b")
+        buf.write("\3\2\2\2\u011b\u011d\t\3\2\2\u011c\u011e\5\34\17\2\u011d")
+        buf.write("\u011c\3\2\2\2\u011d\u011e\3\2\2\2\u011e\u0125\3\2\2\2")
+        buf.write("\u011f\u0126\5\36\20\2\u0120\u0126\7\26\2\2\u0121\u0126")
+        buf.write("\7\24\2\2\u0122\u0126\7\25\2\2\u0123\u0126\7\21\2\2\u0124")
+        buf.write("\u0126\7\34\2\2\u0125\u011f\3\2\2\2\u0125\u0120\3\2\2")
+        buf.write("\2\u0125\u0121\3\2\2\2\u0125\u0122\3\2\2\2\u0125\u0123")
+        buf.write("\3\2\2\2\u0125\u0124\3\2\2\2\u0126\u0127\3\2\2\2\u0127")
+        buf.write("\u0125\3\2\2\2\u0127\u0128\3\2\2\2\u0128\u012a\3\2\2\2")
+        buf.write("\u0129\u012b\5\34\17\2\u012a\u0129\3\2\2\2\u012a\u012b")
+        buf.write("\3\2\2\2\u012b\u012c\3\2\2\2\u012c\u012e\7\23\2\2\u012d")
+        buf.write("\u012f\7\30\2\2\u012e\u012d\3\2\2\2\u012e\u012f\3\2\2")
+        buf.write("\2\u012f\u0131\3\2\2\2\u0130\u0132\5\34\17\2\u0131\u0130")
+        buf.write("\3\2\2\2\u0131\u0132\3\2\2\2\u0132\25\3\2\2\2\u0133\u013c")
+        buf.write("\7\24\2\2\u0134\u013c\7\26\2\2\u0135\u013c\7\34\2\2\u0136")
+        buf.write("\u013c\7\25\2\2\u0137\u013c\5\36\20\2\u0138\u013c\7\32")
+        buf.write("\2\2\u0139\u013c\7\35\2\2\u013a\u013c\5\34\17\2\u013b")
+        buf.write("\u0133\3\2\2\2\u013b\u0134\3\2\2\2\u013b\u0135\3\2\2\2")
+        buf.write("\u013b\u0136\3\2\2\2\u013b\u0137\3\2\2\2\u013b\u0138\3")
+        buf.write("\2\2\2\u013b\u0139\3\2\2\2\u013b\u013a\3\2\2\2\u013c\27")
+        buf.write("\3\2\2\2\u013d\u013e\7\24\2\2\u013e\u013f\7\33\2\2\u013f")
+        buf.write("\u0140\7\26\2\2\u0140\31\3\2\2\2\u0141\u0142\7\24\2\2")
+        buf.write("\u0142\u0148\7\32\2\2\u0143\u0149\7\34\2\2\u0144\u0149")
+        buf.write("\7\24\2\2\u0145\u0149\7\26\2\2\u0146\u0149\5\36\20\2\u0147")
+        buf.write("\u0149\7\25\2\2\u0148\u0143\3\2\2\2\u0148\u0144\3\2\2")
+        buf.write("\2\u0148\u0145\3\2\2\2\u0148\u0146\3\2\2\2\u0148\u0147")
+        buf.write("\3\2\2\2\u0148\u0149\3\2\2\2\u0149\u014d\3\2\2\2\u014a")
+        buf.write("\u014b\7\32\2\2\u014b\u014d\7\24\2\2\u014c\u0141\3\2\2")
+        buf.write("\2\u014c\u014a\3\2\2\2\u014d\33\3\2\2\2\u014e\u0150\7")
+        buf.write("\7\2\2\u014f\u014e\3\2\2\2\u0150\u0151\3\2\2\2\u0151\u014f")
+        buf.write("\3\2\2\2\u0151\u0152\3\2\2\2\u0152\35\3\2\2\2\u0153\u0154")
+        buf.write("\t\4\2\2\u0154\37\3\2\2\2E#.\60\679=AGJMQVY_dgkpux~\u0082")
+        buf.write("\u0086\u008a\u008f\u0094\u0099\u009c\u009f\u00a3\u00a8")
+        buf.write("\u00ac\u00b3\u00b8\u00bb\u00be\u00c2\u00c8\u00cd\u00d2")
+        buf.write("\u00d5\u00da\u00dd\u00e1\u00ea\u00ec\u00ef\u00f3\u00f8")
+        buf.write("\u00fc\u00ff\u0109\u010b\u010e\u0111\u0115\u0119\u011d")
+        buf.write("\u0125\u0127\u012a\u012e\u0131\u013b\u0148\u014c\u0151")
         return buf.getvalue()
 
 
@@ -1402,48 +1397,12 @@ class bashGrammarParser ( Parser ):
                 return self.getTypedRuleContext(bashGrammarParser.SpaceContext,i)
 
 
-        def VAR(self, i:int=None):
+        def command_data(self, i:int=None):
             if i is None:
-                return self.getTokens(bashGrammarParser.VAR)
+                return self.getTypedRuleContexts(bashGrammarParser.Command_dataContext)
             else:
-                return self.getToken(bashGrammarParser.VAR, i)
+                return self.getTypedRuleContext(bashGrammarParser.Command_dataContext,i)
 
-        def VAL(self, i:int=None):
-            if i is None:
-                return self.getTokens(bashGrammarParser.VAL)
-            else:
-                return self.getToken(bashGrammarParser.VAL, i)
-
-        def BLOB(self, i:int=None):
-            if i is None:
-                return self.getTokens(bashGrammarParser.BLOB)
-            else:
-                return self.getToken(bashGrammarParser.BLOB, i)
-
-        def BASH_VAR(self, i:int=None):
-            if i is None:
-                return self.getTokens(bashGrammarParser.BASH_VAR)
-            else:
-                return self.getToken(bashGrammarParser.BASH_VAR, i)
-
-        def string(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(bashGrammarParser.StringContext)
-            else:
-                return self.getTypedRuleContext(bashGrammarParser.StringContext,i)
-
-
-        def INCREMENT(self, i:int=None):
-            if i is None:
-                return self.getTokens(bashGrammarParser.INCREMENT)
-            else:
-                return self.getToken(bashGrammarParser.INCREMENT, i)
-
-        def OTHER(self, i:int=None):
-            if i is None:
-                return self.getTokens(bashGrammarParser.OTHER)
-            else:
-                return self.getToken(bashGrammarParser.OTHER, i)
 
         def SEMICOLON(self):
             return self.getToken(bashGrammarParser.SEMICOLON, 0)
@@ -1485,62 +1444,30 @@ class bashGrammarParser ( Parser ):
                 self.space()
 
 
-            self.state = 252
+            self.state = 246
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,49,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,48,self._ctx)
             while _alt!=1 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1+1:
-                    self.state = 250
-                    self._errHandler.sync(self)
-                    token = self._input.LA(1)
-                    if token in [bashGrammarParser.VAR]:
-                        self.state = 243
-                        self.match(bashGrammarParser.VAR)
-                        pass
-                    elif token in [bashGrammarParser.VAL]:
-                        self.state = 244
-                        self.match(bashGrammarParser.VAL)
-                        pass
-                    elif token in [bashGrammarParser.BLOB]:
-                        self.state = 245
-                        self.match(bashGrammarParser.BLOB)
-                        pass
-                    elif token in [bashGrammarParser.BASH_VAR]:
-                        self.state = 246
-                        self.match(bashGrammarParser.BASH_VAR)
-                        pass
-                    elif token in [bashGrammarParser.SINGLE_STRING, bashGrammarParser.DOUBLE_STRING]:
-                        self.state = 247
-                        self.string()
-                        pass
-                    elif token in [bashGrammarParser.INCREMENT]:
-                        self.state = 248
-                        self.match(bashGrammarParser.INCREMENT)
-                        pass
-                    elif token in [bashGrammarParser.OTHER]:
-                        self.state = 249
-                        self.match(bashGrammarParser.OTHER)
-                        pass
-                    else:
-                        raise NoViableAltException(self)
-             
-                self.state = 254
+                    self.state = 243
+                    self.command_data() 
+                self.state = 248
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,49,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,48,self._ctx)
 
-            self.state = 256
+            self.state = 250
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==bashGrammarParser.SEMICOLON:
-                self.state = 255
+                self.state = 249
                 self.match(bashGrammarParser.SEMICOLON)
 
 
-            self.state = 259
+            self.state = 253
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,51,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,50,self._ctx)
             if la_ == 1:
-                self.state = 258
+                self.state = 252
                 self.space()
 
 
@@ -1632,40 +1559,40 @@ class bashGrammarParser ( Parser ):
         self.enterRule(localctx, 16, self.RULE_assignment)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 261
+            self.state = 255
             self.match(bashGrammarParser.VAR)
-            self.state = 262
+            self.state = 256
             self.match(bashGrammarParser.ASSIGN)
-            self.state = 269 
+            self.state = 263 
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt == 1:
-                    self.state = 269
+                    self.state = 263
                     self._errHandler.sync(self)
                     token = self._input.LA(1)
                     if token in [bashGrammarParser.SINGLE_STRING, bashGrammarParser.DOUBLE_STRING]:
-                        self.state = 263
+                        self.state = 257
                         self.string()
                         pass
                     elif token in [bashGrammarParser.VAL]:
-                        self.state = 264
+                        self.state = 258
                         self.match(bashGrammarParser.VAL)
                         pass
                     elif token in [bashGrammarParser.VAR]:
-                        self.state = 265
+                        self.state = 259
                         self.match(bashGrammarParser.VAR)
                         pass
                     elif token in [bashGrammarParser.BASH_VAR]:
-                        self.state = 266
+                        self.state = 260
                         self.match(bashGrammarParser.BASH_VAR)
                         pass
                     elif token in [bashGrammarParser.RHS_ASSIGNMENT]:
-                        self.state = 267
+                        self.state = 261
                         self.match(bashGrammarParser.RHS_ASSIGNMENT)
                         pass
                     elif token in [bashGrammarParser.BLOB]:
-                        self.state = 268
+                        self.state = 262
                         self.match(bashGrammarParser.BLOB)
                         pass
                     else:
@@ -1674,23 +1601,23 @@ class bashGrammarParser ( Parser ):
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 271 
+                self.state = 265 
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,53,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,52,self._ctx)
 
-            self.state = 274
+            self.state = 268
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,54,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,53,self._ctx)
             if la_ == 1:
-                self.state = 273
+                self.state = 267
                 self.match(bashGrammarParser.SEMICOLON)
 
 
-            self.state = 277
+            self.state = 271
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,55,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,54,self._ctx)
             if la_ == 1:
-                self.state = 276
+                self.state = 270
                 self.space()
 
 
@@ -1795,104 +1722,104 @@ class bashGrammarParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 279
+            self.state = 273
             self.match(bashGrammarParser.OPEN_BRACKETS)
-            self.state = 281
+            self.state = 275
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==bashGrammarParser.SPACE:
-                self.state = 280
+                self.state = 274
                 self.space()
 
 
-            self.state = 283
+            self.state = 277
             self.match(bashGrammarParser.VAR)
-            self.state = 285
+            self.state = 279
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==bashGrammarParser.SPACE:
-                self.state = 284
+                self.state = 278
                 self.space()
 
 
-            self.state = 287
+            self.state = 281
             _la = self._input.LA(1)
             if not(_la==bashGrammarParser.ASSIGN or _la==bashGrammarParser.INCREMENT):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
                 self.consume()
-            self.state = 289
+            self.state = 283
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==bashGrammarParser.SPACE:
-                self.state = 288
+                self.state = 282
                 self.space()
 
 
-            self.state = 297 
+            self.state = 291 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 297
+                self.state = 291
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
                 if token in [bashGrammarParser.SINGLE_STRING, bashGrammarParser.DOUBLE_STRING]:
-                    self.state = 291
+                    self.state = 285
                     self.string()
                     pass
                 elif token in [bashGrammarParser.VAL]:
-                    self.state = 292
+                    self.state = 286
                     self.match(bashGrammarParser.VAL)
                     pass
                 elif token in [bashGrammarParser.VAR]:
-                    self.state = 293
+                    self.state = 287
                     self.match(bashGrammarParser.VAR)
                     pass
                 elif token in [bashGrammarParser.BASH_VAR]:
-                    self.state = 294
+                    self.state = 288
                     self.match(bashGrammarParser.BASH_VAR)
                     pass
                 elif token in [bashGrammarParser.RHS_ASSIGNMENT]:
-                    self.state = 295
+                    self.state = 289
                     self.match(bashGrammarParser.RHS_ASSIGNMENT)
                     pass
                 elif token in [bashGrammarParser.BLOB]:
-                    self.state = 296
+                    self.state = 290
                     self.match(bashGrammarParser.BLOB)
                     pass
                 else:
                     raise NoViableAltException(self)
 
-                self.state = 299 
+                self.state = 293 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << bashGrammarParser.SINGLE_STRING) | (1 << bashGrammarParser.DOUBLE_STRING) | (1 << bashGrammarParser.RHS_ASSIGNMENT) | (1 << bashGrammarParser.VAR) | (1 << bashGrammarParser.BASH_VAR) | (1 << bashGrammarParser.VAL) | (1 << bashGrammarParser.BLOB))) != 0)):
                     break
 
-            self.state = 302
+            self.state = 296
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==bashGrammarParser.SPACE:
-                self.state = 301
+                self.state = 295
                 self.space()
 
 
-            self.state = 304
+            self.state = 298
             self.match(bashGrammarParser.CLOSE_BRACKETS)
-            self.state = 306
+            self.state = 300
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==bashGrammarParser.SEMICOLON:
-                self.state = 305
+                self.state = 299
                 self.match(bashGrammarParser.SEMICOLON)
 
 
-            self.state = 309
+            self.state = 303
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,63,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,62,self._ctx)
             if la_ == 1:
-                self.state = 308
+                self.state = 302
                 self.space()
 
 
@@ -1911,28 +1838,31 @@ class bashGrammarParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def BLOB(self):
-            return self.getToken(bashGrammarParser.BLOB, 0)
-
-        def string(self):
-            return self.getTypedRuleContext(bashGrammarParser.StringContext,0)
-
-
-        def BASH_VAR(self):
-            return self.getToken(bashGrammarParser.BASH_VAR, 0)
-
         def VAR(self):
             return self.getToken(bashGrammarParser.VAR, 0)
 
         def VAL(self):
             return self.getToken(bashGrammarParser.VAL, 0)
 
-        def space(self):
-            return self.getTypedRuleContext(bashGrammarParser.SpaceContext,0)
+        def BLOB(self):
+            return self.getToken(bashGrammarParser.BLOB, 0)
 
+        def BASH_VAR(self):
+            return self.getToken(bashGrammarParser.BASH_VAR, 0)
+
+        def string(self):
+            return self.getTypedRuleContext(bashGrammarParser.StringContext,0)
+
+
+        def INCREMENT(self):
+            return self.getToken(bashGrammarParser.INCREMENT, 0)
 
         def OTHER(self):
             return self.getToken(bashGrammarParser.OTHER, 0)
+
+        def space(self):
+            return self.getTypedRuleContext(bashGrammarParser.SpaceContext,0)
+
 
         def getRuleIndex(self):
             return bashGrammarParser.RULE_command_data
@@ -1960,36 +1890,40 @@ class bashGrammarParser ( Parser ):
         self.enterRule(localctx, 20, self.RULE_command_data)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 318
+            self.state = 313
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [bashGrammarParser.BLOB]:
-                self.state = 311
-                self.match(bashGrammarParser.BLOB)
-                pass
-            elif token in [bashGrammarParser.SINGLE_STRING, bashGrammarParser.DOUBLE_STRING]:
-                self.state = 312
-                self.string()
-                pass
-            elif token in [bashGrammarParser.BASH_VAR]:
-                self.state = 313
-                self.match(bashGrammarParser.BASH_VAR)
-                pass
-            elif token in [bashGrammarParser.VAR]:
-                self.state = 314
+            if token in [bashGrammarParser.VAR]:
+                self.state = 305
                 self.match(bashGrammarParser.VAR)
                 pass
             elif token in [bashGrammarParser.VAL]:
-                self.state = 315
+                self.state = 306
                 self.match(bashGrammarParser.VAL)
                 pass
-            elif token in [bashGrammarParser.SPACE]:
-                self.state = 316
-                self.space()
+            elif token in [bashGrammarParser.BLOB]:
+                self.state = 307
+                self.match(bashGrammarParser.BLOB)
+                pass
+            elif token in [bashGrammarParser.BASH_VAR]:
+                self.state = 308
+                self.match(bashGrammarParser.BASH_VAR)
+                pass
+            elif token in [bashGrammarParser.SINGLE_STRING, bashGrammarParser.DOUBLE_STRING]:
+                self.state = 309
+                self.string()
+                pass
+            elif token in [bashGrammarParser.INCREMENT]:
+                self.state = 310
+                self.match(bashGrammarParser.INCREMENT)
                 pass
             elif token in [bashGrammarParser.OTHER]:
-                self.state = 317
+                self.state = 311
                 self.match(bashGrammarParser.OTHER)
+                pass
+            elif token in [bashGrammarParser.SPACE]:
+                self.state = 312
+                self.space()
                 pass
             else:
                 raise NoViableAltException(self)
@@ -2044,11 +1978,11 @@ class bashGrammarParser ( Parser ):
         self.enterRule(localctx, 22, self.RULE_comparison)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 320
+            self.state = 315
             self.match(bashGrammarParser.VAR)
-            self.state = 321
+            self.state = 316
             self.match(bashGrammarParser.COMPARE)
-            self.state = 322
+            self.state = 317
             self.match(bashGrammarParser.VAL)
         except RecognitionException as re:
             localctx.exception = re
@@ -2113,35 +2047,35 @@ class bashGrammarParser ( Parser ):
         self.enterRule(localctx, 24, self.RULE_increment)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 335
+            self.state = 330
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [bashGrammarParser.VAR]:
-                self.state = 324
+                self.state = 319
                 self.match(bashGrammarParser.VAR)
-                self.state = 325
+                self.state = 320
                 self.match(bashGrammarParser.INCREMENT)
-                self.state = 331
+                self.state = 326
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
                 if token in [bashGrammarParser.BLOB]:
-                    self.state = 326
+                    self.state = 321
                     self.match(bashGrammarParser.BLOB)
                     pass
                 elif token in [bashGrammarParser.VAR]:
-                    self.state = 327
+                    self.state = 322
                     self.match(bashGrammarParser.VAR)
                     pass
                 elif token in [bashGrammarParser.VAL]:
-                    self.state = 328
+                    self.state = 323
                     self.match(bashGrammarParser.VAL)
                     pass
                 elif token in [bashGrammarParser.SINGLE_STRING, bashGrammarParser.DOUBLE_STRING]:
-                    self.state = 329
+                    self.state = 324
                     self.string()
                     pass
                 elif token in [bashGrammarParser.BASH_VAR]:
-                    self.state = 330
+                    self.state = 325
                     self.match(bashGrammarParser.BASH_VAR)
                     pass
                 elif token in [bashGrammarParser.T__0, bashGrammarParser.SPACE, bashGrammarParser.CLOSE_BRACKETS]:
@@ -2150,9 +2084,9 @@ class bashGrammarParser ( Parser ):
                     pass
                 pass
             elif token in [bashGrammarParser.INCREMENT]:
-                self.state = 333
+                self.state = 328
                 self.match(bashGrammarParser.INCREMENT)
-                self.state = 334
+                self.state = 329
                 self.match(bashGrammarParser.VAR)
                 pass
             else:
@@ -2205,19 +2139,19 @@ class bashGrammarParser ( Parser ):
         self.enterRule(localctx, 26, self.RULE_space)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 338 
+            self.state = 333 
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt == 1:
-                    self.state = 337
+                    self.state = 332
                     self.match(bashGrammarParser.SPACE)
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 340 
+                self.state = 335 
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,67,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,66,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -2267,7 +2201,7 @@ class bashGrammarParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 342
+            self.state = 337
             _la = self._input.LA(1)
             if not(_la==bashGrammarParser.SINGLE_STRING or _la==bashGrammarParser.DOUBLE_STRING):
                 self._errHandler.recoverInline(self)

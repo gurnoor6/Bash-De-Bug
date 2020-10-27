@@ -18,4 +18,7 @@ def main(argv):
 	print('=',value)
 
 if __name__=='__main__':
+	if len(sys.argv)!=2:
+		print("usage: python3 main.py {bash_file_name}")
+		exit()
 	main(sys.argv)

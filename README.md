@@ -14,8 +14,9 @@ Initially, we planned to just do a string search for the file, detect `=` signs 
 ### Parsing
 * The first thing we looked for parsing was a library named [bashlex](https://github.com/idank/bashlex). But this had a lot of issues and did not turn out well.
 * So we resorted to making a custom parser and lexer using ANTLR4.
-* Although this is a very tough task, and no such grammar exists for bash, and we had to write our own, the fact that we just have to check for file access and variable assignments, this seemed doable.
-* And finally, as every project has some limitations, this also has and we've discussed them below.
+* The first step was to create a grammar file, which contained the parser and lexer rules.
+* The lexer tokenises the whole input file. The rules for tokens are defined uisng regular expressions, in the grammar file. Also, extreme care had to be taken in the order of tokens, the ones defined first are given higher preference. Moreover, the lexer tries to generate the least number of tokens possible.
+* The parser uses the tokens generated above, to recognise the various structures such as for/while loops, if/else statements and assignment operations.
 
 ## What It CAN do
 * We type a bash script, or choose a file from our PC and the program detects all the variables in the script and displays them on the GUI.

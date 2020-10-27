@@ -6,23 +6,38 @@ grammar bashGrammar;
 
 code				: 	bashScript* EOF;
 
-bashScript			:	(for_loop | assignment | linux_command | space | advanced_assignment)+;
+bashScript			:	(for_loop | assignment | linux_command | space | advanced_assignment | ifElse)+;
 
-for_loop 			:	FOR OPEN_FOR_BRACKET inside_for CLOSE_FOR_BRACKET space? DO space? (assignment | linux_command | advanced_assignment)* space? DONE space?;
+expressions			:	(for_loop | assignment | linux_command | advanced_assignment | ifElse)* space?;
 
-inside_for			:	(assignment SEMICOLON comparison SEMICOLON increment);
+for_loop 			:	FOR space? OPEN_BRACKETS inside_for CLOSE_BRACKETS space? SEMICOLON? space? DO space? expressions DONE space?;
 
-linux_command		: 	COMMAND space? .*?  SEMICOLON? space?;
+inside_for			:	(assignment SEMICOLON space? comparison SEMICOLON space? increment space?);
 
-assignment			:	VAR EQUALS (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ SEMICOLON? space?;
+ifElse				:	IF space? OPEN_BRACKETS space? condition (LOGICAL_OP space? condition)*? CLOSE_BRACKETS space? SEMICOLON? space? THEN space?
+							expressions
+						(ELIF space? OPEN_BRACKETS space? condition (LOGICAL_OP condition)*? CLOSE_BRACKETS space? SEMICOLON? space? THEN space?
+							expressions
+						)*
+						ELSE space?
+							expressions
+						FI space?
+						;
 
-advanced_assignment :	OPEN_FOR_BRACKET VAR (EQUALS | INCREMENT) (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ CLOSE_FOR_BRACKET SEMICOLON? space?;
+condition			:	space? (VAR | VAL | BLOB)+ space? COMPARE space? (string | VAR | VAL | BLOB | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ space?;  
 
-command_data 		: 	(BLOB | string | BASH_VAR | VAR | VAL | space| OTHER);
+
+linux_command		: 	COMMAND space? (VAR | VAL | BLOB | BASH_VAR | string)*?  SEMICOLON? space?;
+
+assignment			:	VAR ASSIGN (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ SEMICOLON? space?;
+
+advanced_assignment :	OPEN_BRACKETS space? VAR space? (ASSIGN | INCREMENT) space? (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ space? CLOSE_BRACKETS SEMICOLON? space?;
+
+command_data 		: 	(BLOB | string | BASH_VAR | VAR | VAL | space | OTHER);
 
 comparison			:	VAR COMPARE VAL;
 
-increment			:	VAR INCREMENT;
+increment			:	(VAR INCREMENT | INCREMENT VAR) ;
 
 space 				:	SPACE+;
 
@@ -53,6 +68,16 @@ COMMENT				: '#' ~[\r\n]* -> skip;
 
 SPACE				: [ \t\r\n];
 
+IF					: 'if';
+
+THEN				: 'then';
+
+ELIF				: 'elif';
+
+ELSE				: 'else';
+
+FI					: 'fi';
+
 FOR					: 'for';
 
 DO 					: 'do';
@@ -64,24 +89,26 @@ COMMAND 			: ('echo' | 'cat' | 'ls' | 'll' | 'time' | 'wget');
 // keeping a not ; inside the expression to differentiate it from the for loop one
 RHS_ASSIGNMENT		: ('${'.*?'}' | '$('[a-zA-Z0-9@!$^%*&+-.]+')');
 
-OPEN_FOR_BRACKET	: ('((' | '[[');
+OPEN_BRACKETS	: ('((' | '[[');
 
-CLOSE_FOR_BRACKET	: ('))' | ']]');
+CLOSE_BRACKETS	: ('))' | ']]');
 
 VAR					: [a-zA-Z_] [a-zA-Z_0-9]*;
 
 // can be used in echo, other variable assignments
 BASH_VAR			: '$' VAR;
 
-VAL					: [A-Za-z0-9]+;
+VAL					: '-'? [A-Za-z0-9]+;
 
-EQUALS				: '=';
+ASSIGN				: '=';
 
 SEMICOLON			: ';';
 
+LOGICAL_OP			: ('||' | '&&');
+
 INCREMENT 			: ('++' | '--' | '+=' | '-=' | '/=' | '*=');
 
-COMPARE 			: ('<=' | '>=' | '<' | '>');
+COMPARE 			: ('<=' | '>=' | '<' | '>' | '==');
 
 BLOB                : [a-zA-Z0-9@!$^%*&+-.]+?;
 

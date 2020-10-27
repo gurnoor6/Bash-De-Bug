@@ -1,4 +1,4 @@
-// Generated from bashGrammar.g4 by ANTLR 4.8
+// Generated from .\bashGrammar.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -27,6 +27,16 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 */
 	void exitBashScript(bashGrammarParser.BashScriptContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#expressions}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpressions(bashGrammarParser.ExpressionsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#expressions}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpressions(bashGrammarParser.ExpressionsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#for_loop}.
 	 * @param ctx the parse tree
 	 */
@@ -46,6 +56,26 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitInside_for(bashGrammarParser.Inside_forContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#ifElse}.
+	 * @param ctx the parse tree
+	 */
+	void enterIfElse(bashGrammarParser.IfElseContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#ifElse}.
+	 * @param ctx the parse tree
+	 */
+	void exitIfElse(bashGrammarParser.IfElseContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondition(bashGrammarParser.ConditionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondition(bashGrammarParser.ConditionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#linux_command}.
 	 * @param ctx the parse tree

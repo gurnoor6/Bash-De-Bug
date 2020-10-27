@@ -1,4 +1,4 @@
-// Generated from .\bashGrammar.g4 by ANTLR 4.7.2
+// Generated from d:\IITB CSE\sem3\CS 251\main_project\Bash-De-Bug\bashGrammar.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class bashGrammarParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.7.2", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -113,14 +113,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_code; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterCode(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitCode(this);
-		}
 	}
 
 	public final CodeContext code() throws RecognitionException {
@@ -200,14 +192,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_bashScript; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterBashScript(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitBashScript(this);
-		}
 	}
 
 	public final BashScriptContext bashScript() throws RecognitionException {
@@ -326,14 +310,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expressions; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterExpressions(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitExpressions(this);
-		}
 	}
 
 	public final ExpressionsContext expressions() throws RecognitionException {
@@ -435,14 +411,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_for_loop; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterFor_loop(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitFor_loop(this);
-		}
 	}
 
 	public final For_loopContext for_loop() throws RecognitionException {
@@ -563,14 +531,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_inside_for; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterInside_for(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitInside_for(this);
-		}
 	}
 
 	public final Inside_forContext inside_for() throws RecognitionException {
@@ -685,14 +645,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_ifElse; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterIfElse(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitIfElse(this);
-		}
 	}
 
 	public final IfElseContext ifElse() throws RecognitionException {
@@ -982,14 +934,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_condition; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterCondition(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitCondition(this);
-		}
 	}
 
 	public final ConditionContext condition() throws RecognitionException {
@@ -1167,14 +1111,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_linux_command; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterLinux_command(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitLinux_command(this);
-		}
 	}
 
 	public final Linux_commandContext linux_command() throws RecognitionException {
@@ -1315,14 +1251,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_assignment; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterAssignment(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitAssignment(this);
-		}
 	}
 
 	public final AssignmentContext assignment() throws RecognitionException {
@@ -1470,14 +1398,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_advanced_assignment; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterAdvanced_assignment(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitAdvanced_assignment(this);
-		}
 	}
 
 	public final Advanced_assignmentContext advanced_assignment() throws RecognitionException {
@@ -1645,14 +1565,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_command_data; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterCommand_data(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitCommand_data(this);
-		}
 	}
 
 	public final Command_dataContext command_data() throws RecognitionException {
@@ -1731,14 +1643,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_comparison; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterComparison(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitComparison(this);
-		}
 	}
 
 	public final ComparisonContext comparison() throws RecognitionException {
@@ -1773,14 +1677,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_increment; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterIncrement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitIncrement(this);
-		}
 	}
 
 	public final IncrementContext increment() throws RecognitionException {
@@ -1833,14 +1729,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_space; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterSpace(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitSpace(this);
-		}
 	}
 
 	public final SpaceContext space() throws RecognitionException {
@@ -1890,14 +1778,6 @@ public class bashGrammarParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_string; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).enterString(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitString(this);
-		}
 	}
 
 	public final StringContext string() throws RecognitionException {

@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
-
+from inserter import inserter,execute
+from main import get_vars
 
 class LineNo(tk.Canvas):
     def __init__(self, *args, **kwargs):
@@ -111,6 +112,7 @@ class Pytext:
 		self.bind_shortcuts()
 		self.runbutton.place(relx=0.5, rely=0)
 
+
 	
 	def set_window_title(self, name="Untitled1"):
 		self.master.title(name + " - Pytext")
@@ -174,17 +176,22 @@ class Pytext:
 			self.varlist.list.insert(0, var)
 
 	def run(self):
-		pass
-		# s = "blah blah blah"
-		# self.setoutput(s)
-		# llist=[]
-		# for i in range(1, 100):
-		# 	llist.append(str(i))
-		# self.setvariables(llist)
+		# pass
+		content = self.textarea.get("1.0","end")
+		with open('input.sh','w') as fh:
+			fh.writelines(content)
+
+		out = get_vars("input.sh")
+		inserter("input.sh",out)
+		llist=[]
+		for i in out:
+			llist.append(f"{i[0],i[1]}")
+		self.setvariables(llist)
+		s = execute(["./temp_input.sh"])
+		self.setoutput(s)
 	
 
 if __name__ == '__main__':
 	master = tk.Tk()
 	pt = Pytext(master)
-
 	master.mainloop()

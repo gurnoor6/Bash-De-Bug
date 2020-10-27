@@ -4,7 +4,6 @@ from parser.bashGrammarVisitor import bashGrammarVisitor
 from antlr4 import *
 import sys
 from bashListener import fileBashListener
-from inserter import *
 
 def main(argv):
 	input = FileStream(argv[1])
@@ -15,7 +14,18 @@ def main(argv):
 	visitor = fileBashListener()
 	value = visitor.visit(tree)
 	# inserter("test.sh",value)
-	print('=',value)
+	print("=",value)
+
+def get_vars(filename):
+	input = FileStream(filename)
+	lexer = bashGrammarLexer(input)
+	stream = CommonTokenStream(lexer)
+	parser = bashGrammarParser(stream)
+	tree = parser.code()
+	visitor = fileBashListener()
+	value = visitor.visit(tree)
+	# inserter("test.sh",value)
+	return value
 
 if __name__=='__main__':
 	if len(sys.argv)!=2:

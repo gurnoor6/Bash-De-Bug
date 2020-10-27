@@ -30,4 +30,4 @@ Initially, we planned to just do a string search for the file, detect `=` signs 
 ## Phase 2 plans
 * Most of the time in phase 1 was spent in deciding the approach to be used, and we finally settled on ANTLR :)
 * The basic framework for the GUI is ready, but some extra features and overall polishing is yet to be done.
-* The basic parsing is done. We are able to parse for/while loops, assignment operations, linux commands, nested loops, nested statements but still we have to work with **sed** scripts and **function calls**. Although we are hopeful that we'll be able to do them using ANTLR as well, but just in case any problems arise, we might resort to string search, but that is just in case.
+* The basic parsing is done. We are able to parse **for/while loops, assignment operations, linux commands, nested loops, nested if-else statements** but still we have to work with **sed** scripts and **function calls**. Although we are hopeful that we'll be able to do them using ANTLR as well, but just in case any problems arise, we might resort to string search, but that is just in case.

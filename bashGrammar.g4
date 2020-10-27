@@ -12,7 +12,7 @@ for_loop 			:	FOR OPEN_FOR_BRACKET inside_for CLOSE_FOR_BRACKET space? DO space?
 
 inside_for			:	(assignment SEMICOLON comparison SEMICOLON increment);
 
-linux_command		: 	COMMAND space? command_data*  SEMICOLON? space?;
+linux_command		: 	COMMAND space? .*?  SEMICOLON? space?;
 
 assignment			:	VAR EQUALS (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ SEMICOLON? space?;
 
@@ -62,7 +62,7 @@ DONE 				: 'done';
 COMMAND 			: ('echo' | 'cat' | 'ls' | 'll' | 'time' | 'wget');
 
 // keeping a not ; inside the expression to differentiate it from the for loop one
-RHS_ASSIGNMENT		: ('${'.*?'}');
+RHS_ASSIGNMENT		: ('${'.*?'}' | '$('[a-zA-Z0-9@!$^%*&+-.]+')');
 
 OPEN_FOR_BRACKET	: ('((' | '[[');
 

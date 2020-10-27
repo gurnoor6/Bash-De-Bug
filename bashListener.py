@@ -10,7 +10,7 @@ class fileBashListener(bashGrammarVisitor):
 		pass
 
 	def visitCode(self, ctx:bashGrammarParser.CodeContext):
-		print("visited code")
+		# print("visited code")
 		self.visitChildren(ctx)
 		return var
 

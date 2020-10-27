@@ -24,8 +24,8 @@ def serializedATN():
         buf.write("\3\b\3\b\3\b\3\b\3\b\3\b\6\bw\n\b\r\b\16\bx\3\b\3\b\5")
         buf.write("\b}\n\b\3\b\5\b\u0080\n\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t")
         buf.write("\5\t\u0089\n\t\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\f\6\f")
-        buf.write("\u0093\n\f\r\f\16\f\u0094\3\r\3\r\3\r\2\2\16\2\4\6\b\n")
-        buf.write("\f\16\20\22\24\26\30\2\4\4\2\21\21\23\23\3\2\3\4\2\u00b4")
+        buf.write("\u0093\n\f\r\f\16\f\u0094\3\r\3\r\3\r\3R\2\16\2\4\6\b")
+        buf.write("\n\f\16\20\22\24\26\30\2\4\4\2\21\21\23\23\3\2\3\4\2\u00b4")
         buf.write("\2\35\3\2\2\2\4\'\3\2\2\2\6+\3\2\2\2\bE\3\2\2\2\nK\3\2")
         buf.write("\2\2\f[\3\2\2\2\16m\3\2\2\2\20\u0088\3\2\2\2\22\u008a")
         buf.write("\3\2\2\2\24\u008e\3\2\2\2\26\u0092\3\2\2\2\30\u0096\3")
@@ -43,8 +43,8 @@ def serializedATN():
         buf.write("\3\2\2\2AC\7\t\2\2BD\5\26\f\2CB\3\2\2\2CD\3\2\2\2D\7\3")
         buf.write("\2\2\2EF\5\f\7\2FG\7\22\2\2GH\5\22\n\2HI\7\22\2\2IJ\5")
         buf.write("\24\13\2J\t\3\2\2\2KM\7\n\2\2LN\5\26\f\2ML\3\2\2\2MN\3")
-        buf.write("\2\2\2NR\3\2\2\2OQ\5\20\t\2PO\3\2\2\2QT\3\2\2\2RP\3\2")
-        buf.write("\2\2RS\3\2\2\2SV\3\2\2\2TR\3\2\2\2UW\7\22\2\2VU\3\2\2")
+        buf.write("\2\2\2NR\3\2\2\2OQ\13\2\2\2PO\3\2\2\2QT\3\2\2\2RS\3\2")
+        buf.write("\2\2RP\3\2\2\2SV\3\2\2\2TR\3\2\2\2UW\7\22\2\2VU\3\2\2")
         buf.write("\2VW\3\2\2\2WY\3\2\2\2XZ\5\26\f\2YX\3\2\2\2YZ\3\2\2\2")
         buf.write("Z\13\3\2\2\2[\\\7\16\2\2\\c\7\21\2\2]d\5\30\r\2^d\7\20")
         buf.write("\2\2_d\7\16\2\2`d\7\17\2\2ad\7\13\2\2bd\7\25\2\2c]\3\2")
@@ -563,13 +563,6 @@ class bashGrammarParser ( Parser ):
                 return self.getTypedRuleContext(bashGrammarParser.SpaceContext,i)
 
 
-        def command_data(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(bashGrammarParser.Command_dataContext)
-            else:
-                return self.getTypedRuleContext(bashGrammarParser.Command_dataContext,i)
-
-
         def SEMICOLON(self):
             return self.getToken(bashGrammarParser.SEMICOLON, 0)
 
@@ -613,10 +606,10 @@ class bashGrammarParser ( Parser ):
             self.state = 80
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            while _alt!=1 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1+1:
                     self.state = 77
-                    self.command_data() 
+                    self.matchWildcard() 
                 self.state = 82
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,10,self._ctx)

@@ -3,7 +3,13 @@ a="asd";
 # This is a comment
 # This too
 
-# does not cover a=$(ls); type cases
+blah=$(ls);
+
+wget -o --quiet https://www.google.com;
+
+cat file21 ewfjwf;
+
+echo blahhh;
 
 a="asd";
 b=a+i
@@ -21,3 +27,6 @@ do
 done
 
 echo $b
+
+
+wget -o plau;

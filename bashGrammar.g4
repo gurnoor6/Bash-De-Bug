@@ -6,23 +6,36 @@ grammar bashGrammar;
 
 code				: 	bashScript* EOF;
 
-bashScript			:	(for_loop | assignment | linux_command | space | advanced_assignment | ifElse)+;
+bashScript			:	(loops | assignment | linux_command | space | advanced_assignment | ifElse)+;
 
-expressions			:	(for_loop | assignment | linux_command | advanced_assignment | ifElse)* space?;
+expressions			:	(loops | assignment | linux_command | advanced_assignment | ifElse | BREAK space? | CONTINUE space? )* space?;
 
-for_loop 			:	FOR space? OPEN_BRACKETS inside_for CLOSE_BRACKETS space? SEMICOLON? space? DO space? expressions DONE space?;
+loops				: 	(while_loop | for_loop);
+
+while_loop			:	WHILE space? multi_conditions SEMICOLON? space?
+						DO space?
+							expressions
+						DONE space?;
+
+for_loop 			:	FOR space? OPEN_BRACKETS inside_for CLOSE_BRACKETS space? SEMICOLON? space?
+						DO space? 
+							expressions
+						DONE space?;
 
 inside_for			:	(assignment? (',' assignment)* SEMICOLON space? condition? (LOGICAL_OP space? condition)*? SEMICOLON space? increment? (',' increment)* space?);
 
-ifElse				:	IF space? OPEN_BRACKETS space? condition (LOGICAL_OP space? condition)*? CLOSE_BRACKETS space? SEMICOLON? space? THEN space?
+ifElse				:	IF space? multi_conditions SEMICOLON? space? THEN space?
 							expressions
 						(ELIF space? OPEN_BRACKETS space? condition (LOGICAL_OP condition)*? CLOSE_BRACKETS space? SEMICOLON? space? THEN space?
 							expressions
 						)*
-						ELSE space?
+						(ELSE space?
 							expressions
+						)?
 						FI space?
 						;
+
+multi_conditions	:	OPEN_BRACKETS space? condition (LOGICAL_OP space? condition)*? CLOSE_BRACKETS space?;
 
 condition			:	space? (VAR | VAL | BLOB)+ space? COMPARE space? (string | VAR | VAL | BLOB | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ space?;  
 
@@ -31,7 +44,8 @@ linux_command		: 	COMMAND space? command_data*? SEMICOLON? space?;
 
 assignment			:	VAR ASSIGN (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ SEMICOLON? space?;
 
-advanced_assignment :	OPEN_BRACKETS space? VAR space? (ASSIGN | INCREMENT) space? (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ space? CLOSE_BRACKETS SEMICOLON? space?;
+// need to write this in proper way
+advanced_assignment :	OPEN_BRACKETS space? VAR space? (ASSIGN | INCREMENT) space? (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)* space? CLOSE_BRACKETS SEMICOLON? space?;
 
 command_data 		: 	(BLOB | INCREMENT | string | BASH_VAR | VAR | VAL | OTHER)+ space?;
 
@@ -80,7 +94,13 @@ FI					: 'fi';
 
 FOR					: 'for';
 
+WHILE				: 'while';
+
 DO 					: 'do';
+
+BREAK				: 'break';
+
+CONTINUE			: 'continue';
 
 DONE 				: 'done';
 

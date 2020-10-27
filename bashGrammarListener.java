@@ -37,6 +37,26 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 */
 	void exitExpressions(bashGrammarParser.ExpressionsContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#loops}.
+	 * @param ctx the parse tree
+	 */
+	void enterLoops(bashGrammarParser.LoopsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#loops}.
+	 * @param ctx the parse tree
+	 */
+	void exitLoops(bashGrammarParser.LoopsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#while_loop}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhile_loop(bashGrammarParser.While_loopContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#while_loop}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhile_loop(bashGrammarParser.While_loopContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#for_loop}.
 	 * @param ctx the parse tree
 	 */
@@ -66,6 +86,16 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIfElse(bashGrammarParser.IfElseContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#multi_conditions}.
+	 * @param ctx the parse tree
+	 */
+	void enterMulti_conditions(bashGrammarParser.Multi_conditionsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#multi_conditions}.
+	 * @param ctx the parse tree
+	 */
+	void exitMulti_conditions(bashGrammarParser.Multi_conditionsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#condition}.
 	 * @param ctx the parse tree

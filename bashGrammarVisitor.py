@@ -24,6 +24,16 @@ class bashGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by bashGrammarParser#loops.
+    def visitLoops(self, ctx:bashGrammarParser.LoopsContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by bashGrammarParser#while_loop.
+    def visitWhile_loop(self, ctx:bashGrammarParser.While_loopContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by bashGrammarParser#for_loop.
     def visitFor_loop(self, ctx:bashGrammarParser.For_loopContext):
         return self.visitChildren(ctx)
@@ -36,6 +46,11 @@ class bashGrammarVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by bashGrammarParser#ifElse.
     def visitIfElse(self, ctx:bashGrammarParser.IfElseContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by bashGrammarParser#multi_conditions.
+    def visitMulti_conditions(self, ctx:bashGrammarParser.Multi_conditionsContext):
         return self.visitChildren(ctx)
 
 

@@ -51,6 +51,30 @@ public class bashGrammarBaseListener implements bashGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterLoops(bashGrammarParser.LoopsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLoops(bashGrammarParser.LoopsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterWhile_loop(bashGrammarParser.While_loopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitWhile_loop(bashGrammarParser.While_loopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterFor_loop(bashGrammarParser.For_loopContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -82,6 +106,18 @@ public class bashGrammarBaseListener implements bashGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitIfElse(bashGrammarParser.IfElseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMulti_conditions(bashGrammarParser.Multi_conditionsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMulti_conditions(bashGrammarParser.Multi_conditionsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

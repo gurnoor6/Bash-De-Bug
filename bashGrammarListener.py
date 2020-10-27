@@ -35,6 +35,24 @@ class bashGrammarListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by bashGrammarParser#loops.
+    def enterLoops(self, ctx:bashGrammarParser.LoopsContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#loops.
+    def exitLoops(self, ctx:bashGrammarParser.LoopsContext):
+        pass
+
+
+    # Enter a parse tree produced by bashGrammarParser#while_loop.
+    def enterWhile_loop(self, ctx:bashGrammarParser.While_loopContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#while_loop.
+    def exitWhile_loop(self, ctx:bashGrammarParser.While_loopContext):
+        pass
+
+
     # Enter a parse tree produced by bashGrammarParser#for_loop.
     def enterFor_loop(self, ctx:bashGrammarParser.For_loopContext):
         pass
@@ -59,6 +77,15 @@ class bashGrammarListener(ParseTreeListener):
 
     # Exit a parse tree produced by bashGrammarParser#ifElse.
     def exitIfElse(self, ctx:bashGrammarParser.IfElseContext):
+        pass
+
+
+    # Enter a parse tree produced by bashGrammarParser#multi_conditions.
+    def enterMulti_conditions(self, ctx:bashGrammarParser.Multi_conditionsContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#multi_conditions.
+    def exitMulti_conditions(self, ctx:bashGrammarParser.Multi_conditionsContext):
         pass
 
 

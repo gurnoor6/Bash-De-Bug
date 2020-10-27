@@ -4,7 +4,7 @@ from bashGrammarVisitor import bashGrammarVisitor
 from antlr4 import *
 import sys
 from bashListener import fileBashListener
-
+from inserter import *
 
 def main(argv):
 	input = FileStream(argv[1])
@@ -14,6 +14,7 @@ def main(argv):
 	tree = parser.code()
 	visitor = fileBashListener()
 	value = visitor.visit(tree)
+	# inserter("test.sh",value)
 	print('=',value)
 
 if __name__=='__main__':

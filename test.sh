@@ -1,15 +1,18 @@
-x=10
-y=9
-z=100
-ls files
-for((i=0;i>=10;i++))
+x=10;
+z=$x;
+ls;
+for((i=10;i>=0;i--))
 do
 	f=10;
+	ls;
+	time;
+	((y=x+2));
+	echo $y;
 done
 
-wget -o htpp://google.com;
+wget  https://www.google.com;
 
-echo $x
-echo $y
+echo $x;
+echo $z;
 
 hello="world"

@@ -1,18 +1,24 @@
-#!/bin/bash
-num=$1
-map=(C XC L XL X IX V IV I)
-revmap=(100 90 50 40 10 9 5 4 1)
-ans=""
-for((i=0;i<${#map[@]};i++))	
+x=10;
+echo \(2,x=$x\)
+z=$x;
+echo \(3,z=$z\)
+x=((x+z));
+echo \(4,x=$x\)
+ls;
+for((i=0;i>=10;i++))
+echo \(6,i=$i\)
 do
-echo \(8,i=$i\)
-	while [ $num -ge ${revmap[$i]} ]
-	do
-		# Both of these ways work
-		# ((num=num-$revmap[$i]))
-		((num=num-revmap[$i]))
-		ans=$ans${map[$i]}
-echo \(14,ans=$ans\)
-	done
+	f=10;
+echo \(8,f=$f\)
+	ls fil;
+	time ./a.out;
+	blah=$blu;
+echo \(11,blah=$blah\)
 done
-echo $ans
+
+wget -o htpp://google.com;
+
+echo $x;
+echo $y
+
+hello="world"echo \(19,hello=$hello\)

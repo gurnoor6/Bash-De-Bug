@@ -8,15 +8,15 @@ code				: 	bashScript* EOF;
 
 bashScript			:	(for_loop | assignment | linux_command)+;
 
-for_loop 			:	FOR OPEN_FOR_BRACKET inside_for CLOSE_FOR_BRACKET space? DO space? assignment+ space? DONE space?;
+for_loop 			:	FOR OPEN_FOR_BRACKET inside_for CLOSE_FOR_BRACKET space? DO space? (assignment | linux_command)* space? DONE space?;
 
 inside_for			:	(assignment SEMICOLON comparison SEMICOLON increment);
 
-linux_command		: 	COMMAND space? command_data+  SEMICOLON? space?;
+linux_command		: 	COMMAND space? command_data*  SEMICOLON? space?;
 
-assignment			:	VAR EQUALS (string | VAL | VAR) SEMICOLON? space?;
+assignment			:	VAR EQUALS (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT) SEMICOLON? space?;
 
-command_data 		: 	(OTHER+ | string | VAR | VAL | space);
+command_data 		: 	(OTHER+ | string | BASH_VAR | VAR | VAL | space);
 
 comparison			:	VAR COMPARE VAL;
 
@@ -34,6 +34,16 @@ string 				:	(SINGLE_STRING | DOUBLE_STRING);
  	for example, for and do done are above var,val
  	else there will be a mis match
 */
+fragment PLUS 		: '+';
+
+fragment MINUS 		: '-';
+
+fragment MULTIPLY 	: '*';
+
+fragment DIVIDE		: '/';	
+
+fragment OPERATOR	: (PLUS | MINUS | MULTIPLY | DIVIDE);
+
 SINGLE_STRING		: '\'' ~('\'')+ '\'';
 
 DOUBLE_STRING		: '"' ~('"')+ '"';
@@ -50,11 +60,17 @@ DONE 				: 'done';
 
 COMMAND 			: ('echo' | 'cat' | 'ls' | 'll' | 'time' | 'wget');
 
+// keeping a not ; inside the expression to differentiate it from the for loop one
+RHS_ASSIGNMENT		: ('${'.*?'}' | '(('(VAL | OPERATOR)+'))');
+
 OPEN_FOR_BRACKET	: ('((' | '[[');
 
 CLOSE_FOR_BRACKET	: ('))' | ']]');
 
 VAR					: [a-zA-Z_] [a-zA-Z_0-9]*;
+
+// can be used in echo, other variable assignments
+BASH_VAR			: '$' VAR;
 
 VAL					: [A-Za-z0-9]+;
 

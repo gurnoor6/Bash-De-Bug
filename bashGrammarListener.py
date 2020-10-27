@@ -1,4 +1,4 @@
-# Generated from bashGrammar.g4 by ANTLR 4.8
+# Generated from .\bashGrammar.g4 by ANTLR 4.7.2
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .bashGrammarParser import bashGrammarParser
@@ -26,6 +26,15 @@ class bashGrammarListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by bashGrammarParser#expressions.
+    def enterExpressions(self, ctx:bashGrammarParser.ExpressionsContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#expressions.
+    def exitExpressions(self, ctx:bashGrammarParser.ExpressionsContext):
+        pass
+
+
     # Enter a parse tree produced by bashGrammarParser#for_loop.
     def enterFor_loop(self, ctx:bashGrammarParser.For_loopContext):
         pass
@@ -41,6 +50,24 @@ class bashGrammarListener(ParseTreeListener):
 
     # Exit a parse tree produced by bashGrammarParser#inside_for.
     def exitInside_for(self, ctx:bashGrammarParser.Inside_forContext):
+        pass
+
+
+    # Enter a parse tree produced by bashGrammarParser#ifElse.
+    def enterIfElse(self, ctx:bashGrammarParser.IfElseContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#ifElse.
+    def exitIfElse(self, ctx:bashGrammarParser.IfElseContext):
+        pass
+
+
+    # Enter a parse tree produced by bashGrammarParser#condition.
+    def enterCondition(self, ctx:bashGrammarParser.ConditionContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#condition.
+    def exitCondition(self, ctx:bashGrammarParser.ConditionContext):
         pass
 
 
@@ -116,5 +143,3 @@ class bashGrammarListener(ParseTreeListener):
         pass
 
 
-
-del bashGrammarParser

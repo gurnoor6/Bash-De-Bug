@@ -1,4 +1,4 @@
-# Generated from bashGrammar.g4 by ANTLR 4.8
+# Generated from .\bashGrammar.g4 by ANTLR 4.7.2
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .bashGrammarParser import bashGrammarParser
@@ -19,6 +19,11 @@ class bashGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by bashGrammarParser#expressions.
+    def visitExpressions(self, ctx:bashGrammarParser.ExpressionsContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by bashGrammarParser#for_loop.
     def visitFor_loop(self, ctx:bashGrammarParser.For_loopContext):
         return self.visitChildren(ctx)
@@ -26,6 +31,16 @@ class bashGrammarVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by bashGrammarParser#inside_for.
     def visitInside_for(self, ctx:bashGrammarParser.Inside_forContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by bashGrammarParser#ifElse.
+    def visitIfElse(self, ctx:bashGrammarParser.IfElseContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by bashGrammarParser#condition.
+    def visitCondition(self, ctx:bashGrammarParser.ConditionContext):
         return self.visitChildren(ctx)
 
 

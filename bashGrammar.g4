@@ -12,7 +12,7 @@ expressions			:	(for_loop | assignment | linux_command | advanced_assignment | i
 
 for_loop 			:	FOR space? OPEN_BRACKETS inside_for CLOSE_BRACKETS space? SEMICOLON? space? DO space? expressions DONE space?;
 
-inside_for			:	(assignment SEMICOLON space? comparison SEMICOLON space? increment space?);
+inside_for			:	(assignment? (',' assignment)* SEMICOLON space? condition? (LOGICAL_OP space? condition)*? SEMICOLON space? increment? (',' increment)* space?);
 
 ifElse				:	IF space? OPEN_BRACKETS space? condition (LOGICAL_OP space? condition)*? CLOSE_BRACKETS space? SEMICOLON? space? THEN space?
 							expressions
@@ -37,7 +37,7 @@ command_data 		: 	(BLOB | string | BASH_VAR | VAR | VAL | space | OTHER);
 
 comparison			:	VAR COMPARE VAL;
 
-increment			:	(VAR INCREMENT | INCREMENT VAR) ;
+increment			:	(VAR INCREMENT (BLOB | VAR | VAL | string | BASH_VAR)? | INCREMENT VAR) ;
 
 space 				:	SPACE+;
 

@@ -62,6 +62,15 @@ class bashGrammarListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by bashGrammarParser#advanced_assignment.
+    def enterAdvanced_assignment(self, ctx:bashGrammarParser.Advanced_assignmentContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#advanced_assignment.
+    def exitAdvanced_assignment(self, ctx:bashGrammarParser.Advanced_assignmentContext):
+        pass
+
+
     # Enter a parse tree produced by bashGrammarParser#command_data.
     def enterCommand_data(self, ctx:bashGrammarParser.Command_dataContext):
         pass

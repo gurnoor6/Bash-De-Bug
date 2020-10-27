@@ -6,17 +6,19 @@ grammar bashGrammar;
 
 code				: 	bashScript* EOF;
 
-bashScript			:	(for_loop | assignment | linux_command)+;
+bashScript			:	(for_loop | assignment | linux_command | space | advanced_assignment)+;
 
-for_loop 			:	FOR OPEN_FOR_BRACKET inside_for CLOSE_FOR_BRACKET space? DO space? (assignment | linux_command)* space? DONE space?;
+for_loop 			:	FOR OPEN_FOR_BRACKET inside_for CLOSE_FOR_BRACKET space? DO space? (assignment | linux_command | advanced_assignment)* space? DONE space?;
 
 inside_for			:	(assignment SEMICOLON comparison SEMICOLON increment);
 
 linux_command		: 	COMMAND space? command_data*  SEMICOLON? space?;
 
-assignment			:	VAR EQUALS (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT) SEMICOLON? space?;
+assignment			:	VAR EQUALS (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ SEMICOLON? space?;
 
-command_data 		: 	(OTHER+ | string | BASH_VAR | VAR | VAL | space);
+advanced_assignment :	OPEN_FOR_BRACKET VAR (EQUALS | INCREMENT) (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ CLOSE_FOR_BRACKET SEMICOLON? space?;
+
+command_data 		: 	(BLOB | string | BASH_VAR | VAR | VAL | space| OTHER);
 
 comparison			:	VAR COMPARE VAL;
 
@@ -25,7 +27,6 @@ increment			:	VAR INCREMENT;
 space 				:	SPACE+;
 
 string 				:	(SINGLE_STRING | DOUBLE_STRING);
-
 
 
 /*
@@ -61,7 +62,7 @@ DONE 				: 'done';
 COMMAND 			: ('echo' | 'cat' | 'ls' | 'll' | 'time' | 'wget');
 
 // keeping a not ; inside the expression to differentiate it from the for loop one
-RHS_ASSIGNMENT		: ('${'.*?'}' | '(('(VAL | OPERATOR)+'))');
+RHS_ASSIGNMENT		: ('${'.*?'}');
 
 OPEN_FOR_BRACKET	: ('((' | '[[');
 
@@ -78,9 +79,12 @@ EQUALS				: '=';
 
 SEMICOLON			: ';';
 
-INCREMENT 			: ('++' | '--');
+INCREMENT 			: ('++' | '--' | '+=' | '-=' | '/=' | '*=');
 
 COMPARE 			: ('<=' | '>=' | '<' | '>');
 
-OTHER 				: .	;
+BLOB                : [a-zA-Z0-9@!$^%*&+-.]+?;
+
+OTHER 				: .;
+
 

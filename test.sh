@@ -1,18 +1,23 @@
-x=10;
-z=$x;
-ls;
-for((i=10;i>=0;i--))
-do
-	f=10;
-	ls;
-	time;
-	((y=x+2));
-	echo $y;
+# !bin/bash
+a="asd";
+# This is a comment
+# This too
+
+# does not cover a=$(ls); type cases
+
+a="asd";
+b=a+i
+c=$bgbg d=df
+a=2;
+
+c=$a+$b;
+((a+=2))
+
+echo $a
+for((i=0;i>=10;i++))
+do  
+    ((i-=4));
+    b=$((b-=100));
 done
 
-wget  https://www.google.com;
-
-echo $x;
-echo $z;
-
-hello="world"
+echo $b

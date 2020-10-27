@@ -10,7 +10,7 @@ class fileBashListener(bashGrammarVisitor):
 		pass
 
 	def visitCode(self, ctx:bashGrammarParser.CodeContext):
-		# print("visited code")
+		print("visited code")
 		self.visitChildren(ctx)
 		return var
 
@@ -26,3 +26,8 @@ class fileBashListener(bashGrammarVisitor):
 		print("visited linux command -> ", ctx.COMMAND())
 		return self.visitChildren(ctx)
 
+	def visitAdvanced_assignment(self, ctx:bashGrammarParser.Advanced_assignmentContext):
+		global var
+		variable = ctx.VAR(0).getText()
+		var+=[(ctx.start.line,variable)]
+		return self.visitChildren(ctx)

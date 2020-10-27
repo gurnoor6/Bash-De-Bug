@@ -39,6 +39,11 @@ class bashGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by bashGrammarParser#advanced_assignment.
+    def visitAdvanced_assignment(self, ctx:bashGrammarParser.Advanced_assignmentContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by bashGrammarParser#command_data.
     def visitCommand_data(self, ctx:bashGrammarParser.Command_dataContext):
         return self.visitChildren(ctx)

@@ -87,6 +87,18 @@ public class bashGrammarBaseListener implements bashGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAdvanced_assignment(bashGrammarParser.Advanced_assignmentContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAdvanced_assignment(bashGrammarParser.Advanced_assignmentContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterCommand_data(bashGrammarParser.Command_dataContext ctx) { }
 	/**
 	 * {@inheritDoc}

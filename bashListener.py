@@ -1,7 +1,7 @@
 import sys
 from antlr4 import *
-from bashGrammarParser import bashGrammarParser
-from bashGrammarVisitor import bashGrammarVisitor
+from parser.bashGrammarParser import bashGrammarParser
+from parser.bashGrammarVisitor import bashGrammarVisitor
 
 var = []
 

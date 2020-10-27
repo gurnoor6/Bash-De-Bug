@@ -1,6 +1,6 @@
-from bashGrammarLexer import bashGrammarLexer
-from bashGrammarParser import bashGrammarParser
-from bashGrammarVisitor import bashGrammarVisitor
+from parser.bashGrammarLexer import bashGrammarLexer
+from parser.bashGrammarParser import bashGrammarParser
+from parser.bashGrammarVisitor import bashGrammarVisitor
 from antlr4 import *
 import sys
 from bashListener import fileBashListener

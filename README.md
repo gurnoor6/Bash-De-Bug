@@ -13,11 +13,11 @@ Initially, we planned to just do a string search for the file, detect `=` signs 
 
 ### Parsing
 * The first thing we looked for parsing was a library named [bashlex](https://github.com/idank/bashlex). But this had a lot of issues and did not turn out well.
-* So we resorted to making a custom parser and lexer using ANTLR4.
+* So we resorted to making a custom parser and lexer using [ANTLR4](https://github.com/antlr/antlr4).
 * The first step was to create a grammar file, which contained the parser and lexer rules.
 * The lexer tokenises the whole input file. The rules for tokens are defined uisng regular expressions, in the grammar file. Also, extreme care had to be taken in the order of tokens, the ones defined first are given higher preference. Moreover, the lexer tries to generate the least number of tokens possible.
 * The parser rules use the tokens generated above, to recognise the various structures such as for/while loops, if/else statements and assignment operations.
-* After writing rules in grammar, we generate the parser in Python. It basically gives us a tree structure of the whole program, by doiing a depth first search in it. There are various entry and exit functions available, which we use to gain relevant information.
+* After writing rules in grammar, we generate the parser in Python. It basically gives us a tree structure of the whole program, by doing a depth first search in it. There are various entry and exit functions available, which we use to gain relevant information.
 
 ## What It CAN do
 * We type a bash script, or choose a file from our PC and the program detects all the variables in the script and displays them on the GUI.
@@ -32,4 +32,4 @@ Initially, we planned to just do a string search for the file, detect `=` signs 
 ## Phase 2 plans
 * Most of the time in phase 1 was spent in deciding the approach to be used, and we finally settled on ANTLR :)
 * The basic framework for the GUI is ready, but some extra features and overall polishing is yet to be done.
-* The basic parsing is done. We are able to parse **for/while loops, assignment operations, linux commands, nested loops, nested if-else statements** but still we have to work with **sed** scripts and **function calls**. Although we are hopeful that we'll be able to do them using ANTLR as well, but just in case any problems arise, we might resort to string search, but that is just in case.
+* The basic parsing is done. We are able to parse **for/while loops, assignment operations, linux commands, nested loops, nested if-else statements** but still we have to work with **sed** scripts and **function calls**. Although we are hopeful that we'll be able to do them using ANTLR as well, but just in case any problems arise, we might resort to string search, but that is worst case scenario.

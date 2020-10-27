@@ -9,7 +9,16 @@ The project is overall divided into two parts - one is the front-end part where 
 Initially, we planned to just do a string search for the file, detect `=` signs for assignment operations, check for a few more conditions and conclude that the variable is detected. But this approach did not seem elegant or challenging, it seemed just like a workaround. So we decided to go with parsing.
 
 ### GUI
-
+* The front-end of the project has been designed with the help of ``tkinter`` module in python. 
+* The Main window is divided into three sections:
+    - Bash IDE region
+    - Debugger region
+    - Variables list region
+* The Bash IDE is an attempt to take as input the code provided by the user, as well as function as an independent code editor. The following features have been added to imitate any generic IDE:
+    - Editing shortcuts like cut (Control-c) and paste (Control-v)
+    - Find and Replace option for easy editing
+    - Line number class to implement dynamic line numbering and scroll features
+    - Syntax highlighting of Bash keywords, numbers and strings for a smoother coding experience
 
 ### Parsing
 * The first thing we looked for parsing was a library named [bashlex](https://github.com/idank/bashlex). But this had a lot of issues and did not turn out well.

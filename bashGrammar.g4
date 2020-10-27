@@ -27,13 +27,13 @@ ifElse				:	IF space? OPEN_BRACKETS space? condition (LOGICAL_OP space? conditio
 condition			:	space? (VAR | VAL | BLOB)+ space? COMPARE space? (string | VAR | VAL | BLOB | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ space?;  
 
 
-linux_command		: 	COMMAND space? (VAR | VAL | BLOB | BASH_VAR | string)*?  SEMICOLON? space?;
+linux_command		: 	COMMAND space? command_data*? SEMICOLON? space?;
 
 assignment			:	VAR ASSIGN (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ SEMICOLON? space?;
 
 advanced_assignment :	OPEN_BRACKETS space? VAR space? (ASSIGN | INCREMENT) space? (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ space? CLOSE_BRACKETS SEMICOLON? space?;
 
-command_data 		: 	(BLOB | string | BASH_VAR | VAR | VAL | space | OTHER);
+command_data 		: 	(BLOB | INCREMENT | string | BASH_VAR | VAR | VAL | OTHER)+ space?;
 
 comparison			:	VAR COMPARE VAL;
 
@@ -87,7 +87,7 @@ DONE 				: 'done';
 COMMAND 			: ('echo' | 'cat' | 'ls' | 'll' | 'time' | 'wget');
 
 // keeping a not ; inside the expression to differentiate it from the for loop one
-RHS_ASSIGNMENT		: ('${'.*?'}' | '$('[a-zA-Z0-9@!$^%*&+-.]+')');
+RHS_ASSIGNMENT		: ('${'.*?'}' | '$('[a-zA-Z0-9@!$^%*&+-.:/]+')');
 
 OPEN_BRACKETS	: ('((' | '[[');
 
@@ -110,7 +110,7 @@ INCREMENT 			: ('++' | '--' | '+=' | '-=' | '/=' | '*=');
 
 COMPARE 			: ('<=' | '>=' | '<' | '>' | '==');
 
-BLOB                : [a-zA-Z0-9@!$^%*&+-.]+?;
+BLOB                : [a-zA-Z0-9@!$^%*&+-.:/]+?;
 
 OTHER 				: .;
 

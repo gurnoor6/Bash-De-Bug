@@ -10,7 +10,7 @@ bashScript			:	(for_loop | assignment | linux_command | space | advanced_assignm
 
 expressions			:	(for_loop | assignment | linux_command | advanced_assignment | ifElse)* space?;
 
-for_loop 			:	FOR space? OPEN_BRACKETS inside_for CLOSE_BRACKETS space? SEMICOLON? space? DO space? expressions DONE space?;
+for_loop 			:	FOR space? OPEN_BRACKETS space? inside_for CLOSE_BRACKETS space? SEMICOLON? space? DO space? expressions DONE space?;
 
 inside_for			:	(assignment? (',' assignment)* SEMICOLON space? condition? (LOGICAL_OP space? condition)*? SEMICOLON space? increment? (',' increment)* space?);
 
@@ -31,7 +31,7 @@ linux_command		: 	COMMAND space? command_data*?  SEMICOLON? space?;
 
 assignment			:	VAR ASSIGN (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ SEMICOLON? space?;
 
-advanced_assignment :	OPEN_BRACKETS space? VAR space? (ASSIGN | INCREMENT) space? (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ space? CLOSE_BRACKETS SEMICOLON? space?;
+advanced_assignment :	OPEN_BRACKETS space? VAR space? (ASSIGN | INCREMENT) space? (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)* space? CLOSE_BRACKETS SEMICOLON? space?;
 
 command_data 		: 	(VAR | VAL | BLOB | BASH_VAR | string | INCREMENT | OTHER | space);
 

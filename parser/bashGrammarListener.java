@@ -1,4 +1,4 @@
-// Generated from bashGrammar.g4 by ANTLR 4.8
+// Generated from bashGrammar.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**

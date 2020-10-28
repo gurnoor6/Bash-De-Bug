@@ -20,6 +20,9 @@ Initially, we planned to just do a string search for the file, detect `=` signs 
     - Line number class to implement dynamic line numbering and scroll features
     - Syntax highlighting of Bash keywords, numbers and strings for a smoother coding experience
 
+This is an example of how the IDE region should look (in Dark Mode!!)
+
+<img src="screenshots/gui-dark.png" height=500><br>
 ### Parsing
 * The first thing we looked for parsing was a library named [bashlex](https://github.com/idank/bashlex). But this had a lot of issues and did not turn out well.
 * So we resorted to making a custom parser and lexer using [ANTLR4](https://github.com/antlr/antlr4).

@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
-from inserter import inserter,execute
-from main import get_vars
+#from inserter import inserter,execute
+#from main import get_vars
 
 class LineNo(tk.Canvas):
     def __init__(self, *args, **kwargs):

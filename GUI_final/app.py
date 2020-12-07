@@ -1,4 +1,5 @@
 import tkinter as tk
+import tkinter.ttk as ttk
 from tkinter import filedialog
 #from inserter import inserter,execute
 from findwindow import FindWindow
@@ -11,16 +12,16 @@ from inputbox import Startend
 from barcomps import Menubar, StatusBar
 
 
-mainbgcol="#29292e"
+mainbgcol="#1B1B1C"
 
-scrollhl="#b1b7de"
-scrollbg="#7c809c"
+scrollhl="#2F2F2F"
+scrollbg="#101010"
 
-buttonbg="green"
+buttonbg="#101010"
 buttonfg="white"
 buttonhl="red"
-
-textbg="black"
+deepcolor="#2F2F2F"
+textbg="#101010"
 textfg="white"
 
 
@@ -33,7 +34,11 @@ class Pytext:
 		font_specs = ("ubuntu", 12)
 
 		self.master=master
-		self.runbutton = tk.Button(self.master, command=self.run, text="run", bg=buttonbg, fg=buttonfg, highlightcolor=buttonhl)
+		style = ttk.Style()
+		style.theme_use('alt')
+		style.configure('TButton', background = buttonbg, foreground = 'white')
+		style.map('TButton', background=[('active',deepcolor)])
+		self.runbutton = ttk.Button(self.master, command=self.run, text="Run!")
 		self.flname = None
 		# self.linebuttons=[]
 		self.menubar = Menubar(self)

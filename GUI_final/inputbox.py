@@ -3,8 +3,8 @@ import tkinter as tk
 labelfg="white"
 inputfg="white"
 
-labelbg="#25323d"
-inputbg="#010521"
+labelbg="#1b1b1c"
+inputbg="#17171c"
 
 class Startend:
 	def __init__(self, parent):

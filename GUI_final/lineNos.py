@@ -1,7 +1,7 @@
 import tkinter as tk
 
 linenosfg="white"
-linenosbg="black"
+linenosbg="#101010"
 
 class LineNo(tk.Canvas):
 	def __init__(self, *args, **kwargs):

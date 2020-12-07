@@ -1,4 +1,4 @@
-// Generated from bashGrammar.g4 by ANTLR 4.7.2
+// Generated from bashGrammar.g4 by ANTLR 4.9
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -37,6 +37,26 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 */
 	void exitExpressions(bashGrammarParser.ExpressionsContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#loops}.
+	 * @param ctx the parse tree
+	 */
+	void enterLoops(bashGrammarParser.LoopsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#loops}.
+	 * @param ctx the parse tree
+	 */
+	void exitLoops(bashGrammarParser.LoopsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#while_loop}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhile_loop(bashGrammarParser.While_loopContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#while_loop}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhile_loop(bashGrammarParser.While_loopContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#for_loop}.
 	 * @param ctx the parse tree
 	 */
@@ -66,6 +86,36 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIfElse(bashGrammarParser.IfElseContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#function_def}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunction_def(bashGrammarParser.Function_defContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#function_def}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunction_def(bashGrammarParser.Function_defContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#function_call}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunction_call(bashGrammarParser.Function_callContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#function_call}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunction_call(bashGrammarParser.Function_callContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#multi_conditions}.
+	 * @param ctx the parse tree
+	 */
+	void enterMulti_conditions(bashGrammarParser.Multi_conditionsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#multi_conditions}.
+	 * @param ctx the parse tree
+	 */
+	void exitMulti_conditions(bashGrammarParser.Multi_conditionsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#condition}.
 	 * @param ctx the parse tree
@@ -136,6 +186,26 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIncrement(bashGrammarParser.IncrementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#open_bracket}.
+	 * @param ctx the parse tree
+	 */
+	void enterOpen_bracket(bashGrammarParser.Open_bracketContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#open_bracket}.
+	 * @param ctx the parse tree
+	 */
+	void exitOpen_bracket(bashGrammarParser.Open_bracketContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#close_bracket}.
+	 * @param ctx the parse tree
+	 */
+	void enterClose_bracket(bashGrammarParser.Close_bracketContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#close_bracket}.
+	 * @param ctx the parse tree
+	 */
+	void exitClose_bracket(bashGrammarParser.Close_bracketContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#space}.
 	 * @param ctx the parse tree

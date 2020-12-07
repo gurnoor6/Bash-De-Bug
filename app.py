@@ -53,7 +53,7 @@ class Startend:
 class Menubar:
 
 	def __init__(self, parent):
-		font_specs = ("Roboto", 12)
+		font_specs = ("Roboto", 10)
 		menubar1 = tk.Menu(parent.master, font=font_specs)
 		parent.master.config(menu=menubar1)
 		file_dd = tk.Menu(menubar1, font=font_specs, tearoff=0)
@@ -176,18 +176,18 @@ class Pytext:
 			self.varlist.list.insert(0, var)
 
 	def run(self):
-		# pass
 		content = self.textarea.get("1.0","end")
 		with open('input.sh','w') as fh:
 			fh.writelines(content)
 
-		out = get_vars("input.sh")
-		inserter("input.sh",out)
+		out, insert_data = get_vars("input.sh")
+		inserter("input.sh", insert_data)
 		llist=[]
 		for i in out:
 			llist.append(f"{i[0],i[1]}")
 		self.setvariables(llist)
 		s = execute(["./temp_input.sh"])
+		# print(s)
 		self.setoutput(s)
 	
 

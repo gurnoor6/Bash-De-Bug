@@ -134,10 +134,6 @@ BREAK				: 'break';
 
 CONTINUE			: 'continue';
 
-OPEN_BRACKETS	    : ('((' | '[[');
-
-CLOSE_BRACKETS	    : ('))' | ']]');
-
 DONE 				: 'done';
 
 COMMAND 			: ('echo' | 'cat' | 'ls' | 'll' | 'time' | 'wget' | 'cd');
@@ -163,7 +159,7 @@ INCREMENT 			: ('++' | '--' | '+=' | '-=' | '/=' | '*=');
 
 COMPARE 			: ('<=' | '>=' | '<' | '>' | '==');
 
-BLOB                : [a-zA-Z0-9@!$^%*&+-.)(]+?;
+BLOB                : [a-zA-Z0-9@!$^%*&+-.]+?;
 
 OTHER 				: .;
 

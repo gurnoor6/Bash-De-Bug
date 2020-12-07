@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-// Generated from bashGrammar.g4 by ANTLR 4.8
-=======
 // Generated from bashGrammar.g4 by ANTLR 4.9
->>>>>>> 5074812a9eef5190831be8e6581aa425ab10d9ec
-=======
-// Generated from bashGrammar.g4 by ANTLR 4.9
->>>>>>> 41a7ec9370f04bec966c2fff4f970a248b041ee0
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;

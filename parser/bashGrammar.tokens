@@ -1,51 +1,4 @@
 T__0=1
-<<<<<<< HEAD
-<<<<<<< HEAD
-SINGLE_STRING=2
-DOUBLE_STRING=3
-COMMENT=4
-SPACE=5
-IF=6
-THEN=7
-ELIF=8
-ELSE=9
-FI=10
-FOR=11
-DO=12
-DONE=13
-SED=14
-COMMAND=15
-RHS_ASSIGNMENT=16
-OPEN_BRACKETS=17
-CLOSE_BRACKETS=18
-VAR=19
-WEBSITE=20
-FILENAME=21
-SED_FLAG=22
-BASH_VAR=23
-VAL=24
-ASSIGN=25
-SEMICOLON=26
-LOGICAL_OP=27
-INCREMENT=28
-COMPARE=29
-BLOB=30
-OTHER=31
-','=1
-'if'=6
-'then'=7
-'elif'=8
-'else'=9
-'fi'=10
-'for'=11
-'do'=12
-'done'=13
-'sed'=14
-'='=25
-';'=26
-=======
-=======
->>>>>>> 41a7ec9370f04bec966c2fff4f970a248b041ee0
 OPEN_PAR=2
 CLOSE_PAR=3
 OPEN_CUR=4
@@ -100,18 +53,9 @@ OTHER=39
 'for'=19
 'while'=20
 'do'=21
-<<<<<<< HEAD
-'break'=22
-'continue'=23
-'done'=24
-'='=29
-';'=30
->>>>>>> 5074812a9eef5190831be8e6581aa425ab10d9ec
-=======
 'sed'=22
 'break'=24
 'continue'=25
 'done'=26
 '='=33
 ';'=34
->>>>>>> 41a7ec9370f04bec966c2fff4f970a248b041ee0

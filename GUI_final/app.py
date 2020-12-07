@@ -6,7 +6,7 @@ sys.path.append(parentdir)
 import tkinter as tk
 import tkinter.ttk as ttk
 from tkinter import filedialog
-from inserter import inserter,execute
+#from inserter import inserter,execute
 from findwindow import FindWindow
 # from main import get_vars
 from highlighter import Highlighter 
@@ -28,7 +28,8 @@ buttonhl="red"
 deepcolor="#2F2F2F"
 textbg="#101010"
 textfg="white"
-
+outputbg="#17171C"
+vartexthl="red"
 
 class Pytext:
 
@@ -57,6 +58,12 @@ class Pytext:
 		self.scrolly = tk.Scrollbar(master, command=self.scroll, takefocus=0, bg=scrollbg, activebackground=scrollhl)
 		#self.scrollx = tk.Scrollbar(master, command=self.textarea.xview, orient='horizontal', bg=scrollbg, activebackground=scrollhl)
 		self.textarea.configure(yscrollcommand=self.scrolly.set)
+
+		self.label=tk.Label(self.master,text="Search:",bg="#1b1b1c",fg=textfg)
+		self.entry=tk.Entry(self.master,bg=outputbg,fg=textfg)
+		self.button=ttk.Button(self.master,text="Go")
+		self.startbtn=ttk.Button(self.master,text="Start")
+
 		self.outputarea = Output(self.master)
 		self.varlist= Varlist(self.master)
 		#self.linesnos.textline.configure(yscrollcommand=self.scrolly.set)
@@ -69,7 +76,30 @@ class Pytext:
 		self.bind_shortcuts()
 		self.runbutton.place(relx=0.5, rely=0.025)
 
-	
+		self.label.place(relx=0.73, rely=0.55, relwidth=0.05, relheight=0.05)
+		self.entry.place(relx=0.78, rely=0.55, relwidth=0.1, relheight=0.05)
+		self.button.place(relx=0.9, rely=0.55, relwidth=0.025, relheight=0.05)
+		self.startbtn.place(relx=0.81, rely=0.475, relwidth=0.05, relheight=0.05)
+
+		def find():
+			#Gucci beta modify kar do ise
+			self.outputarea.outputarea.tag_remove('found','1.0',tk.END)
+
+			s = self.entry.get()
+			if s:
+				idx='1.0'
+				while 1:
+					idx=self.outputarea.outputarea.search(s,idx,nocase=1,stopindex=tk.END)
+					if not idx: break
+					
+					lastidx='%s+%dc' % (idx,len(s))
+					self.outputarea.outputarea.tag_add('found',idx,lastidx)
+					idx=lastidx
+				self.outputarea.outputarea.tag_config('found',foreground=vartexthl)
+			self.entry.focus_set()
+
+		self.button.config(command=find)
+
 	def set_window_title(self, name="Untitled1"):
 		self.master.title(name + " - Pytext")
 	

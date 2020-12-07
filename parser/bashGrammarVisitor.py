@@ -84,6 +84,11 @@ class bashGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by bashGrammarParser#sed_flag.
+    def visitSed_flag(self, ctx:bashGrammarParser.Sed_flagContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by bashGrammarParser#sed.
     def visitSed(self, ctx:bashGrammarParser.SedContext):
         return self.visitChildren(ctx)

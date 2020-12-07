@@ -33,7 +33,7 @@ assignment			:	VAR ASSIGN (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB
 
 advanced_assignment :	OPEN_BRACKETS space? VAR space? (ASSIGN | INCREMENT) space? (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)* space? CLOSE_BRACKETS SEMICOLON? space?;
 
-command_data 		: 	(VAR | VAL | BLOB | BASH_VAR | string | INCREMENT | OTHER | space);
+command_data 		: 	(VAR | VAL | BLOB | BASH_VAR | string | INCREMENT | OTHER | space | sed_flag | FILENAME | WEBSITE | RHS_ASSIGNMENT);
 
 comparison			:	VAR COMPARE VAL;
 
@@ -43,7 +43,9 @@ space 				:	SPACE+;
 
 string 				:	(SINGLE_STRING | DOUBLE_STRING);
 
-sed					:	SED space (SED_FLAG SPACE)* string space (FILENAME | VAR) space COMPARE* SPACE* (FILENAME | VAR)* COMPARE SPACE* (FILENAME | VAR) ; 
+sed_flag 			:	( VAL | SED_FLAG);
+
+sed					:	SED space (sed_flag SPACE?)* string space (FILENAME | VAR) space COMPARE* SPACE* (FILENAME | VAR)* COMPARE SPACE* (FILENAME | VAR) SEMICOLON? space?;
 
 
 /*
@@ -101,9 +103,11 @@ CLOSE_BRACKETS	    : ('))' | ']]');
 
 VAR					: [a-zA-Z_] [a-zA-Z_0-9]*;
 
+WEBSITE 			: (( 'http' 's'? | 'ftp' | 'smtp' ) '://' )? ( 'www.' ) [a-z0-9]+ '.' [a-z]+( '/' [a-zA-Z0-9#]+ '/' ?)* ;
+
 FILENAME			: VAR '.' VAR ;
 
-SED_FLAG 		    : ('-' VAR | '--' VAR | '--expression=');
+SED_FLAG 		    : ('--' VAR | '--expression=');
 
 // can be used in echo, other variable assignments
 BASH_VAR			: '$' VAR;

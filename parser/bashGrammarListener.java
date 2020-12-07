@@ -157,6 +157,16 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 */
 	void exitString(bashGrammarParser.StringContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#sed_flag}.
+	 * @param ctx the parse tree
+	 */
+	void enterSed_flag(bashGrammarParser.Sed_flagContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#sed_flag}.
+	 * @param ctx the parse tree
+	 */
+	void exitSed_flag(bashGrammarParser.Sed_flagContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#sed}.
 	 * @param ctx the parse tree
 	 */

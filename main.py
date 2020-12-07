@@ -22,10 +22,11 @@ def get_vars(filename):
 	stream = CommonTokenStream(lexer)
 	parser = bashGrammarParser(stream)
 	tree = parser.code()
-	visitor = fileBashListener()
-	value = visitor.visit(tree)
+	visitor = fileBashListener(filename)
+	
+	value, insert_data = visitor.visit(tree)
 	# inserter("test.sh",value)
-	return value
+	return value, insert_data
 
 if __name__=='__main__':
 	if len(sys.argv)!=2:

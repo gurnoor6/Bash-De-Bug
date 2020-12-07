@@ -21,7 +21,7 @@ elif ((a>=10 && a<20)); then
 
 else
     echo "$a"
-
+fi
 
 b="CS 251: Software System Labs"
 c="DEBUGGER by team Bash-De-Bug"

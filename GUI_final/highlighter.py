@@ -44,6 +44,12 @@ class Highlighter:
 
     def highlight(self, event=None):
         #print("called")
+        for cat in self.categories:
+            self.text_widget.tag_remove(cat, "1.0", 'end')
+        #     text.tag_delete(tag)
+        # self.configure_tags()
+        #self.text_widget.config(fg="white")
+        #print("called")
         length = tk.IntVar()
         for category in self.categories:
             matches = self.categories[category]['matches']

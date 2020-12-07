@@ -2,12 +2,12 @@ import tkinter as tk
 
 
 outputfg="white"
-outputbg="#001936"
+outputbg="#17171c"
 
 vartexthl="red"
 varlisthl="red"
 varlistfg="white"
-varlistbg="#001936"
+varlistbg="#17171c"
 
 class Output:
 	def __init__(self, parent):

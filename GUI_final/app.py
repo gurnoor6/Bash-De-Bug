@@ -11,7 +11,7 @@ from inputbox import Startend
 from barcomps import Menubar, StatusBar
 
 
-mainbgcol="#25323d"
+mainbgcol="#29292e"
 
 scrollhl="#b1b7de"
 scrollbg="#7c809c"

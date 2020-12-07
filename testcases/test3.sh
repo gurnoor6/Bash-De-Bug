@@ -9,4 +9,11 @@ do
 	((b=b-j));
 done
 
+sed 's/hello/world/' input.txt > output.txt;
+
+sed -e 's/hello/world/' input.txt > output.txt
+
+sed --expression='s/hello/world/' input.txt > output.txt;
+
+
 echo $b;

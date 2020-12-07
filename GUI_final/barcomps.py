@@ -2,11 +2,11 @@ import tkinter as tk
 from tkinter import filedialog
 
 statusbarfg="white"
-statusbarbg="blue"
+statusbarbg="#181f26"
 
-menubarhl="red"
-menutexthl="red"
-menubarbg="blue"
+menubarhl="#31577d"
+menutexthl="white"
+menubarbg="#181f26"
 menubarfg="white"
 
 class Menubar:

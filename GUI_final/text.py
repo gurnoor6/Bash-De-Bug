@@ -8,7 +8,7 @@ class TextArea(tk.Text):
 
         self.master = master
 
-        self.config(wrap=tk.WORD)  # CHAR NONE
+        #self.config(wrap=tk.WORD)  # CHAR NONE
 
         self.tag_configure('find_match', background="yellow")
         self.find_match_index = None

@@ -11,12 +11,12 @@ from inputbox import Startend
 from barcomps import Menubar, StatusBar
 
 
-mainbgcol="green"
+mainbgcol="#25323d"
 
-scrollhl="red"
-scrollbg="orange"
+scrollhl="#b1b7de"
+scrollbg="#7c809c"
 
-buttonbg="orange"
+buttonbg="green"
 buttonfg="white"
 buttonhl="red"
 
@@ -42,18 +42,18 @@ class Pytext:
 		self.linesnos = LineNo(self.master)
 		self.startend = Startend(self)
 		#self.textarea = tk.Text()
-		self.textarea = TextArea(self.master, bg=textbg, fg=textfg, undo=True)
+		self.textarea = TextArea(self.master, bg=textbg, fg=textfg, insertbackground="white", undo=True)
 		self.highlighter = Highlighter(self.textarea, 'languages/bash.yaml')
 		self.scrolly = tk.Scrollbar(master, command=self.scroll, takefocus=0, bg=scrollbg, activebackground=scrollhl)
-		self.scrollx = tk.Scrollbar(master, command=self.textarea.xview, orient='horizontal', bg=scrollbg, activebackground=scrollhl)
+		#self.scrollx = tk.Scrollbar(master, command=self.textarea.xview, orient='horizontal', bg=scrollbg, activebackground=scrollhl)
 		self.textarea.configure(yscrollcommand=self.scrolly.set)
 		self.outputarea = Output(self.master)
 		self.varlist= Varlist(self.master)
 		#self.linesnos.textline.configure(yscrollcommand=self.scrolly.set)
-		self.textarea.configure(xscrollcommand=self.scrollx.set)
+		#self.textarea.configure(xscrollcommand=self.scrollx.set)
 		self.textarea.place(relx=0.03, rely= 0.1, relwidth=0.65, relheight=0.8)
 		self.scrolly.place(relx=0.68, rely= 0.1, relwidth=0.01, relheight=0.8)
-		self.scrollx.place(relx=0.03, rely=0.9, relwidth=0.65, relheight=0.02)
+		#self.scrollx.place(relx=0.03, rely=0.9, relwidth=0.65, relheight=0.02)
 		self.linesnos.attach(self.textarea)
 		self.linesnos.place(relx=0, rely=0.1, relwidth=0.02, relheight=0.8)
 		self.bind_shortcuts()

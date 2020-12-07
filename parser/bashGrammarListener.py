@@ -143,5 +143,14 @@ class bashGrammarListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by bashGrammarParser#sed.
+    def enterSed(self, ctx:bashGrammarParser.SedContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#sed.
+    def exitSed(self, ctx:bashGrammarParser.SedContext):
+        pass
+
+
 
 del bashGrammarParser

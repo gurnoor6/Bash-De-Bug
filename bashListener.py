@@ -31,3 +31,7 @@ class fileBashListener(bashGrammarVisitor):
 		variable = ctx.VAR(0).getText()
 		var+=[(ctx.start.line,variable)]
 		return self.visitChildren(ctx)
+
+	def visitSed(self, ctx:bashGrammarParser.SedContext):
+		print(" i am here")
+		print("ctx: " ,ctx.VAR(1))

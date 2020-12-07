@@ -6,7 +6,7 @@ grammar bashGrammar;
 
 code				: 	bashScript* EOF;
 
-bashScript			:	(for_loop | assignment | linux_command | space | advanced_assignment | ifElse)+;
+bashScript			:	(for_loop | assignment | linux_command | space | advanced_assignment | ifElse | sed)+;
 
 expressions			:	(for_loop | assignment | linux_command | advanced_assignment | ifElse)* space?;
 
@@ -42,6 +42,8 @@ increment			:	(VAR INCREMENT (BLOB | VAR | VAL | string | BASH_VAR)? | INCREMENT
 space 				:	SPACE+;
 
 string 				:	(SINGLE_STRING | DOUBLE_STRING);
+
+sed					:	SED space (SED_FLAG SPACE)* string space (FILENAME | VAR) space COMPARE* SPACE* (FILENAME | VAR)* COMPARE SPACE* (FILENAME | VAR) ; 
 
 
 /*
@@ -84,16 +86,24 @@ DO 					: 'do';
 
 DONE 				: 'done';
 
+SED 				: 'sed';
+
+// SED_FLAG 			: '-n' | '-i' | '-e';
+
 COMMAND 			: ('echo' | 'cat' | 'ls' | 'll' | 'time' | 'wget');
 
 // keeping a not ; inside the expression to differentiate it from the for loop one
 RHS_ASSIGNMENT		: ('${'.*?'}' | '$('[a-zA-Z0-9@!$^%*&+-.]+')');
 
-OPEN_BRACKETS	: ('((' | '[[');
+OPEN_BRACKETS	    : ('((' | '[[');
 
-CLOSE_BRACKETS	: ('))' | ']]');
+CLOSE_BRACKETS	    : ('))' | ']]');
 
 VAR					: [a-zA-Z_] [a-zA-Z_0-9]*;
+
+FILENAME			: VAR '.' VAR ;
+
+SED_FLAG 		    : ('-' VAR | '--' VAR | '--expression=');
 
 // can be used in echo, other variable assignments
 BASH_VAR			: '$' VAR;
@@ -110,7 +120,7 @@ INCREMENT 			: ('++' | '--' | '+=' | '-=' | '/=' | '*=');
 
 COMPARE 			: ('<=' | '>=' | '<' | '>' | '==');
 
-BLOB                : [a-zA-Z0-9@!$^%*&+-.]+?;
+BLOB                : [a-zA-Z0-9@!$^%*&+-.)(]+?;
 
 OTHER 				: .;
 

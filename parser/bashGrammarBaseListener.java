@@ -1,4 +1,4 @@
-// Generated from bashGrammar.g4 by ANTLR 4.7.2
+// Generated from bashGrammar.g4 by ANTLR 4.8
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -190,6 +190,18 @@ public class bashGrammarBaseListener implements bashGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitString(bashGrammarParser.StringContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSed(bashGrammarParser.SedContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSed(bashGrammarParser.SedContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

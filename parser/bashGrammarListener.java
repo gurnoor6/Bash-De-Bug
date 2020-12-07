@@ -1,4 +1,4 @@
-// Generated from bashGrammar.g4 by ANTLR 4.7.2
+// Generated from bashGrammar.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -156,4 +156,14 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitString(bashGrammarParser.StringContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#sed}.
+	 * @param ctx the parse tree
+	 */
+	void enterSed(bashGrammarParser.SedContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#sed}.
+	 * @param ctx the parse tree
+	 */
+	void exitSed(bashGrammarParser.SedContext ctx);
 }

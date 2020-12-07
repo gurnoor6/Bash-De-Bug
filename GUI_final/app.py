@@ -100,6 +100,11 @@ class Pytext:
 
 		self.button.config(command=find)
 
+		def start():
+			#gucci beta fill this
+
+		self.startbtn.config(command=start)
+
 	def set_window_title(self, name="Untitled1"):
 		self.master.title(name + " - Pytext")
 	

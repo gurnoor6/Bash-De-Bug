@@ -6,38 +6,60 @@ grammar bashGrammar;
 
 code				: 	bashScript* EOF;
 
-bashScript			:	(for_loop | assignment | linux_command | space | advanced_assignment | ifElse | sed)+;
+bashScript			:	(function_call | function_def | loops | assignment | linux_command | space | advanced_assignment | ifElse | sed)+;
 
-expressions			:	(for_loop | assignment | linux_command | advanced_assignment | ifElse)* space?;
+expressions			:	(function_call | function_def | loops | assignment | linux_command | advanced_assignment | ifElse | BREAK space? | CONTINUE space? )* space?;
 
-for_loop 			:	FOR space? OPEN_BRACKETS space? inside_for CLOSE_BRACKETS space? SEMICOLON? space? DO space? expressions DONE space?;
+loops				: 	(while_loop | for_loop);
 
-inside_for			:	(assignment? (',' assignment)* SEMICOLON space? condition? (LOGICAL_OP space? condition)*? SEMICOLON space? increment? (',' increment)* space?);
-
-ifElse				:	IF space? OPEN_BRACKETS space? condition (LOGICAL_OP space? condition)*? CLOSE_BRACKETS space? SEMICOLON? space? THEN space?
+while_loop			:	WHILE space? multi_conditions SEMICOLON? space?
+						DO space?
 							expressions
-						(ELIF space? OPEN_BRACKETS space? condition (LOGICAL_OP condition)*? CLOSE_BRACKETS space? SEMICOLON? space? THEN space?
+						DONE space?;
+
+for_loop 			:	FOR space? open_bracket open_bracket inside_for close_bracket close_bracket space? SEMICOLON? space?
+						DO space? 
+							expressions
+						DONE space?;
+
+inside_for			:	(space? assignment? (',' space? assignment)* SEMICOLON space? condition? (LOGICAL_OP space? condition)*? SEMICOLON space? increment? (',' increment)* space?);
+
+ifElse				:	IF space? multi_conditions SEMICOLON? space? THEN space?
+							expressions
+						(ELIF space? open_bracket open_bracket space? condition (LOGICAL_OP condition)*? close_bracket close_bracket space? SEMICOLON? space? THEN space?
 							expressions
 						)*
-						ELSE space?
+						(ELSE space?
 							expressions
+						)?
 						FI space?
 						;
 
-condition			:	space? (VAR | VAL | BLOB)+ space? COMPARE space? (string | VAR | VAL | BLOB | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ space?;  
+function_def		:	FUNCTION space? VAR space? OPEN_PAR space? CLOSE_PAR space? OPEN_CUR space? expressions space? CLOSE_CUR;
+
+function_call		: 	VAR space? command_data*? SEMICOLON? space?; 
+
+multi_conditions	:	open_bracket open_bracket space? condition (LOGICAL_OP space? condition)*? close_bracket close_bracket space?;
+
+condition			:	space? (VAR | VAL | BLOB)+ space? COMPARE space? (string | VAR | VAL | BLOB | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ space?;
 
 
-linux_command		: 	COMMAND space? command_data*?  SEMICOLON? space?;
+linux_command		: 	COMMAND space? command_data*? SEMICOLON? space?;
 
 assignment			:	VAR ASSIGN (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ SEMICOLON? space?;
 
-advanced_assignment :	OPEN_BRACKETS space? VAR space? (ASSIGN | INCREMENT) space? (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)* space? CLOSE_BRACKETS SEMICOLON? space?;
+// need to write this in proper way
+advanced_assignment :	open_bracket open_bracket space? VAR space? (ASSIGN | INCREMENT) space? (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)* space? close_bracket close_bracket SEMICOLON? space?;
 
-command_data 		: 	(VAR | VAL | BLOB | BASH_VAR | string | INCREMENT | OTHER | space | sed_flag | FILENAME | WEBSITE | RHS_ASSIGNMENT);
+command_data 		: 	(VAR | VAL | BLOB | BASH_VAR | string | INCREMENT | OTHER | space | sed_flag | FILENAME | WEBSITE | RHS_ASSIGNMENT)+ space?;
 
 comparison			:	VAR COMPARE VAL;
 
 increment			:	(VAR INCREMENT (BLOB | VAR | VAL | string | BASH_VAR)? | INCREMENT VAR) ;
+
+open_bracket 		: 	(OPEN_PAR | OPEN_CUR | OPEN_BOX);
+
+close_bracket 		: 	(CLOSE_PAR | CLOSE_CUR | CLOSE_BOX);
 
 space 				:	SPACE+;
 
@@ -54,6 +76,7 @@ sed					:	SED space (sed_flag SPACE?)* string space (FILENAME | VAR) space COMPA
  	for example, for and do done are above var,val
  	else there will be a mis match
 */
+
 fragment PLUS 		: '+';
 
 fragment MINUS 		: '-';
@@ -62,7 +85,21 @@ fragment MULTIPLY 	: '*';
 
 fragment DIVIDE		: '/';	
 
-fragment OPERATOR	: (PLUS | MINUS | MULTIPLY | DIVIDE);
+OPEN_PAR	: '(';
+
+CLOSE_PAR	: ')';
+
+OPEN_CUR	: '{';
+
+CLOSE_CUR	: '}';
+
+OPEN_BOX	: '[';
+
+CLOSE_BOX	: ']';
+
+// keeping a not ; inside the expression to differentiate it from the for loop one
+
+RHS_ASSIGNMENT		: ('${'.*?'}' | '$('[a-zA-Z0-9@!$^%*&+-.:/]+')');
 
 SINGLE_STRING		: '\'' ~('\'')+ '\'';
 
@@ -71,6 +108,8 @@ DOUBLE_STRING		: '"' ~('"')+ '"';
 COMMENT				: '#' ~[\r\n]* -> skip;
 
 SPACE				: [ \t\r\n];
+
+FUNCTION 			: 'function';
 
 IF					: 'if';
 
@@ -84,22 +123,24 @@ FI					: 'fi';
 
 FOR					: 'for';
 
-DO 					: 'do';
+WHILE				: 'while';
 
-DONE 				: 'done';
+DO 					: 'do';
 
 SED 				: 'sed';
 
 // SED_FLAG 			: '-n' | '-i' | '-e';
 
-COMMAND 			: ('echo' | 'cat' | 'ls' | 'll' | 'time' | 'wget');
+BREAK				: 'break';
 
-// keeping a not ; inside the expression to differentiate it from the for loop one
-RHS_ASSIGNMENT		: ('${'.*?'}' | '$('[a-zA-Z0-9@!$^%*&+-.]+')');
+CONTINUE			: 'continue';
 
 OPEN_BRACKETS	    : ('((' | '[[');
 
 CLOSE_BRACKETS	    : ('))' | ']]');
+DONE 				: 'done';
+
+COMMAND 			: ('echo' | 'cat' | 'ls' | 'll' | 'time' | 'wget' | 'cd');
 
 VAR					: [a-zA-Z_] [a-zA-Z_0-9]*;
 

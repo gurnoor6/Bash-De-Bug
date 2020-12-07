@@ -55,14 +55,14 @@ class Pytext:
 		self.outputarea = Output(self.master)
 		self.varlist= Varlist(self.master)
 		#self.linesnos.textline.configure(yscrollcommand=self.scrolly.set)
-		#self.textarea.configure(xscrollcommand=self.scrollx.set)
+		#self.textarea.configure(xscrollcommand=self.scrollx.set)	
 		self.textarea.place(relx=0.03, rely= 0.1, relwidth=0.65, relheight=0.8)
 		self.scrolly.place(relx=0.68, rely= 0.1, relwidth=0.01, relheight=0.8)
 		#self.scrollx.place(relx=0.03, rely=0.9, relwidth=0.65, relheight=0.02)
 		self.linesnos.attach(self.textarea)
 		self.linesnos.place(relx=0, rely=0.1, relwidth=0.02, relheight=0.8)
 		self.bind_shortcuts()
-		self.runbutton.place(relx=0.5, rely=0)
+		self.runbutton.place(relx=0.5, rely=0.025)
 
 	
 	def set_window_title(self, name="Untitled1"):

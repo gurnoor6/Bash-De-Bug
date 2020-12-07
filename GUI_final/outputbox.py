@@ -21,10 +21,10 @@ class Output:
 		self.button=ttk.Button(self.parent,text="Go")
 		self.outputarea=tk.Text(self.parent.master, bg=outputbg, fg=outputfg)
 		#self.scroller = tk.Scrollbar(self.outputarea, command=self.outputarea.yview, takefocus=0)
-		self.label.place(relx=0.7, rely=0.05, relwidth=0.05, relheight=0.05)
-		self.entry.place(relx=0.75, rely=0.05, relwidth=0.1, relheight=0.05)
-		self.button.place(relx=0.86, rely=0.05, relwidth=0.025, relheight=0.05)
-		self.outputarea.place(relx=0.7, rely=0.1, relwidth=0.25, relheight=0.4)
+		self.label.place(relx=0.73, rely=0.1, relwidth=0.05, relheight=0.05)
+		self.entry.place(relx=0.78, rely=0.1, relwidth=0.1, relheight=0.05)
+		self.button.place(relx=0.9, rely=0.1, relwidth=0.025, relheight=0.05)
+		self.outputarea.place(relx=0.7, rely=0.15, relwidth=0.275, relheight=0.4)
 		self.outputarea.config(state='disabled')
 		
 		def find():
@@ -48,5 +48,7 @@ class Output:
 class Varlist:
 	def __init__(self, parent):
 		self.parent=parent
+		self.label=tk.Label(self.parent,text="Variables list",bg="#1b1b1c",fg="white")
 		self.list = tk.Listbox(parent, selectmode=tk.MULTIPLE, bg=varlistbg, fg=varlistfg, highlightcolor=varlisthl, selectbackground=vartexthl)
-		self.list.place(relx=0.75, rely=0.6, relwidth=0.2, relheight=0.3)
+		self.list.place(relx=0.7, rely=0.6, relwidth=0.275, relheight=0.3)
+		self.label.place(relx=0.775, rely=0.55, relwidth=0.1, relheight=0.05)

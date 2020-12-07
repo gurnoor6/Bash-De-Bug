@@ -26,7 +26,13 @@ fi
 b="CS 251: Software System Labs"
 c="DEBUGGER by team Bash-De-Bug"
 
-d="$b\n$c"
+d="$b\n$c";
+
+sed 's/hello/world/' input.txt > output.txt;
+
+sed -e 's/hello/world/' input.txt > output.txt
+
+sed --expression='s/hello/world/' input.txt > output.txt;
+
 
 echo "$d"
-

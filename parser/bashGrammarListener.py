@@ -188,24 +188,6 @@ class bashGrammarListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by bashGrammarParser#space.
-    def enterSpace(self, ctx:bashGrammarParser.SpaceContext):
-        pass
-
-    # Exit a parse tree produced by bashGrammarParser#space.
-    def exitSpace(self, ctx:bashGrammarParser.SpaceContext):
-        pass
-
-
-    # Enter a parse tree produced by bashGrammarParser#string.
-    def enterString(self, ctx:bashGrammarParser.StringContext):
-        pass
-
-    # Exit a parse tree produced by bashGrammarParser#string.
-    def exitString(self, ctx:bashGrammarParser.StringContext):
-        pass
-
-
     # Enter a parse tree produced by bashGrammarParser#sed_flag.
     def enterSed_flag(self, ctx:bashGrammarParser.Sed_flagContext):
         pass
@@ -221,6 +203,24 @@ class bashGrammarListener(ParseTreeListener):
 
     # Exit a parse tree produced by bashGrammarParser#sed.
     def exitSed(self, ctx:bashGrammarParser.SedContext):
+        pass
+
+
+    # Enter a parse tree produced by bashGrammarParser#space.
+    def enterSpace(self, ctx:bashGrammarParser.SpaceContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#space.
+    def exitSpace(self, ctx:bashGrammarParser.SpaceContext):
+        pass
+
+
+    # Enter a parse tree produced by bashGrammarParser#string.
+    def enterString(self, ctx:bashGrammarParser.StringContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#string.
+    def exitString(self, ctx:bashGrammarParser.StringContext):
         pass
 
 

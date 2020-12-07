@@ -1,4 +1,4 @@
-// Generated from bashGrammar.g4 by ANTLR 4.7.1
+// Generated from bashGrammar.g4 by ANTLR 4.9
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -58,6 +58,18 @@ public interface bashGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitIfElse(bashGrammarParser.IfElseContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link bashGrammarParser#function_def}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunction_def(bashGrammarParser.Function_defContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link bashGrammarParser#function_call}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunction_call(bashGrammarParser.Function_callContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link bashGrammarParser#multi_conditions}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -105,6 +117,30 @@ public interface bashGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitIncrement(bashGrammarParser.IncrementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link bashGrammarParser#open_bracket}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOpen_bracket(bashGrammarParser.Open_bracketContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link bashGrammarParser#close_bracket}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitClose_bracket(bashGrammarParser.Close_bracketContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link bashGrammarParser#sed_flag}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSed_flag(bashGrammarParser.Sed_flagContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link bashGrammarParser#sed}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSed(bashGrammarParser.SedContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link bashGrammarParser#space}.
 	 * @param ctx the parse tree

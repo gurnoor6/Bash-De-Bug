@@ -109,16 +109,6 @@ class bashGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by bashGrammarParser#space.
-    def visitSpace(self, ctx:bashGrammarParser.SpaceContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by bashGrammarParser#string.
-    def visitString(self, ctx:bashGrammarParser.StringContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by bashGrammarParser#sed_flag.
     def visitSed_flag(self, ctx:bashGrammarParser.Sed_flagContext):
         return self.visitChildren(ctx)
@@ -126,6 +116,16 @@ class bashGrammarVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by bashGrammarParser#sed.
     def visitSed(self, ctx:bashGrammarParser.SedContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by bashGrammarParser#space.
+    def visitSpace(self, ctx:bashGrammarParser.SpaceContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by bashGrammarParser#string.
+    def visitString(self, ctx:bashGrammarParser.StringContext):
         return self.visitChildren(ctx)
 
 

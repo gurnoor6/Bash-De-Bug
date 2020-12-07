@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Generated from bashGrammar.g4 by ANTLR 4.8
 =======
 // Generated from bashGrammar.g4 by ANTLR 4.9
 >>>>>>> 5074812a9eef5190831be8e6581aa425ab10d9ec
+=======
+// Generated from bashGrammar.g4 by ANTLR 4.9
+>>>>>>> 41a7ec9370f04bec966c2fff4f970a248b041ee0
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -259,30 +263,6 @@ public class bashGrammarBaseListener implements bashGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSpace(bashGrammarParser.SpaceContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSpace(bashGrammarParser.SpaceContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterString(bashGrammarParser.StringContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitString(bashGrammarParser.StringContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterSed_flag(bashGrammarParser.Sed_flagContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -302,6 +282,30 @@ public class bashGrammarBaseListener implements bashGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSed(bashGrammarParser.SedContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSpace(bashGrammarParser.SpaceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSpace(bashGrammarParser.SpaceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterString(bashGrammarParser.StringContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitString(bashGrammarParser.StringContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

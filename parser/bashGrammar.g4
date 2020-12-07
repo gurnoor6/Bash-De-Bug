@@ -8,7 +8,7 @@ code				: 	bashScript* EOF;
 
 bashScript			:	(function_call | function_def | loops | assignment | linux_command | space | advanced_assignment | ifElse | sed)+;
 
-expressions			:	(function_call | function_def | loops | assignment | linux_command | advanced_assignment | ifElse | BREAK space? | CONTINUE space? )* space?;
+expressions			:	(function_call | function_def | loops | assignment | linux_command | advanced_assignment | ifElse | sed | BREAK space? | CONTINUE space? )* space?;
 
 loops				: 	(while_loop | for_loop);
 
@@ -61,14 +61,13 @@ open_bracket 		: 	(OPEN_PAR | OPEN_CUR | OPEN_BOX);
 
 close_bracket 		: 	(CLOSE_PAR | CLOSE_CUR | CLOSE_BOX);
 
-space 				:	SPACE+;
-
-string 				:	(SINGLE_STRING | DOUBLE_STRING);
-
 sed_flag 			:	( VAL | SED_FLAG);
 
 sed					:	SED space (sed_flag SPACE?)* string space (FILENAME | VAR) space COMPARE* SPACE* (FILENAME | VAR)* COMPARE SPACE* (FILENAME | VAR) SEMICOLON? space?;
 
+space 				:	SPACE+;
+
+string 				:	(SINGLE_STRING | DOUBLE_STRING);
 
 /*
  	lexer tokens
@@ -129,7 +128,7 @@ DO 					: 'do';
 
 SED 				: 'sed';
 
-// SED_FLAG 			: '-n' | '-i' | '-e';
+SED_FLAG 			: '-n' | '-i' | '-e';
 
 BREAK				: 'break';
 
@@ -138,6 +137,7 @@ CONTINUE			: 'continue';
 OPEN_BRACKETS	    : ('((' | '[[');
 
 CLOSE_BRACKETS	    : ('))' | ']]');
+
 DONE 				: 'done';
 
 COMMAND 			: ('echo' | 'cat' | 'ls' | 'll' | 'time' | 'wget' | 'cd');
@@ -147,8 +147,6 @@ VAR					: [a-zA-Z_] [a-zA-Z_0-9]*;
 WEBSITE 			: (( 'http' 's'? | 'ftp' | 'smtp' ) '://' )? ( 'www.' ) [a-z0-9]+ '.' [a-z]+( '/' [a-zA-Z0-9#]+ '/' ?)* ;
 
 FILENAME			: VAR '.' VAR ;
-
-SED_FLAG 		    : ('--' VAR | '--expression=');
 
 // can be used in echo, other variable assignments
 BASH_VAR			: '$' VAR;

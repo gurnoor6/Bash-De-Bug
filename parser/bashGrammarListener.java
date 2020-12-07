@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Generated from bashGrammar.g4 by ANTLR 4.8
 =======
 // Generated from bashGrammar.g4 by ANTLR 4.9
 >>>>>>> 5074812a9eef5190831be8e6581aa425ab10d9ec
+=======
+// Generated from bashGrammar.g4 by ANTLR 4.9
+>>>>>>> 41a7ec9370f04bec966c2fff4f970a248b041ee0
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -211,26 +215,6 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 */
 	void exitClose_bracket(bashGrammarParser.Close_bracketContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link bashGrammarParser#space}.
-	 * @param ctx the parse tree
-	 */
-	void enterSpace(bashGrammarParser.SpaceContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link bashGrammarParser#space}.
-	 * @param ctx the parse tree
-	 */
-	void exitSpace(bashGrammarParser.SpaceContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link bashGrammarParser#string}.
-	 * @param ctx the parse tree
-	 */
-	void enterString(bashGrammarParser.StringContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link bashGrammarParser#string}.
-	 * @param ctx the parse tree
-	 */
-	void exitString(bashGrammarParser.StringContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#sed_flag}.
 	 * @param ctx the parse tree
 	 */
@@ -250,4 +234,24 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSed(bashGrammarParser.SedContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#space}.
+	 * @param ctx the parse tree
+	 */
+	void enterSpace(bashGrammarParser.SpaceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#space}.
+	 * @param ctx the parse tree
+	 */
+	void exitSpace(bashGrammarParser.SpaceContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void enterString(bashGrammarParser.StringContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void exitString(bashGrammarParser.StringContext ctx);
 }

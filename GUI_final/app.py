@@ -1,9 +1,14 @@
+import os, sys
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
+
 import tkinter as tk
 import tkinter.ttk as ttk
 from tkinter import filedialog
-#from inserter import inserter,execute
+from inserter import inserter,execute
 from findwindow import FindWindow
-#from main import get_vars
+# from main import get_vars
 from highlighter import Highlighter 
 from text import TextArea 
 from lineNos import LineNo
@@ -144,12 +149,12 @@ class Pytext:
 		with open('input.sh','w') as fh:
 			fh.writelines(content)
 
-		out = get_vars("input.sh")
+		var,insert_data = get_vars("input.sh")
 		inserter("input.sh",out)
-		llist=[]
-		for i in out:
-			llist.append(f"{i[0],i[1]}")
-		self.setvariables(llist)
+		vars_list=[]
+		for i in var:
+			vars_list.append(f"{i[0],i[1]}")
+		self.setvariables(vars_list)
 		s = execute(["./temp_input.sh"])
 		self.setoutput(s)
 	

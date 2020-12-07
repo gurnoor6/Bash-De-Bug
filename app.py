@@ -1,84 +1,30 @@
+import os
 import tkinter as tk
+import tkinter.ttk as ttk
 from tkinter import filedialog
-#from inserter import inserter,execute
-#from main import get_vars
+from utils.inserter import inserter,execute
+from findwindow import FindWindow
+from utils.main import get_vars
+from highlighter import Highlighter 
+from text import TextArea 
+from lineNos import LineNo
+from outputbox import Output, Varlist
+from inputbox import Startend
+from barcomps import Menubar, StatusBar
 
-class LineNo(tk.Canvas):
-    def __init__(self, *args, **kwargs):
-        tk.Canvas.__init__(self, *args, **kwargs)
-        self.textwidget = None
 
-    def attach(self, text_widget):
-        self.textwidget = text_widget
+mainbgcol="#1B1B1C"
 
-    def redraw(self, *args):
-        '''redraw line numbers'''
-        self.delete("all")
+scrollhl="#2F2F2F"
+scrollbg="#101010"
 
-        i = self.textwidget.index("@0,0")
-        while True :
-            dline= self.textwidget.dlineinfo(i)
-            if dline is None: break
-            y = dline[1]
-            linenum = str(i).split(".")[0]
-            self.create_text(2,y,anchor="nw", text=linenum)
-            i = self.textwidget.index("%s+1line" % i)
-class Output:
-	def __init__(self, parent):
-		self.parent=parent
-		self.outputarea=tk.Text(self.parent.master)
-		#self.scroller = tk.Scrollbar(self.outputarea, command=self.outputarea.yview, takefocus=0)
-		self.outputarea.place(relx=0.7, rely=0.1, relwidth=0.25, relheight=0.4)
-		self.outputarea.config(state='disabled')
+buttonbg="#101010"
+buttonfg="white"
+buttonhl="red"
+deepcolor="#2F2F2F"
+textbg="#101010"
+textfg="white"
 
-class Varlist:
-	def __init__(self, parent):
-		self.parent=parent
-		self.list = tk.Listbox(parent, selectmode=tk.MULTIPLE)
-		self.list.place(relx=0.75, rely=0.6, relwidth=0.2, relheight=0.3)
-
-class Startend:
-	def __init__(self, parent):
-		self.parent=parent
-		label1 = tk.Label(self.parent.master, text="Enter Starting Point")
-		label2 = tk.Label(self.parent.master, text="Enter Ending Point")
-		self.startfield = tk.Entry(self.parent.master, relief='ridge')
-		self.endfield = tk.Entry(self.parent.master, relief='ridge')
-		label1.grid(row=1, column=1)
-		label2.grid(row=2, column=1)
-
-		self.startfield.grid(row=1, column=2)
-		self.endfield.grid(row=2, column=2)
-
-class Menubar:
-
-	def __init__(self, parent):
-		font_specs = ("Roboto", 10)
-		menubar1 = tk.Menu(parent.master, font=font_specs)
-		parent.master.config(menu=menubar1)
-		file_dd = tk.Menu(menubar1, font=font_specs, tearoff=0)
-		file_dd.add_command(label="New File", command=parent.new_file, accelerator="ctrl + N")
-		file_dd.add_command(label="Open File", command=parent.open_file, accelerator="ctrl + O")
-		file_dd.add_command(label="Save File", command=parent.save_file, accelerator="ctrl + S")
-		file_dd.add_command(label="Save As", command=parent.save_as, accelerator="ctrl + Shift + S")
-		file_dd.add_separator()
-		file_dd.add_command(label="Exit", command=parent.master.destroy)
-
-		menubar1.add_cascade(menu=file_dd, label="File")
-
-class StatusBar:
-
-	def __init__(self, parent):
-		self.value = tk.StringVar()
-		self.value.set("Untitled1")
-		label = tk.Label(parent.master, textvariable=self.value, fg="black", bg="gray", anchor='sw')
-		label.place(relx=0, rely=0.97,relwidth=1)
-	
-	def updatestat(self, *args):
-		if isinstance(args[0], bool):
-			self.value.set("Saved")
-		else:
-			self.value.set("Unsaved Changes")
 
 class Pytext:
 
@@ -86,32 +32,38 @@ class Pytext:
 		master.title("Untitled1 - Pytext")
 		master.geometry("1200x600")
 
-		font_specs = ("ubuntu", 18)
+		font_specs = ("ubuntu", 12)
 
 		self.master=master
-		self.runbutton = tk.Button(self.master, command=self.run, text="run")
+		style = ttk.Style()
+		style.theme_use('alt')
+		style.configure('TButton', background = buttonbg, foreground = 'white')
+		style.map('TButton', background=[('active',deepcolor)])
+		self.runbutton = ttk.Button(self.master, command=self.run, text="Run!")
 		self.flname = None
 		# self.linebuttons=[]
 		self.menubar = Menubar(self)
 		self.statbar = StatusBar(self)
+
 		self.linesnos = LineNo(self.master)
 		self.startend = Startend(self)
-		self.textarea = tk.Text(master, font=font_specs, wrap="none")
-		self.scrolly = tk.Scrollbar(master, command=self.textarea.yview, takefocus=0)
-		self.scrollx = tk.Scrollbar(master, command=self.textarea.xview, orient='horizontal')
+		#self.textarea = tk.Text()
+		self.textarea = TextArea(self.master, bg=textbg, fg=textfg, insertbackground="white", undo=True)
+		self.highlighter = Highlighter(self.textarea, 'languages/bash.yaml')
+		self.scrolly = tk.Scrollbar(master, command=self.scroll, takefocus=0, bg=scrollbg, activebackground=scrollhl)
+		#self.scrollx = tk.Scrollbar(master, command=self.textarea.xview, orient='horizontal', bg=scrollbg, activebackground=scrollhl)
 		self.textarea.configure(yscrollcommand=self.scrolly.set)
 		self.outputarea = Output(self.master)
 		self.varlist= Varlist(self.master)
 		#self.linesnos.textline.configure(yscrollcommand=self.scrolly.set)
-		self.textarea.configure(xscrollcommand=self.scrollx.set)
+		#self.textarea.configure(xscrollcommand=self.scrollx.set)	
 		self.textarea.place(relx=0.03, rely= 0.1, relwidth=0.65, relheight=0.8)
 		self.scrolly.place(relx=0.68, rely= 0.1, relwidth=0.01, relheight=0.8)
-		self.scrollx.place(relx=0.03, rely=0.9, relwidth=0.65, relheight=0.02)
+		#self.scrollx.place(relx=0.03, rely=0.9, relwidth=0.65, relheight=0.02)
 		self.linesnos.attach(self.textarea)
 		self.linesnos.place(relx=0, rely=0.1, relwidth=0.02, relheight=0.8)
 		self.bind_shortcuts()
-		self.runbutton.place(relx=0.5, rely=0)
-
+		self.runbutton.place(relx=0.5, rely=0.025)
 
 	
 	def set_window_title(self, name="Untitled1"):
@@ -122,8 +74,11 @@ class Pytext:
 		Pytext(master)
 		master.mainloop()
 
+	def scroll(self, *args):
+		self.textarea.yview(*args)
+		self.linesnos.redraw()
 	def open_file(self, *args):
-		self.flname = filedialog.askopenfilename(defaultextension=".txt", filetypes=[("All files", "*.*"),("Python", "*.py")])
+		self.flname = filedialog.askopenfilename(defaultextension=".txt", filetypes=[("All files", "*.*")])
 		if self.flname:
 			self.textarea.delete(1.0, tk.END)
 			with open(self.flname, "r")as f:
@@ -152,6 +107,8 @@ class Pytext:
 			self.set_window_title(self.flname)
 		except Exception as e:
 			print(e)
+
+
 	
 	def bind_shortcuts(self):
 		self.textarea.bind('<Control-n>', self.new_file)
@@ -159,39 +116,56 @@ class Pytext:
 		self.textarea.bind('<Control-s>', self.save_file)
 		self.textarea.bind('<Control-S>', self.save_as)
 		self.textarea.bind('<Key>', self.statbar.updatestat)
-		self.textarea.bind('<KeyRelease>', self.linesnos.redraw)
-		self.master.bind_all("<MouseWheel>", self._on_mousewheel)
-	
-	def _on_mousewheel(self, event):
+		self.textarea.bind('<KeyRelease>', self.key_release)
+		self.textarea.bind('<ButtonRelease-4>', self.linesnos.redraw)
+		self.textarea.bind('<ButtonRelease-5>', self.linesnos.redraw)
+		self.textarea.bind('<Control-f>', self.show_find_window)
+
+
+	def key_release(self, *args):
 		self.linesnos.redraw()
-	
+		self.highlighter.highlight()
+
 	def setoutput(self, output):
 		self.outputarea.outputarea.config(state='normal')
 		self.outputarea.outputarea.delete(1.0, tk.END)
 		self.outputarea.outputarea.insert(1.0, output)
 		self.outputarea.outputarea.config(state='disabled')
+		
+	def show_find_window(self, event=None):
+		FindWindow(self.textarea)
 
 	def setvariables(self, vlist):
 		for var in vlist:
 			self.varlist.list.insert(0, var)
 
 	def run(self):
+		# pass
+		# selected_text_list = [self.varlist.list.get(i) for i in self.varlist.list.curselection()]
+		# print("items==== " , selected_text_list)
 		content = self.textarea.get("1.0","end")
 		with open('input.sh','w') as fh:
 			fh.writelines(content)
 
-		out, insert_data = get_vars("input.sh")
-		inserter("input.sh", insert_data)
-		llist=[]
-		for i in out:
-			llist.append(f"{i[0],i[1]}")
-		self.setvariables(llist)
-		s = execute(["./temp_input.sh"])
-		# print(s)
-		self.setoutput(s)
+		var,insert_data = get_vars("input.sh")
+		vars_list=[]
+		var = sorted(var, reverse=True)
+		insert_data = sorted(insert_data,reverse=True)
+		for i in var:
+			vars_list.append(f"{i[0],i[1]}")
+		self.setvariables(vars_list)
+
+		# inserter("input.sh",insert_data)
+		
+		# s = execute(["./temp_input.sh"])
+		# self.setoutput(s)
+		# os.remove("./input.sh")
+		# os.remove("./temp_input.sh")
 	
 
 if __name__ == '__main__':
 	master = tk.Tk()
+	master.configure(background=mainbgcol)
 	pt = Pytext(master)
 	master.mainloop()
+

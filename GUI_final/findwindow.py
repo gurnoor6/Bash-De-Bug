@@ -1,29 +1,36 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 
-
+fgcolor = "white"
+bgcolor = "#1b1b1c"
+deepcolor = "#101010"
 class FindWindow(tk.Toplevel):
     def __init__(self, master, **kwargs):
         super().__init__(**kwargs)
 
         self.master = master
-
-        self.geometry('350x100')
+        self.configure(bg=bgcolor)
+        self.geometry('400x100')
         self.title('Find and Replace')
         self.transient(self.master)
 
         self.text_to_find = tk.StringVar()
         self.text_to_replace_with = tk.StringVar()
 
-        top_frame = tk.Frame(self)
-        middle_frame = tk.Frame(self)
-        bottom_frame = tk.Frame(self)
+        top_frame = tk.Frame(self,bg=bgcolor)
+        middle_frame = tk.Frame(self,bg=bgcolor)
+        bottom_frame = tk.Frame(self,bg=bgcolor)
 
-        find_entry_label = tk.Label(top_frame, text="Find: ")
-        self.find_entry = ttk.Entry(top_frame, textvar=self.text_to_find)
+        find_entry_label = tk.Label(top_frame, text="Find: ",bg=bgcolor,fg=fgcolor)
+        self.find_entry = tk.Entry(top_frame, textvar=self.text_to_find,background=deepcolor,foreground=fgcolor)
 
-        replace_entry_label = tk.Label(middle_frame, text="Replace: ")
-        self.replace_entry = ttk.Entry(middle_frame, textvar=self.text_to_replace_with)
+        replace_entry_label = tk.Label(middle_frame, text="Replace: ",bg=bgcolor,fg=fgcolor)
+        self.replace_entry = tk.Entry(middle_frame, textvar=self.text_to_replace_with,background=deepcolor,foreground=fgcolor)
+
+        style = ttk.Style()
+        style.theme_use('alt')
+        style.configure('TButton', background = deepcolor, foreground = 'white')
+        style.map('TButton', background=[('active',bgcolor)])
 
         self.find_button = ttk.Button(bottom_frame, text="Find", command=self.on_find)
         self.replace_button = ttk.Button(bottom_frame, text="Replace", command=self.on_replace)

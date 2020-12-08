@@ -29,6 +29,7 @@ vartexthl="red"
 insert_data = []
 var = []
 commands = []
+files = []
 output_data = ""
 current_show = ""
 
@@ -168,14 +169,14 @@ class Pytext:
 			self.varlist.list.insert(0, var)
 
 	def run(self):
-		global var,insert_data,commands
+		global var,insert_data,commands, files 
 		# selected_text_list = [self.varlist.list.get(i) for i in self.varlist.list.curselection()]
 
 		content = self.textarea.get("1.0","end")
 		with open('input.sh','w') as fh:
 			fh.writelines(content)
 
-		var,insert_data,commands = get_vars("input.sh")
+		var,insert_data,commands,files = get_vars("input.sh")
 		vars_list=[]
 		var = sorted(var, reverse=True)
 		insert_data = sorted(insert_data,reverse=True)
@@ -212,9 +213,8 @@ class Pytext:
 		self.setoutput(output_data)
 
 	def showFiles(self):
-		global current_show
+		global current_show,files 
 		current_show = "files"
-		files = ["file1", "file3"]
 		self.setvariables(files)
 
 	def showCommands(self):

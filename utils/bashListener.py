@@ -8,6 +8,7 @@ insert_data = []
 var = []
 file = []
 commands = []
+files = []
 
 class fileBashListener(bashGrammarVisitor):
 
@@ -17,17 +18,19 @@ class fileBashListener(bashGrammarVisitor):
 			file = f.readlines()
 
 	def visitCode(self, ctx:bashGrammarParser.CodeContext):
-		global var,file,commands, insert_data
+		global var,file,commands, insert_data,files 
 		self.visitChildren(ctx)
 
 		# clearing the global variables here so that they are not affected on next run
 		var_local = var
 		insert_data_local = insert_data
 		commands_local = commands
+		files_local = files
 		var = []
 		insert_data = []
 		commands = []
-		return var_local, insert_data_local, commands_local
+		files = []
+		return var_local, insert_data_local, commands_local, files_local
 
 	def visitAssignment(self, ctx:bashGrammarParser.AssignmentContext):
 		global var, insert_data
@@ -64,7 +67,7 @@ class fileBashListener(bashGrammarVisitor):
 		return self.visitChildren(ctx)
 
 	def visitSed(self, ctx:bashGrammarParser.SedContext):
-		global commands
+		global commands,files
 		info = f"sed; flags: "
 		for item in ctx.tag():
 			info+= f"{item.getText()} "
@@ -73,8 +76,14 @@ class fileBashListener(bashGrammarVisitor):
 			info += f"{ctx.string().getText()}"
 
 		info += f" line : {ctx.start.line}"
-		print(info)
 		commands.append(info)
+
+		if ctx.VAR() != None:
+			files.append(f"line : {ctx.start.line} : {ctx.VAR()}")
+
+		if ctx.FILENAME() != None:
+			files.append(f"line : {ctx.start.line} : {ctx.FILENAME()}")
+
 		return self.visitChildren(ctx)
 		
 
@@ -114,6 +123,17 @@ class fileBashListener(bashGrammarVisitor):
 
 		# print(line_s, col_s)
 		# print(line_e, col_e)
+
+		return self.visitChildren(ctx)
+
+	def visitRedirect(self, ctx:bashGrammarParser.RedirectContext):
+		global files
+
+		for item in ctx.VAR():
+			files.append(f"line : {ctx.start.line} : {item.getText()}")
+
+		for item in ctx.FILENAME():
+			files.append(f"line : {ctx.start.line} : {item.getText()}")
 
 		return self.visitChildren(ctx)
 

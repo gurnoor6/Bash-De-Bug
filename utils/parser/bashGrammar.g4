@@ -39,7 +39,7 @@ function_def		:	FUNCTION space? VAR space? OPEN_PAR space? CLOSE_PAR space? OPEN
 
 sed					:	SED space? (tag space?)* string space (FILENAME | VAR) space? redirect? SEMICOLON? space?;
 
-linux_command		: 	COMMAND space? (tag | space | command_data)*? SEMICOLON? space? (PIPE space? (linux_command | sed ))*? space? redirect? space?;
+linux_command		: 	COMMAND space? (tag | space | command_data)*? SEMICOLON? space? (PIPE space? (linux_command | sed ))*? space? redirect? SEMICOLON? space?;
 
 function_call		: 	VAR space? (tag | space | command_data)*? SEMICOLON? space?; 
 

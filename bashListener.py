@@ -76,7 +76,7 @@ class fileBashListener(bashGrammarVisitor):
 				break
 			line_e -= 1
 
-		insert_data += [((line_s, col_s), f"\necho \"Function {function_name} starts\"; echo \"==========\";\n")]
+		insert_data += [((line_s, col_s), f"\necho \"Function {function_name} called with args $@\"; echo \"==========\";\n")]
 		insert_data += [((line_e, col_e), f"\necho \"==========\"; echo \"Function {function_name} ends\";\n")]
 
 		# print(line_s, col_s)
@@ -84,9 +84,3 @@ class fileBashListener(bashGrammarVisitor):
 
 		return self.visitChildren(ctx)
 
-
-# class fileBashVisitor(bashGrammarListener):
-# 	def __init__(self):
-# 		pass
-
-# 	def enterFunction()

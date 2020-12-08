@@ -123,37 +123,13 @@ public class bashGrammarBaseListener implements bashGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunction_call(bashGrammarParser.Function_callContext ctx) { }
+	@Override public void enterSed(bashGrammarParser.SedContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunction_call(bashGrammarParser.Function_callContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterMulti_conditions(bashGrammarParser.Multi_conditionsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitMulti_conditions(bashGrammarParser.Multi_conditionsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterCondition(bashGrammarParser.ConditionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitCondition(bashGrammarParser.ConditionContext ctx) { }
+	@Override public void exitSed(bashGrammarParser.SedContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -166,6 +142,66 @@ public class bashGrammarBaseListener implements bashGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitLinux_command(bashGrammarParser.Linux_commandContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFunction_call(bashGrammarParser.Function_callContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFunction_call(bashGrammarParser.Function_callContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterConditions(bashGrammarParser.ConditionsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConditions(bashGrammarParser.ConditionsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCondition1(bashGrammarParser.Condition1Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCondition1(bashGrammarParser.Condition1Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCondition1_base(bashGrammarParser.Condition1_baseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCondition1_base(bashGrammarParser.Condition1_baseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCondition2(bashGrammarParser.Condition2Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCondition2(bashGrammarParser.Condition2Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -207,6 +243,18 @@ public class bashGrammarBaseListener implements bashGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterRedirect(bashGrammarParser.RedirectContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitRedirect(bashGrammarParser.RedirectContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterComparison(bashGrammarParser.ComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -231,6 +279,18 @@ public class bashGrammarBaseListener implements bashGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterTag(bashGrammarParser.TagContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTag(bashGrammarParser.TagContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterOpen_bracket(bashGrammarParser.Open_bracketContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -250,30 +310,6 @@ public class bashGrammarBaseListener implements bashGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitClose_bracket(bashGrammarParser.Close_bracketContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSed_flag(bashGrammarParser.Sed_flagContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSed_flag(bashGrammarParser.Sed_flagContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSed(bashGrammarParser.SedContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSed(bashGrammarParser.SedContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

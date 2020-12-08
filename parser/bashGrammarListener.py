@@ -89,6 +89,24 @@ class bashGrammarListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by bashGrammarParser#sed.
+    def enterSed(self, ctx:bashGrammarParser.SedContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#sed.
+    def exitSed(self, ctx:bashGrammarParser.SedContext):
+        pass
+
+
+    # Enter a parse tree produced by bashGrammarParser#linux_command.
+    def enterLinux_command(self, ctx:bashGrammarParser.Linux_commandContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#linux_command.
+    def exitLinux_command(self, ctx:bashGrammarParser.Linux_commandContext):
+        pass
+
+
     # Enter a parse tree produced by bashGrammarParser#function_call.
     def enterFunction_call(self, ctx:bashGrammarParser.Function_callContext):
         pass
@@ -113,15 +131,6 @@ class bashGrammarListener(ParseTreeListener):
 
     # Exit a parse tree produced by bashGrammarParser#condition.
     def exitCondition(self, ctx:bashGrammarParser.ConditionContext):
-        pass
-
-
-    # Enter a parse tree produced by bashGrammarParser#linux_command.
-    def enterLinux_command(self, ctx:bashGrammarParser.Linux_commandContext):
-        pass
-
-    # Exit a parse tree produced by bashGrammarParser#linux_command.
-    def exitLinux_command(self, ctx:bashGrammarParser.Linux_commandContext):
         pass
 
 
@@ -170,6 +179,15 @@ class bashGrammarListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by bashGrammarParser#tag.
+    def enterTag(self, ctx:bashGrammarParser.TagContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#tag.
+    def exitTag(self, ctx:bashGrammarParser.TagContext):
+        pass
+
+
     # Enter a parse tree produced by bashGrammarParser#open_bracket.
     def enterOpen_bracket(self, ctx:bashGrammarParser.Open_bracketContext):
         pass
@@ -185,24 +203,6 @@ class bashGrammarListener(ParseTreeListener):
 
     # Exit a parse tree produced by bashGrammarParser#close_bracket.
     def exitClose_bracket(self, ctx:bashGrammarParser.Close_bracketContext):
-        pass
-
-
-    # Enter a parse tree produced by bashGrammarParser#sed_flag.
-    def enterSed_flag(self, ctx:bashGrammarParser.Sed_flagContext):
-        pass
-
-    # Exit a parse tree produced by bashGrammarParser#sed_flag.
-    def exitSed_flag(self, ctx:bashGrammarParser.Sed_flagContext):
-        pass
-
-
-    # Enter a parse tree produced by bashGrammarParser#sed.
-    def enterSed(self, ctx:bashGrammarParser.SedContext):
-        pass
-
-    # Exit a parse tree produced by bashGrammarParser#sed.
-    def exitSed(self, ctx:bashGrammarParser.SedContext):
         pass
 
 

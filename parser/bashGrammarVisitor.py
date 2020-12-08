@@ -54,6 +54,16 @@ class bashGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by bashGrammarParser#sed.
+    def visitSed(self, ctx:bashGrammarParser.SedContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by bashGrammarParser#linux_command.
+    def visitLinux_command(self, ctx:bashGrammarParser.Linux_commandContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by bashGrammarParser#function_call.
     def visitFunction_call(self, ctx:bashGrammarParser.Function_callContext):
         return self.visitChildren(ctx)
@@ -66,11 +76,6 @@ class bashGrammarVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by bashGrammarParser#condition.
     def visitCondition(self, ctx:bashGrammarParser.ConditionContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by bashGrammarParser#linux_command.
-    def visitLinux_command(self, ctx:bashGrammarParser.Linux_commandContext):
         return self.visitChildren(ctx)
 
 
@@ -99,6 +104,11 @@ class bashGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by bashGrammarParser#tag.
+    def visitTag(self, ctx:bashGrammarParser.TagContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by bashGrammarParser#open_bracket.
     def visitOpen_bracket(self, ctx:bashGrammarParser.Open_bracketContext):
         return self.visitChildren(ctx)
@@ -106,16 +116,6 @@ class bashGrammarVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by bashGrammarParser#close_bracket.
     def visitClose_bracket(self, ctx:bashGrammarParser.Close_bracketContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by bashGrammarParser#sed_flag.
-    def visitSed_flag(self, ctx:bashGrammarParser.Sed_flagContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by bashGrammarParser#sed.
-    def visitSed(self, ctx:bashGrammarParser.SedContext):
         return self.visitChildren(ctx)
 
 

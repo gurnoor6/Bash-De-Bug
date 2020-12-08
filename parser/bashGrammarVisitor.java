@@ -64,29 +64,47 @@ public interface bashGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFunction_def(bashGrammarParser.Function_defContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link bashGrammarParser#function_call}.
+	 * Visit a parse tree produced by {@link bashGrammarParser#sed}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFunction_call(bashGrammarParser.Function_callContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link bashGrammarParser#multi_conditions}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMulti_conditions(bashGrammarParser.Multi_conditionsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link bashGrammarParser#condition}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCondition(bashGrammarParser.ConditionContext ctx);
+	T visitSed(bashGrammarParser.SedContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link bashGrammarParser#linux_command}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitLinux_command(bashGrammarParser.Linux_commandContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link bashGrammarParser#function_call}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunction_call(bashGrammarParser.Function_callContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link bashGrammarParser#conditions}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitConditions(bashGrammarParser.ConditionsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link bashGrammarParser#condition1}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCondition1(bashGrammarParser.Condition1Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link bashGrammarParser#condition1_base}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCondition1_base(bashGrammarParser.Condition1_baseContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link bashGrammarParser#condition2}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCondition2(bashGrammarParser.Condition2Context ctx);
 	/**
 	 * Visit a parse tree produced by {@link bashGrammarParser#assignment}.
 	 * @param ctx the parse tree
@@ -106,6 +124,12 @@ public interface bashGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCommand_data(bashGrammarParser.Command_dataContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link bashGrammarParser#redirect}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRedirect(bashGrammarParser.RedirectContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link bashGrammarParser#comparison}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -118,6 +142,12 @@ public interface bashGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitIncrement(bashGrammarParser.IncrementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link bashGrammarParser#tag}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTag(bashGrammarParser.TagContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link bashGrammarParser#open_bracket}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -129,18 +159,6 @@ public interface bashGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitClose_bracket(bashGrammarParser.Close_bracketContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link bashGrammarParser#sed_flag}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSed_flag(bashGrammarParser.Sed_flagContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link bashGrammarParser#sed}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSed(bashGrammarParser.SedContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link bashGrammarParser#space}.
 	 * @param ctx the parse tree

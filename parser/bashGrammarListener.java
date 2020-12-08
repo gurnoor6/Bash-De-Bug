@@ -97,35 +97,15 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 */
 	void exitFunction_def(bashGrammarParser.Function_defContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link bashGrammarParser#function_call}.
+	 * Enter a parse tree produced by {@link bashGrammarParser#sed}.
 	 * @param ctx the parse tree
 	 */
-	void enterFunction_call(bashGrammarParser.Function_callContext ctx);
+	void enterSed(bashGrammarParser.SedContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link bashGrammarParser#function_call}.
+	 * Exit a parse tree produced by {@link bashGrammarParser#sed}.
 	 * @param ctx the parse tree
 	 */
-	void exitFunction_call(bashGrammarParser.Function_callContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link bashGrammarParser#multi_conditions}.
-	 * @param ctx the parse tree
-	 */
-	void enterMulti_conditions(bashGrammarParser.Multi_conditionsContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link bashGrammarParser#multi_conditions}.
-	 * @param ctx the parse tree
-	 */
-	void exitMulti_conditions(bashGrammarParser.Multi_conditionsContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link bashGrammarParser#condition}.
-	 * @param ctx the parse tree
-	 */
-	void enterCondition(bashGrammarParser.ConditionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link bashGrammarParser#condition}.
-	 * @param ctx the parse tree
-	 */
-	void exitCondition(bashGrammarParser.ConditionContext ctx);
+	void exitSed(bashGrammarParser.SedContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#linux_command}.
 	 * @param ctx the parse tree
@@ -136,6 +116,56 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitLinux_command(bashGrammarParser.Linux_commandContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#function_call}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunction_call(bashGrammarParser.Function_callContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#function_call}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunction_call(bashGrammarParser.Function_callContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#conditions}.
+	 * @param ctx the parse tree
+	 */
+	void enterConditions(bashGrammarParser.ConditionsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#conditions}.
+	 * @param ctx the parse tree
+	 */
+	void exitConditions(bashGrammarParser.ConditionsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#condition1}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondition1(bashGrammarParser.Condition1Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#condition1}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondition1(bashGrammarParser.Condition1Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#condition1_base}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondition1_base(bashGrammarParser.Condition1_baseContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#condition1_base}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondition1_base(bashGrammarParser.Condition1_baseContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#condition2}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondition2(bashGrammarParser.Condition2Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#condition2}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondition2(bashGrammarParser.Condition2Context ctx);
 	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#assignment}.
 	 * @param ctx the parse tree
@@ -167,6 +197,16 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 */
 	void exitCommand_data(bashGrammarParser.Command_dataContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#redirect}.
+	 * @param ctx the parse tree
+	 */
+	void enterRedirect(bashGrammarParser.RedirectContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#redirect}.
+	 * @param ctx the parse tree
+	 */
+	void exitRedirect(bashGrammarParser.RedirectContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#comparison}.
 	 * @param ctx the parse tree
 	 */
@@ -187,6 +227,16 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 */
 	void exitIncrement(bashGrammarParser.IncrementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link bashGrammarParser#tag}.
+	 * @param ctx the parse tree
+	 */
+	void enterTag(bashGrammarParser.TagContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link bashGrammarParser#tag}.
+	 * @param ctx the parse tree
+	 */
+	void exitTag(bashGrammarParser.TagContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#open_bracket}.
 	 * @param ctx the parse tree
 	 */
@@ -206,26 +256,6 @@ public interface bashGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitClose_bracket(bashGrammarParser.Close_bracketContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link bashGrammarParser#sed_flag}.
-	 * @param ctx the parse tree
-	 */
-	void enterSed_flag(bashGrammarParser.Sed_flagContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link bashGrammarParser#sed_flag}.
-	 * @param ctx the parse tree
-	 */
-	void exitSed_flag(bashGrammarParser.Sed_flagContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link bashGrammarParser#sed}.
-	 * @param ctx the parse tree
-	 */
-	void enterSed(bashGrammarParser.SedContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link bashGrammarParser#sed}.
-	 * @param ctx the parse tree
-	 */
-	void exitSed(bashGrammarParser.SedContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link bashGrammarParser#space}.
 	 * @param ctx the parse tree

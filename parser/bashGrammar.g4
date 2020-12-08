@@ -12,7 +12,7 @@ expressions			:	(function_call | function_def | loops | assignment | linux_comma
 
 loops				: 	(while_loop | for_loop);
 
-while_loop			:	WHILE space? multi_conditions SEMICOLON? space?
+while_loop			:	WHILE space? condition1 SEMICOLON? space?
 						DO space?
 							expressions
 						DONE space?;
@@ -22,11 +22,11 @@ for_loop 			:	FOR space? open_bracket open_bracket inside_for close_bracket clos
 							expressions
 						DONE space?;
 
-inside_for			:	(space? assignment? (',' space? assignment)* SEMICOLON space? condition? (LOGICAL_OP space? condition)*? SEMICOLON space? increment? (',' increment)* space?);
+inside_for			:	(space? assignment? (',' space? assignment)* SEMICOLON space? condition1_base? (LOGICAL_OP space? condition1_base)*? SEMICOLON space? increment? (',' increment)* space?);
 
-ifElse				:	IF space? multi_conditions SEMICOLON? space? THEN space?
+ifElse				:	IF space? conditions SEMICOLON? space? THEN space?
 							expressions
-						(ELIF space? open_bracket open_bracket space? condition (LOGICAL_OP condition)*? close_bracket close_bracket space? SEMICOLON? space? THEN space?
+						(ELIF space? conditions SEMICOLON? space? THEN space?
 							expressions
 						)*
 						(ELSE space?
@@ -37,33 +37,39 @@ ifElse				:	IF space? multi_conditions SEMICOLON? space? THEN space?
 
 function_def		:	FUNCTION space? VAR space? OPEN_PAR space? CLOSE_PAR space? OPEN_CUR space? expressions space? CLOSE_CUR;
 
-function_call		: 	VAR space? command_data*? SEMICOLON? space?; 
+sed					:	SED space? (tag space?)* string space (FILENAME | VAR) space? redirect? SEMICOLON? space?;
 
-multi_conditions	:	open_bracket open_bracket space? condition (LOGICAL_OP space? condition)*? close_bracket close_bracket space?;
+linux_command		: 	COMMAND space? (tag | space | command_data)*? SEMICOLON? space? (PIPE space? (linux_command | sed ))*? space? redirect? space?;
 
-condition			:	space? (VAR | VAL | BLOB)+ space? COMPARE space? (string | VAR | VAL | BLOB | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ space?;
+function_call		: 	VAR space? (tag | space | command_data)*? SEMICOLON? space?; 
 
+conditions 			: 	(condition1 | condition2);
 
-linux_command		: 	COMMAND space? command_data*? SEMICOLON? space?;
+condition1			:	open_bracket open_bracket space? condition1_base (LOGICAL_OP space? condition1_base)*? close_bracket close_bracket space?;
+
+condition1_base		:	space? (VAR | VAL | BLOB)+ space? COMPARE space? (string | VAR | VAL | BLOB | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ space?;
+
+condition2			:	OPEN_BOX SPACE (VAL | VAR | BLOB | string)*? space (tag | COMPARE) space (VAL | VAR | BLOB | string)+ SPACE CLOSE_BOX space?;
 
 assignment			:	VAR ASSIGN (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)+ SEMICOLON? space?;
 
 // need to write this in proper way
+
 advanced_assignment :	open_bracket open_bracket space? VAR space? (ASSIGN | INCREMENT) space? (string | VAL | VAR | BASH_VAR | RHS_ASSIGNMENT | BLOB)* space? close_bracket close_bracket SEMICOLON? space?;
 
-command_data 		: 	(VAR | VAL | BLOB | BASH_VAR | string | INCREMENT | OTHER | space | sed_flag | FILENAME | WEBSITE | RHS_ASSIGNMENT)+ space?;
+command_data 		: 	(VAR | VAL | BLOB | BASH_VAR | string | INCREMENT | OTHER | space | FILENAME | WEBSITE | RHS_ASSIGNMENT)+ space?;
+
+redirect			: 	COMPARE* space? (FILENAME | VAR)* COMPARE SPACE* (FILENAME | VAR) space?;
 
 comparison			:	VAR COMPARE VAL;
 
 increment			:	(VAR INCREMENT (BLOB | VAR | VAL | string | BASH_VAR)? | INCREMENT VAR) ;
 
+tag					:	(FULL_TAG | SINGLE_TAG);
+
 open_bracket 		: 	(OPEN_PAR | OPEN_CUR | OPEN_BOX);
 
 close_bracket 		: 	(CLOSE_PAR | CLOSE_CUR | CLOSE_BOX);
-
-sed_flag 			:	( VAL | SED_FLAG);
-
-sed					:	SED space (sed_flag SPACE?)* string space (FILENAME | VAR) space COMPARE* SPACE* (FILENAME | VAR)* COMPARE SPACE* (FILENAME | VAR) SEMICOLON? space?;
 
 space 				:	SPACE+;
 
@@ -95,6 +101,8 @@ CLOSE_CUR	: '}';
 OPEN_BOX	: '[';
 
 CLOSE_BOX	: ']';
+
+PIPE		: '|';
 
 // keeping a not ; inside the expression to differentiate it from the for loop one
 
@@ -128,26 +136,46 @@ DO 					: 'do';
 
 SED 				: 'sed';
 
-SED_FLAG 			: '-n' | '-i' | '-e';
-
 BREAK				: 'break';
 
 CONTINUE			: 'continue';
 
 DONE 				: 'done';
 
-COMMAND 			: ('echo' | 'cat' | 'ls' | 'll' | 'time' | 'wget' | 'cd');
+COMMAND 			: ('echo' | 'cat' | 'ls' | 'll' | 'time' | 'wget' | 'cd' | 'tr');
 
-VAR					: [a-zA-Z_] [a-zA-Z_0-9]*;
+VAR					: [a-zA-Z] (NEG? [a-zA-Z_0-9]+)*;
 
 WEBSITE 			: (( 'http' 's'? | 'ftp' | 'smtp' ) '://' )? ( 'www.' ) [a-z0-9]+ '.' [a-z]+( '/' [a-zA-Z0-9#]+ '/' ?)* ;
 
 FILENAME			: VAR '.' VAR ;
 
 // can be used in echo, other variable assignments
-BASH_VAR			: '$' VAR;
+BASH_VAR			: '$' VAR ;
 
-VAL					: '-'? [A-Za-z0-9]+;
+INCREMENT 			: (NEGNEG | PLUSPLUS | NEGEQUAL | PLUSEQUAL | MULEQUAL | DIVEQUAL);
+
+NEGNEG				: '--';
+
+NEG  				: '-';
+
+PLUSPLUS			: '++';
+
+NEGEQUAL			: '-=';
+
+PLUSEQUAL			: '+=';
+
+MULEQUAL			: '*=';
+
+DIVEQUAL			: '/=';
+
+COMPARE 			: ('<=' | '>=' | '<' | '>' | '==');
+
+FULL_TAG			: NEGNEG [A-Za-z0-9]+ [A-Za-z0-9=]*;
+
+SINGLE_TAG			: NEG [A-Za-z0-9]+ [A-Za-z0-9=]*;
+
+VAL 				: NEG? [A-Za-z0-9]+;
 
 ASSIGN				: '=';
 
@@ -155,11 +183,7 @@ SEMICOLON			: ';';
 
 LOGICAL_OP			: ('||' | '&&');
 
-INCREMENT 			: ('++' | '--' | '+=' | '-=' | '/=' | '*=');
-
-COMPARE 			: ('<=' | '>=' | '<' | '>' | '==');
-
-BLOB                : [a-zA-Z0-9@!$^%*&+-.]+?;
+BLOB                : [a-zA-Z0-9@!$^%#*&+-.]+?;
 
 OTHER 				: .;
 

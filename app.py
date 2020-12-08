@@ -59,9 +59,13 @@ class Pytext:
 		self.textarea.configure(yscrollcommand=self.scrolly.set)
 
 		self.label=tk.Label(self.master,text="Search:",bg="#1b1b1c",fg=textfg)
-		self.entry=tk.Entry(self.master,bg=outputbg,fg=textfg)
+		self.entry=tk.Entry(self.master,bg=outputbg,fg=textfg,highlightthickness=.5)
 		self.button=ttk.Button(self.master,text="Go")
 		self.startbtn=ttk.Button(self.master,text="Start")
+		
+		self.varbtn=ttk.Button(self.master,text="Variables")
+		self.filebtn=ttk.Button(self.master,text="Files")
+		self.cmdbtn=ttk.Button(self.master,text="Commands")
 
 		self.outputarea = Output(self.master)
 		self.varlist= Varlist(self.master)
@@ -79,6 +83,10 @@ class Pytext:
 		self.entry.place(relx=0.78, rely=0.55, relwidth=0.1, relheight=0.05)
 		self.button.place(relx=0.9, rely=0.55, relwidth=0.025, relheight=0.05)
 		self.startbtn.place(relx=0.81, rely=0.475, relwidth=0.05, relheight=0.05)
+
+		self.varbtn.place(relx=0.7, rely=0.1, relwidth=0.07, relheight=0.05)
+		self.filebtn.place(relx=0.8, rely=0.1, relwidth=0.07, relheight=0.05)
+		self.cmdbtn.place(relx=0.9, rely=0.1, relwidth=0.07, relheight=0.05)
 
 		self.startbtn.config(command=self.start)
 		self.button.config(command=self.find)

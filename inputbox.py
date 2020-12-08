@@ -11,10 +11,10 @@ class Startend:
 		self.parent=parent
 		label1 = tk.Label(self.parent.master, text="Enter Starting Point", bg=labelbg, fg=labelfg)
 		label2 = tk.Label(self.parent.master, text="Enter Ending Point", bg=labelbg, fg=labelfg)
-		self.startfield = tk.Entry(self.parent.master, relief='ridge', bg=inputbg, fg=inputfg)
-		self.endfield = tk.Entry(self.parent.master, relief='ridge', bg=inputbg, fg=inputfg)
-		label1.grid(row=1, column=1)
-		label2.grid(row=2, column=1)
+		self.startfield = tk.Entry(self.parent.master, relief='ridge', bg=inputbg, fg=inputfg,highlightthickness=0.5)
+		self.endfield = tk.Entry(self.parent.master, relief='ridge', bg=inputbg, fg=inputfg,highlightthickness=0.5)
+		label1.place(relx=0, rely=0, relwidth=0.1, relheight=0.05)
+		label2.place(relx=0, rely=0.04, relwidth=0.1, relheight=0.05)
 
-		self.startfield.grid(row=1, column=2)
-		self.endfield.grid(row=2, column=2)
+		self.startfield.place(relx=0.11, rely=0, relwidth=0.1, relheight=0.04)
+		self.endfield.place(relx=0.11, rely=0.05, relwidth=0.1, relheight=0.04)

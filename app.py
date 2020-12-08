@@ -181,7 +181,10 @@ class Pytext:
 		with open('input.sh','w') as fh:
 			fh.writelines(content)
 
-		var,insert_data,commands,files = get_vars("input.sh")
+		var,insert_data,commands,files,error_free = get_vars("input.sh")
+		if error_free==False:
+			print("some error occured")
+			return
 		self.showVariables()
 		
 
@@ -210,7 +213,7 @@ class Pytext:
 		selected_varlist = [self.varlist.list.get(i) for i in self.varlist.list.curselection()]
 
 		temp = []
-		print(selected_varlist)
+		# print(selected_varlist)
 		for item in selected_varlist:
 			temp.append(item.split(" ")[1])
 

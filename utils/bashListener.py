@@ -37,7 +37,7 @@ class fileBashListener(bashGrammarVisitor):
 	def visitAssignment(self, ctx:bashGrammarParser.AssignmentContext):
 		global var, insert_data
 		variable = ctx.VAR(0).getText()
-		print("variable->", variable)
+		# print("variable->", variable)
 		line = ctx.start.line
 		var += [(parent, variable, line)]
 		insert_data += [((line, -1), f"echo \"At line no. {line}, {variable}=${variable}\"\n")]

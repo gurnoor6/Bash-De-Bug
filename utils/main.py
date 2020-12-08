@@ -15,23 +15,28 @@ def main(argv):
 	var,insert_data, commands, files  = visitor.visit(tree)
 	var = list(set(var))
 	insert_data = list(set(insert_data))
-	print("len var = ",len(var), " len insert_data = ", len(insert_data))
-	print("=",var)
-	for item in insert_data:
-		print(item)
+	# print("len var = ",len(var), " len insert_data = ", len(insert_data))
+	# print("=",var)
+	# for item in insert_data:
+	# 	print(item)
 
 def get_vars(filename):
-	input = FileStream(filename)
-	lexer = bashGrammarLexer(input)
-	stream = CommonTokenStream(lexer)
-	parser = bashGrammarParser(stream)
-	tree = parser.code()
-	visitor = fileBashListener(filename)
+	try:
+		input = FileStream(filename)
+		lexer = bashGrammarLexer(input)
+		stream = CommonTokenStream(lexer)
+		parser = bashGrammarParser(stream)
+		tree = parser.code()
+		visitor = fileBashListener(filename)
+		value, insert_data, commands, files  = visitor.visit(tree)
+		value = list(set(value))
+		insert_data = list(set(insert_data))
+		return value, insert_data,commands, files, True
+	except:
+		return [],[],[],[],False
 	
-	value, insert_data, commands, files  = visitor.visit(tree)
-	value = list(set(value))
-	insert_data = list(set(insert_data))
-	return value, insert_data,commands, files 
+	
+	
 
 if __name__=='__main__':
 	if len(sys.argv)!=2:

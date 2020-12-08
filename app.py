@@ -194,8 +194,7 @@ class Pytext:
 
 		var,insert_data,commands,files,error_free = get_vars("input.sh")
 		if error_free==False:
-			error = "Unfortunately, we are currently developing and the code file you entered is not supported by our grammar.\
-			We aim to support it in future, sorry for the inconvenience."
+			error = "Unfortunately, we are currently developing and the code file you entered is not supported by our grammar. We aim to support it in future, sorry for the inconvenience."
 			print(error)
 			self.seterror(error)
 			return

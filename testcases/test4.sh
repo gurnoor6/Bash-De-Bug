@@ -1,10 +1,10 @@
 #!/bin/bash
 
 function hello_world(){
-	echo "I fucked up";
+	echo "this is out MAIN PROJECT!!!!";
 }
 
-function suffer(){
+function sample_func(){
 
 	for ((i=1; i<3; i++));
 	do
@@ -18,7 +18,7 @@ function hehe() { cd ~/Desktop/sem3 }
 
 hello_world
 
-suffer "suffer BITCH!"
+sample_func "Input provided"
 
 hehe
 # a=2;

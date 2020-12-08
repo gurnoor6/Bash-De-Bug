@@ -208,7 +208,14 @@ class Pytext:
 			return
 		global output_data
 		selected_varlist = [self.varlist.list.get(i) for i in self.varlist.list.curselection()]
-		temp = [str(i.split(" ")[1]) for i in selected_varlist]
+
+		temp = []
+		for item in selected_varlist:
+			if type(item) == str:
+				continue
+			else:
+				temp.append(str(item[1]))
+
 		selected_insert_data = []
 		for item in  insert_data:
 			if str(item[0][0]) in temp:

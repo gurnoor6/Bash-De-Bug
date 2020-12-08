@@ -223,10 +223,9 @@ class Pytext:
 		self.setvariables(commands)
 
 	def showVariables(self):
-		global current_show
+		global current_show, var
 		current_show = "variables"
-		files = ["v1", "v2"]
-		self.setvariables(files)
+		self.setvariables(var)
 	
 
 if __name__ == '__main__':

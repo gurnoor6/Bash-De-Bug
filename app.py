@@ -163,6 +163,12 @@ class Pytext:
 		self.outputarea.outputarea.delete(1.0, tk.END)
 		self.outputarea.outputarea.insert(1.0, output)
 		self.outputarea.outputarea.config(state='disabled')
+
+	def seterror(self, output):
+		self.errarea.config(state='normal')
+		self.errarea.delete(1.0, tk.END)
+		self.errarea.insert(1.0, output)
+		self.errarea.config(state='disabled')
 		
 	def show_find_window(self, event=None):
 		FindWindow(self.textarea)
@@ -188,7 +194,9 @@ class Pytext:
 
 		var,insert_data,commands,files,error_free = get_vars("input.sh")
 		if error_free==False:
-			print("some error occured")
+			error = "some error occured"
+			print(error)
+			self.setoutput(error)
 			return
 		self.showVariables()
 		

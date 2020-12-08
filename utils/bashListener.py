@@ -7,6 +7,7 @@ from .parser.bashGrammarListener import bashGrammarListener
 insert_data = []
 var = []
 file = []
+commands = []
 
 class fileBashListener(bashGrammarVisitor):
 
@@ -16,9 +17,17 @@ class fileBashListener(bashGrammarVisitor):
 			file = f.readlines()
 
 	def visitCode(self, ctx:bashGrammarParser.CodeContext):
-		# print("visited code")
+		global var,file,commands, insert_data
 		self.visitChildren(ctx)
-		return var, insert_data
+
+		# clearing the global variables here so that they are not affected on next run
+		var_local = var
+		insert_data_local = insert_data
+		commands_local = commands
+		var = []
+		insert_data = []
+		commands = []
+		return var_local, insert_data_local, commands_local
 
 	def visitAssignment(self, ctx:bashGrammarParser.AssignmentContext):
 		global var, insert_data
@@ -31,7 +40,19 @@ class fileBashListener(bashGrammarVisitor):
 		return self.visitChildren(ctx)
 
 	def visitLinux_command(self, ctx:bashGrammarParser.Linux_commandContext):
-		print("visited linux command -> ", ctx.COMMAND())
+		global commands
+		info  = ""
+		info += f"{ctx.COMMAND()}; "
+		for item in ctx.tag():
+			info += f"{item.getText()} "
+
+		for item in ctx.command_data():
+			info += f"{item.getText()} "
+
+		info += f"; line : {ctx.start.line}"
+
+		commands.append(info)
+
 		return self.visitChildren(ctx)
 
 	def visitAdvanced_assignment(self, ctx:bashGrammarParser.Advanced_assignmentContext):
@@ -43,9 +64,21 @@ class fileBashListener(bashGrammarVisitor):
 		return self.visitChildren(ctx)
 
 	def visitSed(self, ctx:bashGrammarParser.SedContext):
-		print(" i am here")
-		print("ctx: " ,ctx.VAR(1))
+		global commands
+		info = f"sed; flags: "
+		for item in ctx.tag():
+			info+= f"{item.getText()} "
+
+		if ctx.string().getText() != None:
+			info += f"{ctx.string().getText()}"
+
+		info += f" line : {ctx.start.line}"
+		print(info)
+		commands.append(info)
+		return self.visitChildren(ctx)
 		
+
+
 	def visitIncrement(self, ctx:bashGrammarParser.IncrementContext):
 		global var, insert_data
 		line = ctx.start.line

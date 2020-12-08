@@ -69,13 +69,23 @@ class bashGrammarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by bashGrammarParser#multi_conditions.
-    def visitMulti_conditions(self, ctx:bashGrammarParser.Multi_conditionsContext):
+    # Visit a parse tree produced by bashGrammarParser#conditions.
+    def visitConditions(self, ctx:bashGrammarParser.ConditionsContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by bashGrammarParser#condition.
-    def visitCondition(self, ctx:bashGrammarParser.ConditionContext):
+    # Visit a parse tree produced by bashGrammarParser#condition1.
+    def visitCondition1(self, ctx:bashGrammarParser.Condition1Context):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by bashGrammarParser#condition1_base.
+    def visitCondition1_base(self, ctx:bashGrammarParser.Condition1_baseContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by bashGrammarParser#condition2.
+    def visitCondition2(self, ctx:bashGrammarParser.Condition2Context):
         return self.visitChildren(ctx)
 
 
@@ -91,6 +101,11 @@ class bashGrammarVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by bashGrammarParser#command_data.
     def visitCommand_data(self, ctx:bashGrammarParser.Command_dataContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by bashGrammarParser#redirect.
+    def visitRedirect(self, ctx:bashGrammarParser.RedirectContext):
         return self.visitChildren(ctx)
 
 

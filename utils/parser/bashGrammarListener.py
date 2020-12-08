@@ -116,21 +116,39 @@ class bashGrammarListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by bashGrammarParser#multi_conditions.
-    def enterMulti_conditions(self, ctx:bashGrammarParser.Multi_conditionsContext):
+    # Enter a parse tree produced by bashGrammarParser#conditions.
+    def enterConditions(self, ctx:bashGrammarParser.ConditionsContext):
         pass
 
-    # Exit a parse tree produced by bashGrammarParser#multi_conditions.
-    def exitMulti_conditions(self, ctx:bashGrammarParser.Multi_conditionsContext):
+    # Exit a parse tree produced by bashGrammarParser#conditions.
+    def exitConditions(self, ctx:bashGrammarParser.ConditionsContext):
         pass
 
 
-    # Enter a parse tree produced by bashGrammarParser#condition.
-    def enterCondition(self, ctx:bashGrammarParser.ConditionContext):
+    # Enter a parse tree produced by bashGrammarParser#condition1.
+    def enterCondition1(self, ctx:bashGrammarParser.Condition1Context):
         pass
 
-    # Exit a parse tree produced by bashGrammarParser#condition.
-    def exitCondition(self, ctx:bashGrammarParser.ConditionContext):
+    # Exit a parse tree produced by bashGrammarParser#condition1.
+    def exitCondition1(self, ctx:bashGrammarParser.Condition1Context):
+        pass
+
+
+    # Enter a parse tree produced by bashGrammarParser#condition1_base.
+    def enterCondition1_base(self, ctx:bashGrammarParser.Condition1_baseContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#condition1_base.
+    def exitCondition1_base(self, ctx:bashGrammarParser.Condition1_baseContext):
+        pass
+
+
+    # Enter a parse tree produced by bashGrammarParser#condition2.
+    def enterCondition2(self, ctx:bashGrammarParser.Condition2Context):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#condition2.
+    def exitCondition2(self, ctx:bashGrammarParser.Condition2Context):
         pass
 
 
@@ -158,6 +176,15 @@ class bashGrammarListener(ParseTreeListener):
 
     # Exit a parse tree produced by bashGrammarParser#command_data.
     def exitCommand_data(self, ctx:bashGrammarParser.Command_dataContext):
+        pass
+
+
+    # Enter a parse tree produced by bashGrammarParser#redirect.
+    def enterRedirect(self, ctx:bashGrammarParser.RedirectContext):
+        pass
+
+    # Exit a parse tree produced by bashGrammarParser#redirect.
+    def exitRedirect(self, ctx:bashGrammarParser.RedirectContext):
         pass
 
 

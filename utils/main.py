@@ -12,7 +12,7 @@ def main(argv):
 	parser = bashGrammarParser(stream)
 	tree = parser.code()
 	visitor = fileBashListener(argv[1])
-	var,insert_data = visitor.visit(tree)
+	var,insert_data, commands = visitor.visit(tree)
 	var = list(set(var))
 	insert_data = list(set(insert_data))
 	print("len var = ",len(var), " len insert_data = ", len(insert_data))
@@ -28,10 +28,10 @@ def get_vars(filename):
 	tree = parser.code()
 	visitor = fileBashListener(filename)
 	
-	value, insert_data = visitor.visit(tree)
+	value, insert_data, commands = visitor.visit(tree)
 	value = list(set(value))
 	insert_data = list(set(insert_data))
-	return value, insert_data
+	return value, insert_data,commands
 
 if __name__=='__main__':
 	if len(sys.argv)!=2:

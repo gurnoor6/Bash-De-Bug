@@ -28,7 +28,9 @@ outputbg="#17171C"
 vartexthl="red"
 insert_data = []
 var = []
+commands = []
 output_data = ""
+current_show = ""
 
 class Pytext:
 
@@ -63,9 +65,9 @@ class Pytext:
 		self.button=ttk.Button(self.master,text="Go")
 		self.startbtn=ttk.Button(self.master,text="Start")
 		
-		self.varbtn=ttk.Button(self.master,text="Variables")
-		self.filebtn=ttk.Button(self.master,text="Files")
-		self.cmdbtn=ttk.Button(self.master,text="Commands")
+		self.varbtn=ttk.Button(self.master,text="Variables", command = self.showVariables)
+		self.filebtn=ttk.Button(self.master,text="Files", command = self.showFiles)
+		self.cmdbtn=ttk.Button(self.master,text="Commands", command = self.showCommands)
 
 		self.outputarea = Output(self.master)
 		self.varlist= Varlist(self.master)
@@ -161,18 +163,19 @@ class Pytext:
 		FindWindow(self.textarea)
 
 	def setvariables(self, vlist):
+		self.varlist.list.delete(0,'end')
 		for var in vlist:
 			self.varlist.list.insert(0, var)
 
 	def run(self):
-		global var,insert_data
+		global var,insert_data,commands
 		# selected_text_list = [self.varlist.list.get(i) for i in self.varlist.list.curselection()]
 
 		content = self.textarea.get("1.0","end")
 		with open('input.sh','w') as fh:
 			fh.writelines(content)
 
-		var,insert_data = get_vars("input.sh")
+		var,insert_data,commands = get_vars("input.sh")
 		vars_list=[]
 		var = sorted(var, reverse=True)
 		insert_data = sorted(insert_data,reverse=True)
@@ -199,12 +202,31 @@ class Pytext:
 
 
 	def start(self):
+		if current_show == "commands":
+			return
 		global output_data
 		selected_varlist = [i for i in self.varlist.list.curselection()]
 		selected_insert_data = [insert_data[-i-1] for i in selected_varlist]
 		inserter("input.sh",selected_insert_data)
 		output_data = execute(["./temp_input.sh"])
 		self.setoutput(output_data)
+
+	def showFiles(self):
+		global current_show
+		current_show = "files"
+		files = ["file1", "file3"]
+		self.setvariables(files)
+
+	def showCommands(self):
+		global current_show,commands
+		current_show = "commands"
+		self.setvariables(commands)
+
+	def showVariables(self):
+		global current_show
+		current_show = "variables"
+		files = ["v1", "v2"]
+		self.setvariables(files)
 	
 
 if __name__ == '__main__':

@@ -140,7 +140,7 @@ class fileBashListener(bashGrammarVisitor):
 
 	def visitFunction_call(self, ctx:bashGrammarParser.Function_callContext):
 		global var, parent
-		function = ctx.VAR()
+		function = ctx.VAR().getText()
 		line = ctx.start.line
 		var += [(parent, f"function {function} called", line)]
 		return self.visitChildren(ctx)

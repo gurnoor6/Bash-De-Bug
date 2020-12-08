@@ -1,10 +1,10 @@
 #!/bin/bash
 
 function hello_world(){
-	echo "this is our MAIN PROJECT!!!!";
+	echo "CS251 is the best!!!!";
 }
 
-function sample_func(){
+function function_1(){
 
 	for ((i=1; i<3; i++));
 	do
@@ -14,10 +14,10 @@ function sample_func(){
 	cd ~/Desktop/sem3
 }
 
-function hehe() { cd ~/Desktop/sem3; }
+function function_2() { cd ~/Desktop/sem3; }
 
 hello_world;
 
-sample_func "Input provided";
+function_1 "Input provided";
 
-hehe
+function_2

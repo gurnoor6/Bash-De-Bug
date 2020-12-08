@@ -11,7 +11,7 @@ from lineNos import LineNo
 from outputbox import Output, Varlist
 from inputbox import Startend
 from barcomps import Menubar, StatusBar
-
+from utils.distance import distance
 
 mainbgcol="#1B1B1C"
 
@@ -24,7 +24,11 @@ buttonhl="red"
 deepcolor="#2F2F2F"
 textbg="#101010"
 textfg="white"
-
+outputbg="#17171C"
+vartexthl="red"
+insert_data = []
+var = []
+output_data = ""
 
 class Pytext:
 
@@ -53,6 +57,12 @@ class Pytext:
 		self.scrolly = tk.Scrollbar(master, command=self.scroll, takefocus=0, bg=scrollbg, activebackground=scrollhl)
 		#self.scrollx = tk.Scrollbar(master, command=self.textarea.xview, orient='horizontal', bg=scrollbg, activebackground=scrollhl)
 		self.textarea.configure(yscrollcommand=self.scrolly.set)
+
+		self.label=tk.Label(self.master,text="Search:",bg="#1b1b1c",fg=textfg)
+		self.entry=tk.Entry(self.master,bg=outputbg,fg=textfg)
+		self.button=ttk.Button(self.master,text="Go")
+		self.startbtn=ttk.Button(self.master,text="Start")
+
 		self.outputarea = Output(self.master)
 		self.varlist= Varlist(self.master)
 		#self.linesnos.textline.configure(yscrollcommand=self.scrolly.set)
@@ -65,7 +75,14 @@ class Pytext:
 		self.bind_shortcuts()
 		self.runbutton.place(relx=0.5, rely=0.025)
 
-	
+		self.label.place(relx=0.73, rely=0.55, relwidth=0.05, relheight=0.05)
+		self.entry.place(relx=0.78, rely=0.55, relwidth=0.1, relheight=0.05)
+		self.button.place(relx=0.9, rely=0.55, relwidth=0.025, relheight=0.05)
+		self.startbtn.place(relx=0.81, rely=0.475, relwidth=0.05, relheight=0.05)
+
+		self.startbtn.config(command=self.start)
+		self.button.config(command=self.find)
+
 	def set_window_title(self, name="Untitled1"):
 		self.master.title(name + " - Pytext")
 	
@@ -140,9 +157,9 @@ class Pytext:
 			self.varlist.list.insert(0, var)
 
 	def run(self):
-		# pass
+		global var,insert_data
 		# selected_text_list = [self.varlist.list.get(i) for i in self.varlist.list.curselection()]
-		# print("items==== " , selected_text_list)
+
 		content = self.textarea.get("1.0","end")
 		with open('input.sh','w') as fh:
 			fh.writelines(content)
@@ -155,12 +172,31 @@ class Pytext:
 			vars_list.append(f"{i[0],i[1]}")
 		self.setvariables(vars_list)
 
-		# inserter("input.sh",insert_data)
-		
-		# s = execute(["./temp_input.sh"])
-		# self.setoutput(s)
-		# os.remove("./input.sh")
-		# os.remove("./temp_input.sh")
+	def find(self):
+		global output_data
+		search = self.entry.get()
+		if search=="":
+			self.setoutput(output_data)
+			return
+
+		match_data = output_data.decode("utf-8").split("\n")
+		new_data = []
+		for i in range(len(match_data)):
+			d = distance(match_data[i],search)
+			if d!=0:
+				new_data.append((match_data[i],d))
+		new_data = sorted(new_data, reverse=True, key = lambda x: x[1])
+		new_data = '\n'.join([i[0] for i in new_data])
+		self.setoutput(new_data)
+
+
+	def start(self):
+		global output_data
+		selected_varlist = [i for i in self.varlist.list.curselection()]
+		selected_insert_data = [insert_data[-i-1] for i in selected_varlist]
+		inserter("input.sh",selected_insert_data)
+		output_data = execute(["./temp_input.sh"])
+		self.setoutput(output_data)
 	
 
 if __name__ == '__main__':

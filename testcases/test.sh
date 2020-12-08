@@ -1,19 +1,19 @@
 # !bin/bash
-a="asd";
-# This is a comment
-# This too
+a="hello world";
 
-blah=$(ls);
+# Commenting for better reach
+
+var1=$(ls);
 
 wget -o --quiet https://www.google.com;
 
-cat file21 ewfjwf;
+cat file1 file2;
 
-echo blahhh;
+echo cs251_is_the_best;
 
 a="asd";
-b=a+i
-c=$bgbg d=df
+b=lorem+ipsum
+c=$b d=dog
 a=2;
 
 c=$a+$b;
@@ -29,4 +29,4 @@ done
 echo $b
 
 
-wget -o plau;
+wget -o https://www.plagcheck.net;

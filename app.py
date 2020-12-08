@@ -163,10 +163,16 @@ class Pytext:
 	def show_find_window(self, event=None):
 		FindWindow(self.textarea)
 
-	def setvariables(self, vlist):
+	def setvariables(self, vlist, called_functions=None, all_var=None):
 		self.varlist.list.delete(0,'end')
 		for var in vlist:
 			self.varlist.list.insert(0, var)
+
+		if called_functions!=None:
+			for var in all_var:
+				if var[0] in called_functions:
+					self.varlist.list.insert(0,var[1:])
+
 
 	def run(self):
 		global var,insert_data,commands, files 
@@ -177,12 +183,8 @@ class Pytext:
 			fh.writelines(content)
 
 		var,insert_data,commands,files = get_vars("input.sh")
-		vars_list=[]
-		var = sorted(var, reverse=True)
-		insert_data = sorted(insert_data,reverse=True)
-		for i in var:
-			vars_list.append(f"{i[0],i[1]}")
-		self.setvariables(vars_list)
+		self.showVariables()
+		
 
 	def find(self):
 		global output_data
@@ -206,8 +208,12 @@ class Pytext:
 		if current_show == "commands" or current_show=="files":
 			return
 		global output_data
-		selected_varlist = [i for i in self.varlist.list.curselection()]
-		selected_insert_data = [insert_data[-i-1] for i in selected_varlist]
+		selected_varlist = [self.varlist.list.get(i) for i in self.varlist.list.curselection()]
+		temp = [str(i.split(" ")[1]) for i in selected_varlist]
+		selected_insert_data = []
+		for item in  insert_data:
+			if str(item[0][0]) in temp:
+				selected_insert_data.append(item)
 		inserter("input.sh",selected_insert_data)
 		output_data = execute(["./temp_input.sh"])
 		self.setoutput(output_data)
@@ -225,7 +231,17 @@ class Pytext:
 	def showVariables(self):
 		global current_show, var
 		current_show = "variables"
-		self.setvariables(var)
+		vars_list=[]
+		var = sorted(var, reverse=True, key = lambda x: x[1])
+		called_functions = []
+		for i in var:
+			if i[0]=='main':
+				num = 20
+				vars_list.append(f"{i[1]} {i[2]}")
+			if i[1].split(" ")[0] == "function":
+				called_functions.append(i[1].split(" ")[1])
+		self.setvariables(vars_list,called_functions,var)
+
 	
 
 if __name__ == '__main__':

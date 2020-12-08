@@ -10,6 +10,8 @@ file = []
 commands = []
 files = []
 
+parent = "main"
+
 class fileBashListener(bashGrammarVisitor):
 
 	def __init__(self, filename):
@@ -37,9 +39,8 @@ class fileBashListener(bashGrammarVisitor):
 		variable = ctx.VAR(0).getText()
 		print("variable->", variable)
 		line = ctx.start.line
-		var += [(line, variable)]
+		var += [(parent, variable, line)]
 		insert_data += [((line, -1), f"echo \"At line no. {line}, {variable}=${variable}\"\n")]
-
 		return self.visitChildren(ctx)
 
 	def visitLinux_command(self, ctx:bashGrammarParser.Linux_commandContext):
@@ -62,7 +63,7 @@ class fileBashListener(bashGrammarVisitor):
 		global var, insert_data
 		variable = ctx.VAR(0).getText()
 		line = ctx.start.line
-		var += [(line, variable)]
+		var += [(parent, variable, line)]
 		insert_data += [((line, -1), f"echo \"At line no. {line}, {variable}=${variable}\"\n")]
 		return self.visitChildren(ctx)
 
@@ -86,8 +87,6 @@ class fileBashListener(bashGrammarVisitor):
 
 		return self.visitChildren(ctx)
 		
-
-
 	def visitIncrement(self, ctx:bashGrammarParser.IncrementContext):
 		global var, insert_data
 		line = ctx.start.line
@@ -95,10 +94,22 @@ class fileBashListener(bashGrammarVisitor):
 		insert_data += [((line, -1), f"echo \"At line no. {line}, {variable}=${variable}\"\n")]
 		return self.visitChildren(ctx)
 
+
+	def visitRedirect(self, ctx:bashGrammarParser.RedirectContext):
+		global files
+
+		for item in ctx.VAR():
+			files.append(f"line : {ctx.start.line} : {item.getText()}")
+
+		for item in ctx.FILENAME():
+			files.append(f"line : {ctx.start.line} : {item.getText()}")
+
+		return self.visitChildren(ctx)
+
 	def visitFunction_def(self, ctx:bashGrammarParser.Function_defContext):
-		global insert_data, file
+		global insert_data, file, parent
 		function_name = ctx.VAR().getText()
-		
+		parent = function_name
 		start = ctx.start.line
 		end = ctx.stop.line
 		line_s = start
@@ -118,22 +129,19 @@ class fileBashListener(bashGrammarVisitor):
 				break
 			line_e -= 1
 
+
 		insert_data += [((line_s, col_s), f"\necho \"Function {function_name} called with args $@\"; echo \"==========\";\n")]
 		insert_data += [((line_e, col_e), f"\necho \"==========\"; echo \"Function {function_name} ends\";\n")]
+		self.visitChildren(ctx)
+		parent = "main"
+		return
 
-		# print(line_s, col_s)
-		# print(line_e, col_e)
+ 
 
-		return self.visitChildren(ctx)
-
-	def visitRedirect(self, ctx:bashGrammarParser.RedirectContext):
-		global files
-
-		for item in ctx.VAR():
-			files.append(f"line : {ctx.start.line} : {item.getText()}")
-
-		for item in ctx.FILENAME():
-			files.append(f"line : {ctx.start.line} : {item.getText()}")
-
+	def visitFunction_call(self, ctx:bashGrammarParser.Function_callContext):
+		global var, parent
+		function = ctx.VAR()
+		line = ctx.start.line
+		var += [(parent, f"function {function} called", line)]
 		return self.visitChildren(ctx)
 

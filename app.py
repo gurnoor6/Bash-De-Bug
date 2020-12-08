@@ -69,6 +69,8 @@ class Pytext:
 		self.filebtn=ttk.Button(self.master,text="Files", command = self.showFiles)
 		self.cmdbtn=ttk.Button(self.master,text="Commands", command = self.showCommands)
 
+		self.errarea=tk.Text(self.master,bg=textbg,fg=vartexthl,insertbackground="white",undo=True,highlightthickness=0.5)
+
 		self.outputarea = Output(self.master)
 		self.varlist= Varlist(self.master)
 		#self.linesnos.textline.configure(yscrollcommand=self.scrolly.set)
@@ -80,6 +82,9 @@ class Pytext:
 		self.linesnos.place(relx=0, rely=0.1, relwidth=0.02, relheight=0.8)
 		self.bind_shortcuts()
 		self.runbutton.place(relx=0.5, rely=0.025)
+		
+		self.errarea.place(relx=0.03,rely=0.9,relwidth=0.5,relheight=0.05)
+		self.errarea.config(state='disabled')
 
 		self.label.place(relx=0.73, rely=0.55, relwidth=0.05, relheight=0.05)
 		self.entry.place(relx=0.78, rely=0.55, relwidth=0.1, relheight=0.05)

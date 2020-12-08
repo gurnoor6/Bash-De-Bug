@@ -98,7 +98,7 @@ CLOSE_BOX	: ']';
 
 // keeping a not ; inside the expression to differentiate it from the for loop one
 
-RHS_ASSIGNMENT		: ('${'.*?'}' | '$('[a-zA-Z0-9@!$^%*&+-.:/]+')');
+RHS_ASSIGNMENT		: ('${'.*?'}' | '$('[a-zA-Z0-9@!$^%*&+-.:/ ]+')' | '$(('[a-zA-Z0-9@!$^%*&+-.:/ ]+'))' );
 
 SINGLE_STRING		: '\'' ~('\'')+ '\'';
 

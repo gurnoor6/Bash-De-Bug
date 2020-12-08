@@ -136,11 +136,6 @@ public class bashGrammarParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitCode(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitCode(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final CodeContext code() throws RecognitionException {
@@ -245,11 +240,6 @@ public class bashGrammarParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitBashScript(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitBashScript(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -422,11 +412,6 @@ public class bashGrammarParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitExpressions(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitExpressions(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ExpressionsContext expressions() throws RecognitionException {
@@ -572,11 +557,6 @@ public class bashGrammarParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitLoops(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitLoops(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final LoopsContext loops() throws RecognitionException {
@@ -644,11 +624,6 @@ public class bashGrammarParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitWhile_loop(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitWhile_loop(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -772,11 +747,6 @@ public class bashGrammarParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitFor_loop(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitFor_loop(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -922,11 +892,6 @@ public class bashGrammarParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitInside_for(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitInside_for(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1143,11 +1108,6 @@ public class bashGrammarParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitIfElse(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitIfElse(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final IfElseContext ifElse() throws RecognitionException {
@@ -1340,11 +1300,6 @@ public class bashGrammarParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitFunction_def(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitFunction_def(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final Function_defContext function_def() throws RecognitionException {
@@ -1475,11 +1430,6 @@ public class bashGrammarParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitSed(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitSed(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1656,11 +1606,6 @@ public class bashGrammarParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitLinux_command(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitLinux_command(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1883,11 +1828,6 @@ public class bashGrammarParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitFunction_call(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitFunction_call(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final Function_callContext function_call() throws RecognitionException {
@@ -2008,11 +1948,6 @@ public class bashGrammarParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitConditions(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitConditions(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ConditionsContext conditions() throws RecognitionException {
@@ -2090,11 +2025,6 @@ public class bashGrammarParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitCondition1(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitCondition1(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2221,11 +2151,6 @@ public class bashGrammarParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitCondition1_base(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitCondition1_base(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2415,11 +2340,6 @@ public class bashGrammarParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitCondition2(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitCondition2(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2613,11 +2533,6 @@ public class bashGrammarParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitAssignment(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitAssignment(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final AssignmentContext assignment() throws RecognitionException {
@@ -2782,11 +2697,6 @@ public class bashGrammarParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitAdvanced_assignment(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitAdvanced_assignment(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3004,11 +2914,6 @@ public class bashGrammarParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitCommand_data(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitCommand_data(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final Command_dataContext command_data() throws RecognitionException {
@@ -3165,11 +3070,6 @@ public class bashGrammarParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitRedirect(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitRedirect(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final RedirectContext redirect() throws RecognitionException {
@@ -3293,11 +3193,6 @@ public class bashGrammarParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitComparison(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitComparison(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ComparisonContext comparison() throws RecognitionException {
@@ -3348,11 +3243,6 @@ public class bashGrammarParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitIncrement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitIncrement(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3455,11 +3345,6 @@ public class bashGrammarParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitTag(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitTag(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final TagContext tag() throws RecognitionException {
@@ -3507,11 +3392,6 @@ public class bashGrammarParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitOpen_bracket(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitOpen_bracket(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3561,11 +3441,6 @@ public class bashGrammarParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitClose_bracket(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitClose_bracket(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final Close_bracketContext close_bracket() throws RecognitionException {
@@ -3614,11 +3489,6 @@ public class bashGrammarParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitSpace(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitSpace(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3676,11 +3546,6 @@ public class bashGrammarParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof bashGrammarListener ) ((bashGrammarListener)listener).exitString(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof bashGrammarVisitor ) return ((bashGrammarVisitor<? extends T>)visitor).visitString(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 

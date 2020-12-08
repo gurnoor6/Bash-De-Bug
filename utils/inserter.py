@@ -26,6 +26,7 @@ def execute(cmd):
 	process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE,shell=True)
 	stdout, stderr = process.communicate()
 	print(stdout)
+	# print(stderr)
 	return stdout
 
 

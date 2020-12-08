@@ -16,7 +16,7 @@ class Menubar:
 		menubar1 = tk.Menu(parent.master, font=font_specs, background=menubarbg, fg=menubarfg, activeforeground=menutexthl, activebackground=menubarhl)
 		parent.master.config(menu=menubar1)
 		file_dd = tk.Menu(menubar1, font=font_specs, fg=menubarfg, bg=menubarbg, activeforeground=menutexthl, activebackground=menubarhl, tearoff=0)
-		file_dd.add_command(label="New File", command=parent.new_file, accelerator="ctrl + N")
+		#file_dd.add_command(label="New File", command=parent.new_file, accelerator="ctrl + N")
 		file_dd.add_command(label="Open File", command=parent.open_file, accelerator="ctrl + O")
 		file_dd.add_command(label="Save File", command=parent.save_file, accelerator="ctrl + S")
 		file_dd.add_command(label="Save As", command=parent.save_as, accelerator="ctrl + Shift + S")

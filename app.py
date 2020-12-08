@@ -9,7 +9,6 @@ from highlighter import Highlighter
 from text import TextArea 
 from lineNos import LineNo
 from outputbox import Output, Varlist
-#from inputbox import Startend
 from barcomps import Menubar, StatusBar
 from utils.distance import distance
 

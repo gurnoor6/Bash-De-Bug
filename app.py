@@ -9,7 +9,7 @@ from highlighter import Highlighter
 from text import TextArea 
 from lineNos import LineNo
 from outputbox import Output, Varlist
-from inputbox import Startend
+#from inputbox import Startend
 from barcomps import Menubar, StatusBar
 from utils.distance import distance
 
@@ -53,7 +53,7 @@ class Pytext:
 		self.statbar = StatusBar(self)
 
 		self.linesnos = LineNo(self.master)
-		self.startend = Startend(self)
+		#self.startend = Startend(self)
 		#self.textarea = tk.Text()
 		self.textarea = TextArea(self.master, bg=textbg, fg=textfg, insertbackground="white", undo=True)
 		self.highlighter = Highlighter(self.textarea, 'languages/bash.yaml')

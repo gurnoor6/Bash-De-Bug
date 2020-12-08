@@ -5,7 +5,7 @@ from .main import get_vars
 
 def inserter(filename,data):
 
-	print(len(data))
+	# print(len(data))
 	data = sorted(data, key = lambda tup: (tup[0][0], tup[0][1]), reverse= True)
 	with open(filename) as fh:
 		content = fh.readlines()
@@ -25,7 +25,7 @@ def inserter(filename,data):
 def execute(cmd):
 	process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE,shell=True)
 	stdout, stderr = process.communicate()
-	print(stdout)
+	# print(stdout)
 	# print(stderr)
 	return stdout
 

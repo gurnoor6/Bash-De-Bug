@@ -170,7 +170,7 @@ class Pytext:
 		if called_functions!=None:
 			for var in all_var:
 				if var[0] in called_functions:
-					self.varlist.list.insert(0,var[1:])
+					self.varlist.list.insert(0,f"{var[1]} {var[2]}")
 
 
 	def run(self):
@@ -210,11 +210,9 @@ class Pytext:
 		selected_varlist = [self.varlist.list.get(i) for i in self.varlist.list.curselection()]
 
 		temp = []
+		print(selected_varlist)
 		for item in selected_varlist:
-			if type(item) == str:
-				continue
-			else:
-				temp.append(str(item[1]))
+			temp.append(item.split(" ")[1])
 
 		selected_insert_data = []
 		for item in  insert_data:

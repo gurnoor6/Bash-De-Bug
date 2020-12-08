@@ -203,7 +203,7 @@ class Pytext:
 
 
 	def start(self):
-		if current_show == "commands":
+		if current_show == "commands" or current_show=="files":
 			return
 		global output_data
 		selected_varlist = [i for i in self.varlist.list.curselection()]

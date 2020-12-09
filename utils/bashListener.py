@@ -12,8 +12,18 @@ files = []
 
 parent = "main"
 
+
+## May we explain this class
+##
+## chalo
 class fileBashListener(bashGrammarVisitor):
 
+	## Constructor
+	##
+	## Ise bhi karo describe
+	## @param filename just the filename of the file to be parsed
+	## @returns nothing
+	## @warning beware
 	def __init__(self, filename):
 		global file
 		with open(filename) as f:

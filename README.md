@@ -1,3 +1,5 @@
+@mainpage
+
 # Bash-De-Bug
 Course Project of CS251, Autumn 2020.
 
@@ -22,7 +24,8 @@ Initially, we planned to just do a string search for the file, detect `=` signs 
 
 This is an example of how the IDE region should look (in Dark Mode!!)
 
-<img src="screenshots/gui-dark.png" height=500><br>
+![](screenshots/gui-dark.png)
+
 ### Parsing
 * The first thing we looked for parsing was a library named [bashlex](https://github.com/idank/bashlex). But this had a lot of issues and did not turn out well.
 * So we resorted to making a custom parser and lexer using [ANTLR4](https://github.com/antlr/antlr4).
@@ -65,7 +68,9 @@ For the following input,
         echo "Better luck next time"
     fi
 
-the abstract syntax tree that we get is <br> <img src="testcases/test4.png" height=300 width=1000> <br>
+the abstract syntax tree that we get is <br>
+
+![](testcases/test4.png)
 and the corresponding tokens generated are <br>
 
     [@0,10:10='\r',<SPACE>,1:10]
@@ -102,4 +107,5 @@ and the corresponding tokens generated are <br>
     
  
 The GUI generated using Tkinter, giving an idea of what we hope to accomplish<br>
-<img src="screenshots/gui.png" height=500 width=1000><br>
+<!-- <img src="screenshots/gui.png" height=500 width=1000><br> -->
+![](screenshots/gui.png)

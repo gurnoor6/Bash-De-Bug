@@ -1,11 +1,14 @@
 var searchData=
 [
-  ['open_5fbox_787',['OPEN_BOX',['../classparser_1_1bash_grammar_lexer_1_1bash_grammar_lexer.html#a081b85226ecd096a00248c63325c3a0e',1,'parser.bashGrammarLexer.bashGrammarLexer.OPEN_BOX()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#aac40c130899850e9b60a8459bca771ed',1,'parser.bashGrammarParser.bashGrammarParser.OPEN_BOX()']]],
-  ['open_5fcur_788',['OPEN_CUR',['../classparser_1_1bash_grammar_lexer_1_1bash_grammar_lexer.html#a822f4d007bc91726778b52bfba7c661b',1,'parser.bashGrammarLexer.bashGrammarLexer.OPEN_CUR()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#aa3a53ffbd6dc51493c47b777e7dc1965',1,'parser.bashGrammarParser.bashGrammarParser.OPEN_CUR()']]],
-  ['open_5fpar_789',['OPEN_PAR',['../classparser_1_1bash_grammar_lexer_1_1bash_grammar_lexer.html#a60b7c3a7c6d71cde948aeebbe069a9b4',1,'parser.bashGrammarLexer.bashGrammarLexer.OPEN_PAR()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#a868209d3aba1a8d15679f7ea807f6569',1,'parser.bashGrammarParser.bashGrammarParser.OPEN_PAR()']]],
-  ['other_790',['OTHER',['../classparser_1_1bash_grammar_lexer_1_1bash_grammar_lexer.html#aea7d130b0e712d6c66e7f3835f24b8ec',1,'parser.bashGrammarLexer.bashGrammarLexer.OTHER()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#af6ea7a3134576ac70f456e92946c7b8b',1,'parser.bashGrammarParser.bashGrammarParser.OTHER()']]],
-  ['output_5fdata_791',['output_data',['../namespaceapp.html#adb3b6528ee03100f739cb2b4edfe7842',1,'app']]],
-  ['outputarea_792',['outputarea',['../classapp_1_1_pytext.html#a21262e9d0362027be80a960d1da328ef',1,'app.Pytext.outputarea()'],['../classoutputbox_1_1_output.html#ae8461b7ac3c2948f167b5a08b1c80ea5',1,'outputbox.Output.outputarea()']]],
-  ['outputbg_793',['outputbg',['../namespaceapp.html#a907a14a68964487de9c51cfcf71c7f7e',1,'app.outputbg()'],['../namespaceoutputbox.html#acad100a6804cb7f64a976e44b6d1a5af',1,'outputbox.outputbg()']]],
-  ['outputfg_794',['outputfg',['../namespaceoutputbox.html#a848a1a773d288fcdee06a1cee547ee00',1,'outputbox']]]
+  ['s1_295',['s1',['../namespacedistance.html#aab287736d612a57701ee9063532411f5',1,'distance']]],
+  ['s2_296',['s2',['../namespacedistance.html#a5902095f941afe880daf19f2e4f3b735',1,'distance']]],
+  ['scrollbg_297',['scrollbg',['../namespaceapp.html#a454a13b6e7dabf586ce742534225dd0b',1,'app']]],
+  ['scrollhl_298',['scrollhl',['../namespaceapp.html#abe844a357cec3a2062841a3eeba1c2f1',1,'app']]],
+  ['scrolly_299',['scrolly',['../classapp_1_1_pytext.html#aa7f6385614746d4055b9fa36c948c8c5',1,'app::Pytext']]],
+  ['startbtn_300',['startbtn',['../classapp_1_1_pytext.html#ae0f0bd1884d2cc75077a88474f93953e',1,'app::Pytext']]],
+  ['statbar_301',['statbar',['../classapp_1_1_pytext.html#a95d4fcca4834640197f50d062ddb482a',1,'app::Pytext']]],
+  ['statusbarbg_302',['statusbarbg',['../namespacebarcomps.html#ac5c618bc62bc6a9ac5dbe96119b1260e',1,'barcomps']]],
+  ['statusbarfg_303',['statusbarfg',['../namespacebarcomps.html#afdd0757f39f12ad553195f9efa480087',1,'barcomps']]],
+  ['strings_5fcolor_304',['strings_color',['../classhighlighter_1_1_highlighter.html#a3db0bd3e9057fc3afb065fb1bebbea7b',1,'highlighter::Highlighter']]],
+  ['syntax_5ffile_305',['syntax_file',['../classhighlighter_1_1_highlighter.html#ac0c9783a0ff71d46a40485eeaeccd6e3',1,'highlighter::Highlighter']]]
 ];

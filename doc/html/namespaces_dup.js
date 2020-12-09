@@ -22,6 +22,5 @@ var namespaces_dup =
       [ "main", "namespacemain.html#af3f5f1d2e9b06bf119f500dced42f536", null ]
     ] ],
     [ "outputbox", "namespaceoutputbox.html", "namespaceoutputbox" ],
-    [ "parser", "namespaceparser.html", "namespaceparser" ],
     [ "text", "namespacetext.html", "namespacetext" ]
 ];

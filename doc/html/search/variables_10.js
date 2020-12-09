@@ -1,22 +1,4 @@
 var searchData=
 [
-  ['s1_833',['s1',['../namespacedistance.html#aab287736d612a57701ee9063532411f5',1,'distance']]],
-  ['s2_834',['s2',['../namespacedistance.html#a5902095f941afe880daf19f2e4f3b735',1,'distance']]],
-  ['scrollbg_835',['scrollbg',['../namespaceapp.html#a454a13b6e7dabf586ce742534225dd0b',1,'app']]],
-  ['scrollhl_836',['scrollhl',['../namespaceapp.html#abe844a357cec3a2062841a3eeba1c2f1',1,'app']]],
-  ['scrolly_837',['scrolly',['../classapp_1_1_pytext.html#aa7f6385614746d4055b9fa36c948c8c5',1,'app::Pytext']]],
-  ['sed_838',['SED',['../classparser_1_1bash_grammar_lexer_1_1bash_grammar_lexer.html#af583264f47d5c8608cc995ee3d124bf8',1,'parser.bashGrammarLexer.bashGrammarLexer.SED()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#a72c8811ab3d80468eb1af6c95c405b47',1,'parser.bashGrammarParser.bashGrammarParser.SED()']]],
-  ['semicolon_839',['SEMICOLON',['../classparser_1_1bash_grammar_lexer_1_1bash_grammar_lexer.html#a42fd5448334e8fb350b4f992f23b8718',1,'parser.bashGrammarLexer.bashGrammarLexer.SEMICOLON()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#a1427dd72e7c8ebea8ca65517da0f8cec',1,'parser.bashGrammarParser.bashGrammarParser.SEMICOLON()']]],
-  ['sharedcontextcache_840',['sharedContextCache',['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#a5326e2c5953801561db72f7e14fa5060',1,'parser::bashGrammarParser::bashGrammarParser']]],
-  ['single_5fstring_841',['SINGLE_STRING',['../classparser_1_1bash_grammar_lexer_1_1bash_grammar_lexer.html#a471b81a1187c4ea068c6d099bc5768b4',1,'parser.bashGrammarLexer.bashGrammarLexer.SINGLE_STRING()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#ac59026f74e3962f41af7b9563c49cf96',1,'parser.bashGrammarParser.bashGrammarParser.SINGLE_STRING()']]],
-  ['single_5ftag_842',['SINGLE_TAG',['../classparser_1_1bash_grammar_lexer_1_1bash_grammar_lexer.html#af18f9c940c161473a5d5c5a0ba7d1bec',1,'parser.bashGrammarLexer.bashGrammarLexer.SINGLE_TAG()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#acb0e14137f8bcea8c5a2b1c6be947f68',1,'parser.bashGrammarParser.bashGrammarParser.SINGLE_TAG()']]],
-  ['space_843',['SPACE',['../classparser_1_1bash_grammar_lexer_1_1bash_grammar_lexer.html#a51684958924d3bb96e3afbfbde8e802d',1,'parser.bashGrammarLexer.bashGrammarLexer.SPACE()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#ab9553d37cb86326bf8162cda671d1f42',1,'parser.bashGrammarParser.bashGrammarParser.SPACE()']]],
-  ['startbtn_844',['startbtn',['../classapp_1_1_pytext.html#ae0f0bd1884d2cc75077a88474f93953e',1,'app::Pytext']]],
-  ['statbar_845',['statbar',['../classapp_1_1_pytext.html#a95d4fcca4834640197f50d062ddb482a',1,'app::Pytext']]],
-  ['state_846',['state',['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#a4556bd53ecd64e94120f0591bd446f7a',1,'parser::bashGrammarParser::bashGrammarParser']]],
-  ['statusbarbg_847',['statusbarbg',['../namespacebarcomps.html#ac5c618bc62bc6a9ac5dbe96119b1260e',1,'barcomps']]],
-  ['statusbarfg_848',['statusbarfg',['../namespacebarcomps.html#afdd0757f39f12ad553195f9efa480087',1,'barcomps']]],
-  ['strings_5fcolor_849',['strings_color',['../classhighlighter_1_1_highlighter.html#a3db0bd3e9057fc3afb065fb1bebbea7b',1,'highlighter::Highlighter']]],
-  ['symbolicnames_850',['symbolicNames',['../classparser_1_1bash_grammar_lexer_1_1bash_grammar_lexer.html#a504d4e76cd542c07f70320e2209bfb9f',1,'parser.bashGrammarLexer.bashGrammarLexer.symbolicNames()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#aad49ca3b5bb4e61340ad66de9c965039',1,'parser.bashGrammarParser.bashGrammarParser.symbolicNames()']]],
-  ['syntax_5ffile_851',['syntax_file',['../classhighlighter_1_1_highlighter.html#ac0c9783a0ff71d46a40485eeaeccd6e3',1,'highlighter::Highlighter']]]
+  ['w_321',['w',['../namespacehighlighter.html#a2fcec1aaa7de43f642c70f0c43549fd7',1,'highlighter']]]
 ];

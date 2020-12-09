@@ -1,9 +1,16 @@
 var searchData=
 [
-  ['redirect_642',['redirect',['../classbash_grammar_parser.html#a41771e93c3ccfa998b6458b87650df6a',1,'bashGrammarParser.redirect()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser_1_1_sed_context.html#a51d88d0b9286ea7fd983790fc1116180',1,'parser.bashGrammarParser.bashGrammarParser.SedContext.redirect()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser_1_1_linux__command_context.html#a5c56158708700a4efd7c1d3bec137cab',1,'parser.bashGrammarParser.bashGrammarParser.Linux_commandContext.redirect()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#aa7ad730ee5b727c19030e078cf22a43e',1,'parser.bashGrammarParser.bashGrammarParser.redirect()']]],
-  ['redo_643',['redo',['../classtext_1_1_text_area.html#ac518edc8cae28864e2d826f430ab3623',1,'text::TextArea']]],
-  ['redraw_644',['redraw',['../classline_nos_1_1_line_no.html#a6d8fb004c4cb16e41e6a400782fbd210',1,'lineNos::LineNo']]],
-  ['replace_5ftext_645',['replace_text',['../classtext_1_1_text_area.html#a8b0285a86c85cec18381580253fbd994',1,'text::TextArea']]],
-  ['rhs_5fassignment_646',['RHS_ASSIGNMENT',['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser_1_1_condition1__base_context.html#a5ea8d1f815efbd820b777c38762b6eb9',1,'parser.bashGrammarParser.bashGrammarParser.Condition1_baseContext.RHS_ASSIGNMENT()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser_1_1_assignment_context.html#aec2f68f3acb617611a1927bd47ad4603',1,'parser.bashGrammarParser.bashGrammarParser.AssignmentContext.RHS_ASSIGNMENT()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser_1_1_advanced__assignment_context.html#a2a3f6824cd99f30e105f71e9624f274b',1,'parser.bashGrammarParser.bashGrammarParser.Advanced_assignmentContext.RHS_ASSIGNMENT()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser_1_1_command__data_context.html#ac71fb84aebddd013274315492baf408f',1,'parser.bashGrammarParser.bashGrammarParser.Command_dataContext.RHS_ASSIGNMENT()']]],
-  ['run_647',['run',['../classapp_1_1_pytext.html#a3d303f86fde6dda78ee03805a6cbc627',1,'app::Pytext']]]
+  ['save_5fas_221',['save_as',['../classapp_1_1_pytext.html#a81ef46e39cbc23a8fd526259b3a1fd52',1,'app::Pytext']]],
+  ['save_5ffile_222',['save_file',['../classapp_1_1_pytext.html#a1fb41436d4c63d170661928ae41b6b43',1,'app::Pytext']]],
+  ['scroll_223',['scroll',['../classapp_1_1_pytext.html#a1c4921ac58790a5f58088533428570c9',1,'app::Pytext']]],
+  ['select_5fall_224',['select_all',['../classtext_1_1_text_area.html#a1900161a910ec2e92059467645eea9cc',1,'text::TextArea']]],
+  ['set_5fwindow_5ftitle_225',['set_window_title',['../classapp_1_1_pytext.html#a67d189098538e5895de157948f8db026',1,'app::Pytext']]],
+  ['seterror_226',['seterror',['../classapp_1_1_pytext.html#a17d9d9e50ae106070d31fc983083282e',1,'app::Pytext']]],
+  ['setoutput_227',['setoutput',['../classapp_1_1_pytext.html#a6f10fd3f309352c961c9f722b47fe1c0',1,'app::Pytext']]],
+  ['setvariables_228',['setvariables',['../classapp_1_1_pytext.html#a2f18db6b5353078fc73aed1edc9ed23c',1,'app::Pytext']]],
+  ['show_5ffind_5fwindow_229',['show_find_window',['../classapp_1_1_pytext.html#a3f3b278b04926835e00f1caacad6b561',1,'app::Pytext']]],
+  ['showcommands_230',['showCommands',['../classapp_1_1_pytext.html#ae75f9021ee9fe6f1b712eda39a4a13a7',1,'app::Pytext']]],
+  ['showfiles_231',['showFiles',['../classapp_1_1_pytext.html#a85b60af0cc3f504e88d4ab8ae5d0ca1b',1,'app::Pytext']]],
+  ['showvariables_232',['showVariables',['../classapp_1_1_pytext.html#a273314df83a710c3bb7282102f78ff49',1,'app::Pytext']]],
+  ['start_233',['start',['../classapp_1_1_pytext.html#a431518e412213ba6065ea6bc946fedb0',1,'app::Pytext']]]
 ];

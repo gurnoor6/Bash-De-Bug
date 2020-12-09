@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['distance_459',['distance',['../namespacedistance.html',1,'']]]
+  ['distance_170',['distance',['../namespacedistance.html',1,'']]]
 ];

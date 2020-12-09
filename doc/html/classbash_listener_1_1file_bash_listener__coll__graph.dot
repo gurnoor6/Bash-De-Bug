@@ -5,7 +5,5 @@ digraph "bashListener.fileBashListener"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="bashListener.fileBashListener",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="May we explain this class."];
   Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="parser.bashGrammarVisitor.bash\lGrammarVisitor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classparser_1_1bash_grammar_visitor_1_1bash_grammar_visitor.html",tooltip=" "];
-  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="ParseTreeVisitor",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 [label="bashGrammarVisitor",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
 }

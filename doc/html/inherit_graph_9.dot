@@ -4,7 +4,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node14 [label="Canvas",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
-  Node14 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node0 [label="lineNos.LineNo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classline_nos_1_1_line_no.html",tooltip=" "];
+  Node4 [label="Text",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="text.TextArea",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtext_1_1_text_area.html",tooltip="TextArea class The main text area where the user can write the code which needs to be debugged."];
 }

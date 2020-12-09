@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_627',['main',['../namespacemain.html#af3f5f1d2e9b06bf119f500dced42f536',1,'main']]]
+  ['new_5ffile_209',['new_file',['../classapp_1_1_pytext.html#a9a796cc4a1a9e540d72f30d42aa15d66',1,'app::Pytext']]]
 ];

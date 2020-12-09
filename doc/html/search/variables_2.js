@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['background_712',['background',['../namespaceapp.html#a7def1a058f714ef9e2077a526acbb04c',1,'app']]],
-  ['bash_5fvar_713',['BASH_VAR',['../classparser_1_1bash_grammar_lexer_1_1bash_grammar_lexer.html#a1994b0ff82e1544cda6942d9d39cfa1e',1,'parser.bashGrammarLexer.bashGrammarLexer.BASH_VAR()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#af109d3afc117b95e86219d64a1a2a648',1,'parser.bashGrammarParser.bashGrammarParser.BASH_VAR()']]],
-  ['bgcolor_714',['bgcolor',['../namespacefindwindow.html#a12e04f4890f1c5bc861029a6db0313b3',1,'findwindow']]],
-  ['blob_715',['BLOB',['../classparser_1_1bash_grammar_lexer_1_1bash_grammar_lexer.html#a045810fe28a91183353ce40404db667f',1,'parser.bashGrammarLexer.bashGrammarLexer.BLOB()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#a25da6095abd9e23d80cf9ccabd34af0b',1,'parser.bashGrammarParser.bashGrammarParser.BLOB()']]],
-  ['break_716',['BREAK',['../classparser_1_1bash_grammar_lexer_1_1bash_grammar_lexer.html#ab9b772a58bbbaf55e1725b79e6ac7c17',1,'parser.bashGrammarLexer.bashGrammarLexer.BREAK()'],['../classparser_1_1bash_grammar_parser_1_1bash_grammar_parser.html#a5e72e6d288c6eeafe3e03fafac4d7b53',1,'parser.bashGrammarParser.bashGrammarParser.BREAK()']]],
-  ['button_717',['button',['../classapp_1_1_pytext.html#ac7bdd1dd3dea629a60ab24c44618afc8',1,'app::Pytext']]],
-  ['buttonbg_718',['buttonbg',['../namespaceapp.html#aba5e7a896c38b42ca66b259ea834682b',1,'app']]],
-  ['buttonfg_719',['buttonfg',['../namespaceapp.html#a40d0184aa9f8ce3d5f67d2eb6f8e3ba7',1,'app']]],
-  ['buttonhl_720',['buttonhl',['../namespaceapp.html#ae3b71d738efe5af8df422a28eeb308f5',1,'app']]]
+  ['data_256',['data',['../namespaceinserter.html#a8cdf98c38d5191a6cf0a3dc22faaf447',1,'inserter']]],
+  ['deepcolor_257',['deepcolor',['../namespaceapp.html#acde0d7e344a42840694f93a45ffee4ca',1,'app.deepcolor()'],['../namespacefindwindow.html#aeab90ec80a0724825a1dfd310dda1002',1,'findwindow.deepcolor()']]],
+  ['disallowed_5fprevious_5fchars_258',['disallowed_previous_chars',['../classhighlighter_1_1_highlighter.html#a0d7b69abde49ef69d5fb9352654199ce',1,'highlighter::Highlighter']]]
 ];

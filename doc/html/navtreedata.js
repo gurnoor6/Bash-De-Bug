@@ -35,13 +35,7 @@ var NAVTREE =
       [ "Phase 2 plans", "index.html#autotoc_md6", null ],
       [ "Example", "index.html#autotoc_md7", null ]
     ] ],
-    [ "Features", "md_utils_features.html", [
-      [ "Detect all the variables and list it to the user.", "md_utils_features.html#autotoc_md9", null ],
-      [ "Breakpoints", "md_utils_features.html#autotoc_md10", null ],
-      [ "GUI", "md_utils_features.html#autotoc_md11", null ]
-    ] ],
     [ "Resources", "md_utils_resources.html", null ],
-    [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -55,9 +49,9 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", "functions_vars" ]
+        [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -68,11 +62,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"____init_____8py.html",
-"classfindwindow_1_1_find_window.html#af3bd281b40c5d6d762819b531e37f88a",
-"classparser_1_1bash_grammar_parser_1_1bash_grammar_parser_1_1_condition2_context.html#ac118a173d9a4956f32f75be39c49e08b",
-"classparser_1_1bash_grammar_visitor_1_1bash_grammar_visitor.html#ae9ddf255605da1831802a03d1519936b",
-"namespacefindwindow.html#aeab90ec80a0724825a1dfd310dda1002"
+"annotated.html",
+"namespaceoutputbox.html#a8d3298b3d3654a30a4d46e73d945b507"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

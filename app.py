@@ -12,6 +12,8 @@ from outputbox import Output, Varlist
 from barcomps import Menubar, StatusBar
 from utils.distance import distance
 
+#Initialization of required variables
+
 mainbgcol="#1B1B1C"
 
 scrollhl="#2F2F2F"
@@ -32,7 +34,16 @@ files = []
 output_data = ""
 current_show = ""
 
+## The main class which holds all the Tkinter widgets
+#
+# Contains a menubar, statusbar, textarea, variable list and output area which help the user to interact easily with the debugger
+
 class Pytext:
+
+	## Constructor for the class
+	#
+	# Instantiates and places all other components inside the GUI window
+	# @param master The root Tkinter component (tk.Tk()) to which the object is parented
 
 	def __init__(self, master):
 		master.title("Untitled1 - Pytext")
@@ -47,17 +58,13 @@ class Pytext:
 		style.map('TButton', background=[('active',deepcolor)])
 		self.runbutton = ttk.Button(self.master, command=self.run, text="Run!")
 		self.flname = None
-		# self.linebuttons=[]
 		self.menubar = Menubar(self)
 		self.statbar = StatusBar(self)
 
 		self.linesnos = LineNo(self.master)
-		#self.startend = Startend(self)
-		#self.textarea = tk.Text()
 		self.textarea = TextArea(self.master, bg=textbg, fg=textfg, insertbackground="white", undo=True)
 		self.highlighter = Highlighter(self.textarea, 'languages/bash.yaml')
 		self.scrolly = tk.Scrollbar(master, command=self.scroll, takefocus=0, bg=scrollbg, activebackground=scrollhl)
-		#self.scrollx = tk.Scrollbar(master, command=self.textarea.xview, orient='horizontal', bg=scrollbg, activebackground=scrollhl)
 		self.textarea.configure(yscrollcommand=self.scrolly.set)
 
 		self.label=tk.Label(self.master,text="Search:",bg="#1b1b1c",fg=textfg)
@@ -73,11 +80,9 @@ class Pytext:
 
 		self.outputarea = Output(self.master)
 		self.varlist= Varlist(self.master)
-		#self.linesnos.textline.configure(yscrollcommand=self.scrolly.set)
-		#self.textarea.configure(xscrollcommand=self.scrollx.set)	
+
 		self.textarea.place(relx=0.03, rely= 0.1, relwidth=0.65, relheight=0.8)
 		self.scrolly.place(relx=0.68, rely= 0.1, relwidth=0.01, relheight=0.8)
-		#self.scrollx.place(relx=0.03, rely=0.9, relwidth=0.65, relheight=0.02)
 		self.linesnos.attach(self.textarea)
 		self.linesnos.place(relx=0, rely=0.1, relwidth=0.02, relheight=0.8)
 		self.bind_shortcuts()
@@ -98,6 +103,7 @@ class Pytext:
 		self.startbtn.config(command=self.start)
 		self.button.config(command=self.find)
 
+
 	def set_window_title(self, name="Untitled1"):
 		self.master.title(name + " - Pytext")
 	
@@ -106,9 +112,14 @@ class Pytext:
 		Pytext(master)
 		master.mainloop()
 
+	## Required for insync scrolling of text and line numbers
+ 
 	def scroll(self, *args):
 		self.textarea.yview(*args)
 		self.linesnos.redraw()
+
+	## Open a file from computer
+
 	def open_file(self, *args):
 		self.flname = filedialog.askopenfilename(defaultextension=".txt", filetypes=[("All files", "*.*")])
 		if self.flname:
@@ -117,7 +128,9 @@ class Pytext:
 				self.textarea.insert(1.0, f.read())
 			self.set_window_title(self.flname)
 			self.statbar.updatestat(True)
-			
+	
+	## Save the changes made
+
 	def save_file(self, *args):
 		if self.flname:
 			with open(self.flname, "w") as f:
@@ -126,7 +139,7 @@ class Pytext:
 		else:
 			self.save_as()
 		
-	
+	## Save the file as another file	
 
 	def save_as(self, *args):
 		try:
@@ -141,7 +154,9 @@ class Pytext:
 			print(e)
 
 
-	
+	## Handles all the keybinds
+
+	# Binds various shortcuts like save, save as and open. It also binds scrolling and key-releases to ensure insync rendering of line numbers, text area and status bar
 	def bind_shortcuts(self):
 		self.textarea.bind('<Control-n>', self.new_file)
 		self.textarea.bind('<Control-o>', self.open_file)
@@ -153,10 +168,17 @@ class Pytext:
 		self.textarea.bind('<ButtonRelease-5>', self.linesnos.redraw)
 		self.textarea.bind('<Control-f>', self.show_find_window)
 
+	## Defines the actions to be performed when any key is released after being pressed
+
+	# Redraws the line numbers as well as highlights the keywords 
 
 	def key_release(self, *args):
 		self.linesnos.redraw()
 		self.highlighter.highlight()
+
+	## Displays text in the output area
+
+	# @params output Text to be shown in the output area
 
 	def setoutput(self, output):
 		self.outputarea.outputarea.config(state='normal')
@@ -164,14 +186,23 @@ class Pytext:
 		self.outputarea.outputarea.insert(1.0, output)
 		self.outputarea.outputarea.config(state='disabled')
 
+	## @sambit wtf is this?
+
+
 	def seterror(self, output):
 		self.errarea.config(state='normal')
 		self.errarea.delete(1.0, tk.END)
 		self.errarea.insert(1.0, output)
 		self.errarea.config(state='disabled')
+
+	## Instantiates the find and replace window
 		
 	def show_find_window(self, event=None):
 		FindWindow(self.textarea)
+
+	## Displays the variables in the variable Listbox
+
+	# @params vlist Python list to be displayed in the Listbox
 
 	def setvariables(self, vlist, called_functions=None, all_var=None):
 		self.varlist.list.delete(0,'end')
@@ -183,10 +214,10 @@ class Pytext:
 				if var[0] in called_functions:
 					self.varlist.list.insert(0,f"{var[1]} {var[2]}")
 
+	## @sambot kya krta h ye bc?
 
 	def run(self):
 		global var,insert_data,commands, files 
-		# selected_text_list = [self.varlist.list.get(i) for i in self.varlist.list.curselection()]
 
 		content = self.textarea.get("1.0","end")
 		with open('input.sh','w') as fh:
@@ -199,7 +230,8 @@ class Pytext:
 			self.seterror(error)
 			return
 		self.showVariables()
-		
+	
+	## @sambot ye kab aaya bc??	
 
 	def find(self):
 		global output_data
@@ -219,6 +251,8 @@ class Pytext:
 		self.setoutput(new_data)
 
 
+	## No fucking clue @sambot
+
 	def start(self):
 		if current_show == "commands" or current_show=="files":
 			return
@@ -226,7 +260,6 @@ class Pytext:
 		selected_varlist = [self.varlist.list.get(i) for i in self.varlist.list.curselection()]
 
 		temp = []
-		# print(selected_varlist)
 		for item in selected_varlist:
 			temp.append(item.split(" ")[1])
 
@@ -262,7 +295,7 @@ class Pytext:
 				called_functions.append(i[1].split(" ")[1])
 		self.setvariables(vars_list,called_functions,var)
 
-	
+## Initializes the tkinter mainloop	
 
 if __name__ == '__main__':
 	master = tk.Tk()

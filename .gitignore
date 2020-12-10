@@ -1,0 +1,6 @@
+temporary/
+input.sh
+temp_input.sh
+generate.sh
+parser/__pycache__/
+__pycache__/

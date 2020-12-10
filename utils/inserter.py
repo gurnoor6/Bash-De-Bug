@@ -5,8 +5,9 @@ from .main import get_vars
 
 ## Inserting echos
 ## Inserts echos (in a secondary temporaroy file) corresponding to assignments, function calls and function definitions
-## @params filename Name/location of original file that was parsed
-## @params data Insert data that was generated from bashListener.py on passed onto this in *main* 
+##
+## @param filename Name/location of original file that was parsed
+## @param data Insert data that was generated from bashListener.py on passed onto this in *main* 
 def inserter(filename,data):
 
 	# print(len(data))

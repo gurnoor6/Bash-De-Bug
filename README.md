@@ -1,4 +1,5 @@
 @mainpage
+<br>
 Documentation available [here](https://gurnoor6.github.io/bash-de-bug-documentation/).
 
 # Bash-De-Bug

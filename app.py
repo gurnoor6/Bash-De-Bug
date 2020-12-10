@@ -107,6 +107,7 @@ class Pytext:
 	def set_window_title(self, name="Untitled1"):
 		self.master.title(name + " - Pytext")
 	
+	
 	def new_file(self, *args):
 		master = tk.Tk()
 		Pytext(master)
@@ -118,7 +119,7 @@ class Pytext:
 		self.textarea.yview(*args)
 		self.linesnos.redraw()
 
-	## Open a file from computer
+	## Opens a file from computer 
 
 	def open_file(self, *args):
 		self.flname = filedialog.askopenfilename(defaultextension=".txt", filetypes=[("All files", "*.*")])
@@ -129,7 +130,7 @@ class Pytext:
 			self.set_window_title(self.flname)
 			self.statbar.updatestat(True)
 	
-	## Save the changes made
+	## Saves the changes made to the file
 
 	def save_file(self, *args):
 		if self.flname:
@@ -170,7 +171,7 @@ class Pytext:
 
 	## Defines the actions to be performed when any key is released after being pressed
 
-	# Redraws the line numbers as well as highlights the keywords 
+	# Redraws the line numbers as well as highlights the keywords on each key release
 
 	def key_release(self, *args):
 		self.linesnos.redraw()
@@ -186,8 +187,9 @@ class Pytext:
 		self.outputarea.outputarea.insert(1.0, output)
 		self.outputarea.outputarea.config(state='disabled')
 
-	## @sambit wtf is this?
-
+	## Displays error message when encountered with one in the error area
+	#
+	# @param output Text to be shown in the error area
 
 	def seterror(self, output):
 		self.errarea.config(state='normal')
@@ -195,7 +197,7 @@ class Pytext:
 		self.errarea.insert(1.0, output)
 		self.errarea.config(state='disabled')
 
-	## Instantiates the find and replace window
+	## Instantiates the find and replace window by calling the FindWindow function						
 		
 	def show_find_window(self, event=None):
 		FindWindow(self.textarea)
@@ -214,7 +216,7 @@ class Pytext:
 				if var[0] in called_functions:
 					self.varlist.list.insert(0,f"{var[1]} {var[2]}")
 
-	## @sambot kya krta h ye bc?
+	## Binds with the Run button, runs on the code and shows the variables list in the varlist area or throws an error message 
 
 	def run(self):
 		global var,insert_data,commands, files 
@@ -231,7 +233,7 @@ class Pytext:
 			return
 		self.showVariables()
 	
-	## @sambot ye kab aaya bc??	
+	## Function that binds to the Search bar in the output area. Helps in filtering out the variables needed to be debugged
 
 	def find(self):
 		global output_data
@@ -251,7 +253,7 @@ class Pytext:
 		self.setoutput(new_data)
 
 
-	## No fucking clue @sambot
+	## Binds with the Start button and fetches the debugged output in the output area on the selected variables in variables list
 
 	def start(self):
 		if current_show == "commands" or current_show=="files":
@@ -270,17 +272,20 @@ class Pytext:
 		inserter("input.sh",selected_insert_data)
 		output_data = execute(["./temp_input.sh"])
 		self.setoutput(output_data)
-
+	
+	## Binds with the Files button to show files used in the code
 	def showFiles(self):
 		global current_show,files 
 		current_show = "files"
 		self.setvariables(files)
 
+	## Binds with the Commands button to show bash commands used in the code
 	def showCommands(self):
 		global current_show,commands
 		current_show = "commands"
 		self.setvariables(commands)
-
+	
+	## Binds with the Variables button to show the variables in the list
 	def showVariables(self):
 		global current_show, var
 		current_show = "variables"

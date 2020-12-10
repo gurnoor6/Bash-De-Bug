@@ -1,10 +1,21 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 
+# Colour variables initialized
+
 fgcolor = "white"
 bgcolor = "#1b1b1c"
 deepcolor = "#101010"
+
+## Find Window helps in finding and replacing entered keywords with new keywords. Opens a findwindow box for this purpose
+# 
+# @param tk.Toplevel Makes use of this tkinter widget to place the features inside it 
 class FindWindow(tk.Toplevel):
+
+    ## Constructor to initialize the frames, labels, buttons and entries and place them conveniently
+    # 
+    # 
+    # @param master parent Tkinter widget to which object has to be parented to
     def __init__(self, master, **kwargs):
         super().__init__(**kwargs)
 
@@ -53,13 +64,21 @@ class FindWindow(tk.Toplevel):
         self.find_entry.focus_force()
 
         self.protocol("WM_DELETE_WINDOW", self.on_cancel)
-
+    ## on_find
+    # 
+    # Makes use of the find function defined in parent text widget
     def on_find(self):
         self.master.find(self.text_to_find.get())
 
+    ## on_replace
+    # 
+    # Replaces text using the replace_text function in parent text widget
     def on_replace(self):
         self.master.replace_text(self.text_to_find.get(), self.text_to_replace_with.get())
-
+    
+    ## Close button
+    # 
+    # Closes the find window
     def on_cancel(self):
         self.master.cancel_find()
         self.destroy()

@@ -2,8 +2,14 @@ import tkinter as tk
 import time
 import yaml
 
+## Syntax Highlighting
 
+## Highlights certain keywords in bash, strings and numbers in distinguishable colours. This is done on each key release event.
 class Highlighter:
+
+    ## Constructor to initiate the variables
+    # @param text_widget The text widget in tkinter for which the syntax highlighting is to be done
+    # @param syntax_file The yaml file that provides the keywords and their corresponding highlighting colours
     def __init__(self, text_widget, syntax_file):
         self.text_widget = text_widget
         self.syntax_file = syntax_file
@@ -16,10 +22,12 @@ class Highlighter:
 
         self.text_widget.bind('<KeyRelease>', self.on_key_release)
 
+    ## Starts highlighting text on key release event
     def on_key_release(self, event=None):
 
         self.highlight()
 
+    ## Parsing the bash.yaml file for the given set of keywords to highlight in bash
     def parse_syntax_file(self):
         with open(self.syntax_file, 'r') as stream:
             try:
@@ -34,6 +42,8 @@ class Highlighter:
 
         self.configure_tags()
 
+    ## Assigning colors to the tags  
+
     def configure_tags(self):
         for category in self.categories.keys():
             color = self.categories[category]['color']
@@ -41,6 +51,11 @@ class Highlighter:
 
         self.text_widget.tag_configure("number", foreground=self.numbers_color)
         self.text_widget.tag_configure("string", foreground=self.strings_color)
+
+
+    ## Main algorithm for highlighting
+    #
+    #  Highlights the keywords by parsing the entire code on each key release.
 
     def highlight(self, event=None):
         #print("called")
@@ -85,6 +100,10 @@ class Highlighter:
         self.highlight_regex(r"[\'][^\']*[\']", "string")
         self.highlight_regex(r"[\"][^\']*[\"]", "string")
 
+    ## Regex Highlighting
+    #  Highlights the provided regex with its respective tag 
+    # @param regex The regex format which needs to be tagged
+    # @param tag Helps identify which tag the corresponding regex belongs to
     def highlight_regex(self, regex, tag):
         length = tk.IntVar()
         start = 1.0
@@ -96,8 +115,3 @@ class Highlighter:
             start = end
             idx = self.text_widget.search(regex, start, stopindex=tk.END, regexp=1, count=length)
 
-
-if __name__ == '__main__':
-    w = tk.Tk()
-    h = Highlighter(tk.Text(w), 'languages/python.yaml')
-    w.mainloop()

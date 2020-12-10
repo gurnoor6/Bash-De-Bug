@@ -17,12 +17,14 @@ class LineNo(tk.Canvas):
 		self.configure(bg=linenosbg)
 
 	## Attach
-	# @param text_widget Tkinter text widget whose line numbers are needed to be tracked
+	#
+	#  @param text_widget Tkinter text widget whose line numbers are needed to be tracked
 	def attach(self, text_widget):
 		self.textwidget = text_widget
 
 	## Redraw
-	# Checks the line number of the first line being displayed and renders all subsequent line numbers
+	#
+	#  Checks the line number of the first line being displayed and renders all subsequent line numbers
 	def redraw(self, *args):
 		self.delete("all")
 		i = self.textwidget.index("@0,0")

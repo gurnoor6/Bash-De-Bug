@@ -10,7 +10,8 @@ varlistfg="white"
 varlistbg="#17171c"
 
 ## Output class
-# Displays the output of the debugger
+#
+#  Displays the output of the debugger
 
 class Output:
 	## Constructor
@@ -22,11 +23,13 @@ class Output:
 		self.outputarea.config(state='disabled')
 
 #Varlist class
-# Is a listbox which displays all the variables and their line numbers
+#
+#  Is a listbox which displays all the variables and their line numbers
 
 class Varlist:
 	## Constructor
-	# @param parent Tkinter widget to which object has to be parented to
+	#
+	#  @param parent Tkinter widget to which object has to be parented to
 	def __init__(self, parent):
 		self.parent=parent
 		self.list = tk.Listbox(parent, selectmode=tk.MULTIPLE, bg=varlistbg, fg=varlistfg, highlightcolor=varlisthl, selectbackground=vartexthl,highlightthickness=1)

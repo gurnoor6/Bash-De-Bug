@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="textblock"><h1><a class="anchor" id="autotoc_md0"></a>
 Bash-De-Bug</h1>
 <p>Course Project of CS251, Autumn 2020.</p>
-<p>The aim of this project is to build a debugger, primarily intended for Bash Scripts, that prints out the variables and the contents of files that are being used in the program. Although the way this is being built, it wont be hard to extend it to other languages as well.</p>
+<p>The aim of this project is to build a debugger, primarily intended for Bash Scripts, that prints out the variables and the contents of files that are being used in the program. Although the way this is being built, it wont be hard to extend it to other languages as well. The setup scipt for this can be found <a href="https://github.com/gurnoor6/Bash-De-Bug/blob/master/setup.sh">here</a>.</p>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Approach</h2>
 <p>The project is overall divided into two parts - one is the front-end part where we build a Tkinter based GUI for the project, and another is the backend part, where we manage writing a parser for Bash scripts, detecting variable assignments in it, and inserting the print statements in a copy of the script. Then we execute the script from within python, and redirect the output to the user, filtering the line numbers / variable names requested.</p>

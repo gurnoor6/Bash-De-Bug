@@ -32,8 +32,12 @@ var NAVTREE =
       ] ],
       [ "What It CAN do", "index.html#autotoc_md4", null ],
       [ "What it CANNOT do", "index.html#autotoc_md5", null ],
-      [ "Phase 2 plans", "index.html#autotoc_md6", null ],
+      [ "Phase 2 improvements", "index.html#autotoc_md6", null ],
       [ "Example", "index.html#autotoc_md7", null ]
+    ] ],
+    [ "BASH Grammar", "md_utils_grammar.html", [
+      [ "Tokens", "md_utils_grammar.html#autotoc_md9", null ],
+      [ "Rules", "md_utils_grammar.html#autotoc_md10", null ]
     ] ],
     [ "Resources", "md_utils_resources.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -63,7 +67,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"outputbox_8py.html"
+"namespaceoutputbox.html#acad100a6804cb7f64a976e44b6d1a5af"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

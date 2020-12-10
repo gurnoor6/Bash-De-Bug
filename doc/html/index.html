@@ -112,7 +112,7 @@ GUI</h3>
 <li>The Main window is divided into three sections:<ul>
 <li>Bash IDE region</li>
 <li>Debugger region</li>
-<li>Variables list region</li>
+<li>Variables list/Commands List/Files list region toggler</li>
 </ul>
 </li>
 <li>The Bash IDE is an attempt to take as input the code provided by the user, as well as function as an independent code editor. The following features have been added to imitate any generic IDE:<ul>
@@ -140,7 +140,7 @@ What It CAN do</h2>
 <ul>
 <li>We type a bash script, or choose a file from our PC and the program detects all the variables in the script and displays them on the GUI.</li>
 <li>The user is asked to select the variables, and/or the line numbers between which he wants to view the variables.</li>
-<li>The required output is shown on the output box, and we have a substring matching feature through which the user can even search for the required variable and line number.</li>
+<li>The required output is shown on the output box, and we have a string matching feature that uses the <b>Levenshtein Distance</b> for text similarity to sort results according to relevance.</li>
 <li>It can go through for/while loops, and assignment operations. It can also handle basic bash commands like <code>wget</code>, <code>ls</code>, <code>cat</code>, <code>cut</code>, etc.</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md5"></a>
@@ -148,65 +148,103 @@ What it CANNOT do</h2>
 <ul>
 <li>It cannot check for the correctness of the syntax. The bash syntax is quite diverse and writing a rule for each of them with proper arguments and flags would get quite difficult.</li>
 <li>It assumes that the syntax is correct, and hence helps to fix the <b>logical errors</b>.</li>
+<li>It might not be able to debug each and every bash script. Our grammar supports only a small subset of them. In case it does not support, an error message occurs at the bottom of the screen notifying the user.</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md6"></a>
-Phase 2 plans</h2>
+Phase 2 improvements</h2>
 <ul>
-<li>Most of the time in phase 1 was spent in deciding the approach to be used, and we finally settled on ANTLR :)</li>
-<li>The basic framework for the GUI is ready, but some extra features and overall polishing is yet to be done.</li>
-<li>The basic parsing is done. We are able to parse <b>for/while loops, assignment operations, linux commands, nested loops, nested if-else statements</b> but still we have to work with <b>sed</b> scripts and <b>function calls</b>. Although we are hopeful that we'll be able to do them using ANTLR as well, but just in case any problems arise, we might resort to string search, but that is worst case scenario.</li>
+<li>Added support for sed scripts</li>
+<li>Parsed function calls</li>
+<li>Made linux commands more descriptive by showing the options with which they are called.</li>
+<li>Improvements in Grammar</li>
+<li>Design improvements including separate lists for variables, files, and commands.</li>
+<li>Added search functionality using string similarity algorithms</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Example</h2>
-<p>For the following input, </p><pre class="fragment">#!bin/bash
+<p>For the following input, </p><pre class="fragment"># !bin/bash
 
-a=2;
-b=100;
+a=$(ls)
 
-for ((;a&lt;b;a+=23));
+b=10;
+
+for((i=0,j=10;i&lt;=10 &amp;&amp; j&gt;=0;i++,j-=2))
 do
-    echo "looping continues"
+    ((b=b-j));
 done
 
-if ((a&gt;110)); then
-    echo $(pwd)
-else
-    echo "Better luck next time"
-fi
+sed 's/hello/world/' input.txt &gt; output.txt;
+
+sed -e 's/hello/world/' input.txt &gt; output.txt
+
+sed --expression='s/hello/world/' input.txt &gt; output.txt;
+
+cat encrypted.txt | tr a-zA-Z "$set2a$set2A" &gt; decrypted.txt
+
+echo $b;
 </pre><p> the abstract syntax tree that we get is <br  />
 </p>
-<p><img src="test4.png" alt="" class="inline"/> and the corresponding tokens generated are <br  />
- </p><pre class="fragment">[@0,10:10='\r',&lt;SPACE&gt;,1:10]
-[@1,11:11='\n',&lt;SPACE&gt;,1:11]
-[@2,12:12='\r',&lt;SPACE&gt;,2:0]
-[@3,13:13='\n',&lt;SPACE&gt;,2:1]
-[@4,14:14='a',&lt;VAR&gt;,3:0]
-[@5,15:15='=',&lt;'='&gt;,3:1]
-[@6,16:16='2',&lt;VAL&gt;,3:2]
-[@7,17:17=';',&lt;';'&gt;,3:3]
-[@8,18:18='\r',&lt;SPACE&gt;,3:4]
-[@9,19:19='\n',&lt;SPACE&gt;,3:5]
-[@10,20:20='b',&lt;VAR&gt;,4:0]
-[@11,21:21='=',&lt;'='&gt;,4:1]
-[@12,22:24='100',&lt;VAL&gt;,4:2]
-[@13,25:25=';',&lt;';'&gt;,4:5]
-[@14,26:26='\r',&lt;SPACE&gt;,4:6]
-[@15,27:27='\n',&lt;SPACE&gt;,4:7]
-[@16,28:28='\r',&lt;SPACE&gt;,5:0]
-[@17,29:29='\n',&lt;SPACE&gt;,5:1]
-[@18,30:32='for',&lt;'for'&gt;,6:0]
-[@19,33:33=' ',&lt;SPACE&gt;,6:3]
-[@20,34:35='((',&lt;OPEN_BRACKETS&gt;,6:4]
-[@21,36:36=';',&lt;';'&gt;,6:6]
-[@22,37:37='a',&lt;VAR&gt;,6:7]
-[@23,38:38='&lt;',&lt;COMPARE&gt;,6:8]
-[@24,39:39='b',&lt;VAR&gt;,6:9]
-[@25,40:40=';',&lt;';'&gt;,6:10]
-[@26,41:41='a',&lt;VAR&gt;,6:11]
-[@27,42:43='+=',&lt;INCREMENT&gt;,6:12]
-[@28,44:45='23',&lt;VAL&gt;,6:14]
-[@29,46:47='))',&lt;CLOSE_BRACKETS&gt;,6:16]
-[@30,48:48=';',&lt;';'&gt;,6:18]
+<p><img src="test3.png" alt="" class="inline"/> and the corresponding tokens generated are <br  />
+ </p><pre class="fragment">[@58,89:91='sed',&lt;'sed'&gt;,12:0]
+[@59,92:92=' ',&lt;SPACE&gt;,12:3]
+[@60,93:108=''s/hello/world/'',&lt;SINGLE_STRING&gt;,12:4]
+[@61,109:109=' ',&lt;SPACE&gt;,12:20]
+[@62,110:118='input.txt',&lt;FILENAME&gt;,12:21]
+[@63,119:119=' ',&lt;SPACE&gt;,12:30]
+[@64,120:120='&gt;',&lt;COMPARE&gt;,12:31]
+[@65,121:121=' ',&lt;SPACE&gt;,12:32]
+[@66,122:131='output.txt',&lt;FILENAME&gt;,12:33]
+[@67,132:132=';',&lt;';'&gt;,12:43]
+[@68,133:133='\n',&lt;SPACE&gt;,12:44]
+[@69,134:134='\n',&lt;SPACE&gt;,13:0]
+[@70,135:137='sed',&lt;'sed'&gt;,14:0]
+[@71,138:138=' ',&lt;SPACE&gt;,14:3]
+[@72,139:140='-e',&lt;SINGLE_TAG&gt;,14:4]
+[@73,141:141=' ',&lt;SPACE&gt;,14:6]
+[@74,142:157=''s/hello/world/'',&lt;SINGLE_STRING&gt;,14:7]
+[@75,158:158=' ',&lt;SPACE&gt;,14:23]
+[@76,159:167='input.txt',&lt;FILENAME&gt;,14:24]
+[@77,168:168=' ',&lt;SPACE&gt;,14:33]
+[@78,169:169='&gt;',&lt;COMPARE&gt;,14:34]
+[@79,170:170=' ',&lt;SPACE&gt;,14:35]
+[@80,171:180='output.txt',&lt;FILENAME&gt;,14:36]
+[@81,181:181='\n',&lt;SPACE&gt;,14:46]
+[@82,182:182='\n',&lt;SPACE&gt;,15:0]
+[@83,183:185='sed',&lt;'sed'&gt;,16:0]
+[@84,186:186=' ',&lt;SPACE&gt;,16:3]
+[@85,187:199='--expression=',&lt;FULL_TAG&gt;,16:4]
+[@86,200:215=''s/hello/world/'',&lt;SINGLE_STRING&gt;,16:17]
+[@87,216:216=' ',&lt;SPACE&gt;,16:33]
+[@88,217:225='input.txt',&lt;FILENAME&gt;,16:34]
+[@89,226:226=' ',&lt;SPACE&gt;,16:43]
+[@90,227:227='&gt;',&lt;COMPARE&gt;,16:44]
+[@91,228:228=' ',&lt;SPACE&gt;,16:45]
+[@92,229:238='output.txt',&lt;FILENAME&gt;,16:46]
+[@93,239:239=';',&lt;';'&gt;,16:56]
+[@94,240:240='\n',&lt;SPACE&gt;,16:57]
+[@95,241:241='\n',&lt;SPACE&gt;,17:0]
+[@96,242:244='cat',&lt;COMMAND&gt;,18:0]
+[@97,245:245=' ',&lt;SPACE&gt;,18:3]
+[@98,246:258='encrypted.txt',&lt;FILENAME&gt;,18:4]
+[@99,259:259=' ',&lt;SPACE&gt;,18:17]
+[@100,260:260='|',&lt;'|'&gt;,18:18]
+[@101,261:261=' ',&lt;SPACE&gt;,18:19]
+[@102,262:263='tr',&lt;COMMAND&gt;,18:20]
+[@103,264:264=' ',&lt;SPACE&gt;,18:22]
+[@104,265:270='a-zA-Z',&lt;VAR&gt;,18:23]
+[@105,271:271=' ',&lt;SPACE&gt;,18:29]
+[@106,272:285='"$set2a$set2A"',&lt;DOUBLE_STRING&gt;,18:30]
+[@107,286:286=' ',&lt;SPACE&gt;,18:44]
+[@108,287:287='&gt;',&lt;COMPARE&gt;,18:45]
+[@109,288:288=' ',&lt;SPACE&gt;,18:46]
+[@110,289:301='decrypted.txt',&lt;FILENAME&gt;,18:47]
+[@111,302:302='\n',&lt;SPACE&gt;,18:60]
+[@112,303:303='\n',&lt;SPACE&gt;,19:0]
+[@113,304:307='echo',&lt;COMMAND&gt;,20:0]
+[@114,308:308=' ',&lt;SPACE&gt;,20:4]
+[@115,309:310='$b',&lt;BASH_VAR&gt;,20:5]
+[@116,311:311=';',&lt;';'&gt;,20:7]
+[@117,312:311='&lt;EOF&gt;',&lt;EOF&gt;,20:8]
 </pre><p>The GUI generated using Tkinter, giving an idea of what we hope to accomplish<br  />
 </p>
 <p><img src="gui.png" alt="" class="inline"/> </p>

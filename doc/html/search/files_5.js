@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inserter_2epy_182',['inserter.py',['../inserter_8py.html',1,'']]]
+  ['highlighter_2epy_184',['highlighter.py',['../highlighter_8py.html',1,'']]]
 ];

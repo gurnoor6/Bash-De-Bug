@@ -15,7 +15,7 @@ Initially, we planned to just do a string search for the file, detect `=` signs 
 * The Main window is divided into three sections:
     - Bash IDE region
     - Debugger region
-    - Variables list region
+    - Variables list/Commands List/Files list region toggler
 * The Bash IDE is an attempt to take as input the code provided by the user, as well as function as an independent code editor. The following features have been added to imitate any generic IDE:
     - Editing shortcuts like cut (Control-c) and paste (Control-v)
     - Find and Replace option for easy editing

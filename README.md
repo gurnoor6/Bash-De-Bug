@@ -37,12 +37,13 @@ This is an example of how the IDE region should look (in Dark Mode!!)
 ## What It CAN do
 * We type a bash script, or choose a file from our PC and the program detects all the variables in the script and displays them on the GUI.
 * The user is asked to select the variables, and/or the line numbers between which he wants to view the variables.
-* The required output is shown on the output box, and we have a substring matching feature through which the user can even search for the required variable and line number.
+* The required output is shown on the output box, and we have a string matching feature that uses the **Levenshtein Distance** for text similarity to sort results according to relevance.
 * It can go through for/while loops, and assignment operations. It can also handle basic bash commands like `wget`, `ls`, `cat`, `cut`, etc. 
 
 ## What it CANNOT do
 * It cannot check for the correctness of the syntax. The bash syntax is quite diverse and writing a rule for each of them with proper arguments and flags would get quite difficult.
 * It assumes that the syntax is correct, and hence helps to fix the **logical errors**.
+* It might not be able to debug each and every bash script. Our grammar supports only a small subset of them. In case it does not support, an error message occurs at the bottom of the screen notifying the user. 
 
 ## Phase 2 improvements
 * Added support for sed scripts

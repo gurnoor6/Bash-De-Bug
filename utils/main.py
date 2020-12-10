@@ -20,6 +20,10 @@ def main(argv):
 	# for item in insert_data:
 	# 	print(item)
 
+## Get variables from the the bash scrpit after tokenising and parsing.
+## 
+## @params filename name/location of the file to be parsed
+## @returns variable list, echos to insert with metadata, commands list and the files list after parsing the input file
 def get_vars(filename):
 	try:
 		input = FileStream(filename)

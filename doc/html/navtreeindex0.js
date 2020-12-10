@@ -163,8 +163,6 @@ var NAVTREEINDEX0 =
 "functions_vars.html":[3,3,2],
 "hierarchy.html":[3,2],
 "highlighter_8py.html":[4,0,4],
-"highlighter_8py.html#a2fcec1aaa7de43f642c70f0c43549fd7":[4,0,4,2],
-"highlighter_8py.html#a6922ead896e74f96562b992a37b583b2":[4,0,4,1],
 "index.html":[],
 "index.html#autotoc_md0":[0],
 "index.html#autotoc_md1":[0,0],
@@ -230,8 +228,6 @@ var NAVTREEINDEX0 =
 "namespacefindwindow.html#a244946e66796949deeff37c4e556c3ed":[2,0,4,3],
 "namespacefindwindow.html#aeab90ec80a0724825a1dfd310dda1002":[2,0,4,2],
 "namespacehighlighter.html":[2,0,5],
-"namespacehighlighter.html#a2fcec1aaa7de43f642c70f0c43549fd7":[2,0,5,2],
-"namespacehighlighter.html#a6922ead896e74f96562b992a37b583b2":[2,0,5,1],
 "namespaceinserter.html":[2,0,6],
 "namespaceinserter.html#a8cdf98c38d5191a6cf0a3dc22faaf447":[2,0,6,2],
 "namespaceinserter.html#ae964d8dcea2a5a062c47dc8bce876d50":[2,0,6,1],
@@ -249,5 +245,9 @@ var NAVTREEINDEX0 =
 "namespaceoutputbox.html#a1de04e2bc2f72ae6e7e0e7712fe8448d":[2,0,9,5],
 "namespaceoutputbox.html#a7a8fd0167f1674fa7ed008381333d844":[2,0,9,6],
 "namespaceoutputbox.html#a8405572110a8b70f3bb62a42c83c8c68":[2,0,9,4],
-"namespaceoutputbox.html#a848a1a773d288fcdee06a1cee547ee00":[2,0,9,3]
+"namespaceoutputbox.html#a848a1a773d288fcdee06a1cee547ee00":[2,0,9,3],
+"namespaceoutputbox.html#a8d3298b3d3654a30a4d46e73d945b507":[2,0,9,7],
+"namespaceoutputbox.html#acad100a6804cb7f64a976e44b6d1a5af":[2,0,9,2],
+"namespaces.html":[2,0],
+"namespacetext.html":[2,0,10]
 };

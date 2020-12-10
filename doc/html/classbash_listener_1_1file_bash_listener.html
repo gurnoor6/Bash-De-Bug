@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('classbash_listener_1_1file_bash_listen
 </div><!--header-->
 <div class="contents">
 
-<p>May we explain this class.  
+<p>Custom parse tree visitor class.  
  <a href="classbash_listener_1_1file_bash_listener.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for bashListener.fileBashListener:</div>
@@ -120,27 +120,36 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2da6caf34b703cddce4d9091044e15cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classbash_listener_1_1file_bash_listener.html#a2da6caf34b703cddce4d9091044e15cf">More...</a><br /></td></tr>
 <tr class="separator:a2da6caf34b703cddce4d9091044e15cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae10a9329cbaf40b1d06005f3d67058de"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbash_listener_1_1file_bash_listener.html#ae10a9329cbaf40b1d06005f3d67058de">visitCode</a> (self, bashGrammarParser.CodeContext ctx)</td></tr>
+<tr class="memdesc:ae10a9329cbaf40b1d06005f3d67058de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit top level node.  <a href="classbash_listener_1_1file_bash_listener.html#ae10a9329cbaf40b1d06005f3d67058de">More...</a><br /></td></tr>
 <tr class="separator:ae10a9329cbaf40b1d06005f3d67058de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adef6ed078f809ccd81049b7a46ad0027"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbash_listener_1_1file_bash_listener.html#adef6ed078f809ccd81049b7a46ad0027">visitAssignment</a> (self, bashGrammarParser.AssignmentContext ctx)</td></tr>
+<tr class="memdesc:adef6ed078f809ccd81049b7a46ad0027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit Assignment Nodes Appends assigned parameter to the global variable list and corresponding echo to the global insert list.  <a href="classbash_listener_1_1file_bash_listener.html#adef6ed078f809ccd81049b7a46ad0027">More...</a><br /></td></tr>
 <tr class="separator:adef6ed078f809ccd81049b7a46ad0027"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71b97f49525ef5c7559a61e90eb9bd11"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbash_listener_1_1file_bash_listener.html#a71b97f49525ef5c7559a61e90eb9bd11">visitLinux_command</a> (self, bashGrammarParser.Linux_commandContext ctx)</td></tr>
+<tr class="memdesc:a71b97f49525ef5c7559a61e90eb9bd11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit Linux command Nodes Appends visited command to the global commands list.  <a href="classbash_listener_1_1file_bash_listener.html#a71b97f49525ef5c7559a61e90eb9bd11">More...</a><br /></td></tr>
 <tr class="separator:a71b97f49525ef5c7559a61e90eb9bd11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42d38a09891a7f95250d10d12833de47"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbash_listener_1_1file_bash_listener.html#a42d38a09891a7f95250d10d12833de47">visitAdvanced_assignment</a> (self, bashGrammarParser.Advanced_assignmentContext ctx)</td></tr>
+<tr class="memdesc:a42d38a09891a7f95250d10d12833de47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit Advanced assignment Nodes Appends the assigned variables and echos to the corresponding global lists.  <a href="classbash_listener_1_1file_bash_listener.html#a42d38a09891a7f95250d10d12833de47">More...</a><br /></td></tr>
 <tr class="separator:a42d38a09891a7f95250d10d12833de47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84b3642d11242fe89003dfb74285d233"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbash_listener_1_1file_bash_listener.html#a84b3642d11242fe89003dfb74285d233">visitSed</a> (self, bashGrammarParser.SedContext ctx)</td></tr>
+<tr class="memdesc:a84b3642d11242fe89003dfb74285d233"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit sed statements Appends tags and transformation string of the visited sed command to the global commands list.  <a href="classbash_listener_1_1file_bash_listener.html#a84b3642d11242fe89003dfb74285d233">More...</a><br /></td></tr>
 <tr class="separator:a84b3642d11242fe89003dfb74285d233"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84d22088b4c259077c21e4c211ad2ca0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbash_listener_1_1file_bash_listener.html#a84d22088b4c259077c21e4c211ad2ca0">visitIncrement</a> (self, bashGrammarParser.IncrementContext ctx)</td></tr>
+<tr class="memdesc:a84d22088b4c259077c21e4c211ad2ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit Increment Nodes Looks for changes in a already declared variable and adds echo to global insert list.  <a href="classbash_listener_1_1file_bash_listener.html#a84d22088b4c259077c21e4c211ad2ca0">More...</a><br /></td></tr>
 <tr class="separator:a84d22088b4c259077c21e4c211ad2ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f23c4e46a3ed9ddec3776986d724f61"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbash_listener_1_1file_bash_listener.html#a5f23c4e46a3ed9ddec3776986d724f61">visitRedirect</a> (self, bashGrammarParser.RedirectContext ctx)</td></tr>
+<tr class="memdesc:a5f23c4e46a3ed9ddec3776986d724f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit file redirections Adds the filenames of the redirects to the global files list, both input and the output files.  <a href="classbash_listener_1_1file_bash_listener.html#a5f23c4e46a3ed9ddec3776986d724f61">More...</a><br /></td></tr>
 <tr class="separator:a5f23c4e46a3ed9ddec3776986d724f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa62ea47dd3ebcedf5cb3f18495d8d9a1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbash_listener_1_1file_bash_listener.html#aa62ea47dd3ebcedf5cb3f18495d8d9a1">visitFunction_def</a> (self, bashGrammarParser.Function_defContext ctx)</td></tr>
+<tr class="memdesc:aa62ea47dd3ebcedf5cb3f18495d8d9a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit Funciton definitions On visiting function definitions, adds echos to the entry and well as the exit of the funcitons definitions and sets parent of corresponding variables to be funciton, so as to differentiate between global variables from the function variables.  <a href="classbash_listener_1_1file_bash_listener.html#aa62ea47dd3ebcedf5cb3f18495d8d9a1">More...</a><br /></td></tr>
 <tr class="separator:aa62ea47dd3ebcedf5cb3f18495d8d9a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02d6b5be5da1bf3a450b0fa60f609060"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbash_listener_1_1file_bash_listener.html#a02d6b5be5da1bf3a450b0fa60f609060">visitFunction_call</a> (self, bashGrammarParser.Function_callContext ctx)</td></tr>
+<tr class="memdesc:a02d6b5be5da1bf3a450b0fa60f609060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visit funciton calls Adds function calls to the corresponding global list so as to display where a particular function was called.  <a href="classbash_listener_1_1file_bash_listener.html#a02d6b5be5da1bf3a450b0fa60f609060">More...</a><br /></td></tr>
 <tr class="separator:a02d6b5be5da1bf3a450b0fa60f609060"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>May we explain this class. </p>
-<p>chalo </p>
+<div class="textblock"><p>Custom parse tree visitor class. </p>
+<p>Class to perform certain required functions on the generated parse tree. Visits nodes of different types and performs certain operations depending on the type </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2da6caf34b703cddce4d9091044e15cf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2da6caf34b703cddce4d9091044e15cf">&#9670;&nbsp;</a></span>__init__()</h2>
@@ -169,14 +178,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<p>Ise bhi karo describe </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filename</td><td>just the filename of the file to be parsed </td></tr>
+    <tr><td class="paramname">filename</td><td>name/location of the file to be parsed </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>nothing </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>beware </dd></dl>
 
 </div>
 </div>
@@ -207,6 +214,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Visit Advanced assignment Nodes Appends the assigned variables and echos to the corresponding global lists. </p>
+<p>Similar to <a class="el" href="classbash_listener_1_1file_bash_listener.html#adef6ed078f809ccd81049b7a46ad0027" title="Visit Assignment Nodes Appends assigned parameter to the global variable list and corresponding echo ...">visitAssignment()</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>The object pointer </td></tr>
+    <tr><td class="paramname">ctx</td><td>Context variable containing details of the children of the current node </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="adef6ed078f809ccd81049b7a46ad0027"></a>
@@ -234,6 +251,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Visit Assignment Nodes Appends assigned parameter to the global variable list and corresponding echo to the global insert list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>The object pointer </td></tr>
+    <tr><td class="paramname">ctx</td><td>Context variable containing details of the children of the current node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classbash_listener_1_1file_bash_listener.html#a42d38a09891a7f95250d10d12833de47" title="Visit Advanced assignment Nodes Appends the assigned variables and echos to the corresponding global ...">visitAdvanced_assignment()</a> </dd></dl>
 
 </div>
 </div>
@@ -263,6 +290,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Visit top level node. </p>
+<p>Initializes all the return variables to be empty <br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>The object pointer </td></tr>
+    <tr><td class="paramname">ctx</td><td>Context variable containing details of the children of the current node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>variable list, file list, commands list and echos to be inserted in the input file </dd></dl>
+
 </div>
 </div>
 <a id="a02d6b5be5da1bf3a450b0fa60f609060"></a>
@@ -290,6 +328,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Visit funciton calls Adds function calls to the corresponding global list so as to display where a particular function was called. </p>
 
 </div>
 </div>
@@ -319,6 +359,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Visit Funciton definitions On visiting function definitions, adds echos to the entry and well as the exit of the funcitons definitions and sets parent of corresponding variables to be funciton, so as to differentiate between global variables from the function variables. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>The object pointer </td></tr>
+    <tr><td class="paramname">ctx</td><td>Context variable containing details of the children of the current node </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a84d22088b4c259077c21e4c211ad2ca0"></a>
@@ -346,6 +395,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Visit Increment Nodes Looks for changes in a already declared variable and adds echo to global insert list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>The object pointer </td></tr>
+    <tr><td class="paramname">ctx</td><td>Context variable containing details of the children of the current node </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -375,6 +433,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Visit Linux command Nodes Appends visited command to the global commands list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>The object pointer </td></tr>
+    <tr><td class="paramname">ctx</td><td>Context variable containing details of the children of the current node </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a5f23c4e46a3ed9ddec3776986d724f61"></a>
@@ -403,6 +470,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Visit file redirections Adds the filenames of the redirects to the global files list, both input and the output files. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>The object pointer </td></tr>
+    <tr><td class="paramname">ctx</td><td>Context variable containing details of the children of the current node </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a84b3642d11242fe89003dfb74285d233"></a>
@@ -430,6 +506,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Visit sed statements Appends tags and transformation string of the visited sed command to the global commands list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>The object pointer </td></tr>
+    <tr><td class="paramname">ctx</td><td>Context variable containing details of the children of the current node </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

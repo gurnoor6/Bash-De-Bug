@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="outputbox.Output",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classoutputbox_1_1_output.html",tooltip="Output class Displays the output of the debugger."];
+  Node0 [label="outputbox.Output",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classoutputbox_1_1_output.html",tooltip="Output class."];
 }

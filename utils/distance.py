@@ -1,7 +1,8 @@
 from math import floor, ceil 
 from fuzzywuzzy import fuzz
-# Function to calculate the 
-# Jaro Similarity of two s 
+
+## Function to calculate the Jaro similarity score between 2 strings.
+## This function is used in app.Pytext.find to get filtered rank based results
 def jdistance(s1, s2): 
 	s1 = s1.lower()
 	s2 = s2.lower()
@@ -79,5 +80,3 @@ if __name__=='__main__':
 	# Prjaro Similarity of two s 
 	print(round(jdistance(s1, s2),6))
 	print(distance(s1,s2)) 
-  
-# This code is contributed by mohit kumar 29 

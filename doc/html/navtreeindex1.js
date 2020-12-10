@@ -1,9 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"namespaceoutputbox.html#a8d3298b3d3654a30a4d46e73d945b507":[2,0,9,7],
-"namespaceoutputbox.html#acad100a6804cb7f64a976e44b6d1a5af":[2,0,9,2],
-"namespaces.html":[2,0],
-"namespacetext.html":[2,0,10],
 "outputbox_8py.html":[4,0,6],
 "outputbox_8py.html#a1de04e2bc2f72ae6e7e0e7712fe8448d":[4,0,6,5],
 "outputbox_8py.html#a7a8fd0167f1674fa7ed008381333d844":[4,0,6,6],

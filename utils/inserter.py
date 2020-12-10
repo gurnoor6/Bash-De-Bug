@@ -3,6 +3,10 @@ import sys
 import subprocess
 from .main import get_vars
 
+## Inserting echos
+## Inserts echos (in a secondary temporaroy file) corresponding to assignments, function calls and function definitions
+## @params filename Name/location of original file that was parsed
+## @params data Insert data that was generated from bashListener.py on passed onto this in *main* 
 def inserter(filename,data):
 
 	# print(len(data))
@@ -22,6 +26,8 @@ def inserter(filename,data):
 		fh.truncate(0)
 		fh.writelines(content)
 
+## Execute the subprocess
+## Funciton defined to execute a subprocess to run the temporary secondary file generated
 def execute(cmd):
 	process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE,shell=True)
 	stdout, stderr = process.communicate()

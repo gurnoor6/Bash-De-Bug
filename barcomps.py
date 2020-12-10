@@ -30,7 +30,7 @@ class Menubar:
 
 		menubar1.add_cascade(menu=file_dd, label="File")
 
-## SatusBar Class
+## StatusBar Class
 
 # Displays the current status, whether the changes made to the the file have been saved or not
 class StatusBar:

@@ -4,7 +4,9 @@ var files_dup =
     [ "app.py", "app_8py.html", "app_8py" ],
     [ "barcomps.py", "barcomps_8py.html", "barcomps_8py" ],
     [ "findwindow.py", "findwindow_8py.html", "findwindow_8py" ],
-    [ "highlighter.py", "highlighter_8py.html", "highlighter_8py" ],
+    [ "highlighter.py", "highlighter_8py.html", [
+      [ "Highlighter", "classhighlighter_1_1_highlighter.html", "classhighlighter_1_1_highlighter" ]
+    ] ],
     [ "lineNos.py", "line_nos_8py.html", "line_nos_8py" ],
     [ "outputbox.py", "outputbox_8py.html", "outputbox_8py" ],
     [ "text.py", "text_8py.html", [

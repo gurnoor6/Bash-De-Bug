@@ -6,5 +6,5 @@ digraph "Graphical Class Hierarchy"
   rankdir="LR";
   Node2 [label="Toplevel",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node2 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node0 [label="findwindow.FindWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfindwindow_1_1_find_window.html",tooltip=" "];
+  Node0 [label="findwindow.FindWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfindwindow_1_1_find_window.html",tooltip="Find Window helps in finding and replacing entered keywords with new keywords."];
 }

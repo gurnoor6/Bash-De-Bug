@@ -6,5 +6,5 @@ digraph "Graphical Class Hierarchy"
   rankdir="LR";
   Node13 [label="bashGrammarVisitor",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node13 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node0 [label="bashListener.fileBashListener",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbash_listener_1_1file_bash_listener.html",tooltip="May we explain this class."];
+  Node0 [label="bashListener.fileBashListener",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbash_listener_1_1file_bash_listener.html",tooltip="Custom parse tree visitor class."];
 }

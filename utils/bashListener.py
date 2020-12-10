@@ -13,22 +13,25 @@ files = []
 parent = "main"
 
 
-## May we explain this class
+## Custom parse tree visitor class
 ##
-## chalo
+## Class to perform certain required functions on the generated parse tree. Visits nodes of different types and performs certain operations depending on the type 
 class fileBashListener(bashGrammarVisitor):
 
 	## Constructor
 	##
-	## Ise bhi karo describe
-	## @param filename just the filename of the file to be parsed
-	## @returns nothing
-	## @warning beware
+	## @param filename name/location of the file to be parsed
 	def __init__(self, filename):
 		global file
 		with open(filename) as f:
 			file = f.readlines()
 
+	## Visit top level node
+	## 
+	## Initializes all the return variables to be empty  
+	## @param self The object pointer
+	## @param ctx Context variable containing details of the children of the current node 
+	## @returns variable list, file list, commands list and echos to be inserted in the input file
 	def visitCode(self, ctx:bashGrammarParser.CodeContext):
 		global var,file,commands, insert_data,files 
 		self.visitChildren(ctx)
@@ -44,6 +47,13 @@ class fileBashListener(bashGrammarVisitor):
 		files = []
 		return var_local, insert_data_local, commands_local, files_local
 
+
+	## Visit Assignment Nodes
+	## Appends assigned parameter to the global variable list and corresponding echo to the global insert list
+	## 
+	## @param self The object pointer
+	## @param ctx Context variable containing details of the children of the current node
+	## @see visitAdvanced_assignment()
 	def visitAssignment(self, ctx:bashGrammarParser.AssignmentContext):
 		global var, insert_data
 		variable = ctx.VAR(0).getText()
@@ -53,6 +63,11 @@ class fileBashListener(bashGrammarVisitor):
 		insert_data += [((line, -1), f"echo \"At line no. {line}, {variable}=${variable}\"\n")]
 		return self.visitChildren(ctx)
 
+	## Visit Linux command Nodes
+	## Appends visited command to the global commands list 
+	## 
+	## @param self The object pointer
+	## @param ctx Context variable containing details of the children of the current node
 	def visitLinux_command(self, ctx:bashGrammarParser.Linux_commandContext):
 		global commands
 		info  = ""
@@ -69,6 +84,11 @@ class fileBashListener(bashGrammarVisitor):
 
 		return self.visitChildren(ctx)
 
+	## Visit Advanced assignment Nodes
+	## Appends the assigned variables and echos to the corresponding global lists. Similar to visitAssignment()
+	##
+	## @param self The object pointer
+	## @param ctx Context variable containing details of the children of the current node
 	def visitAdvanced_assignment(self, ctx:bashGrammarParser.Advanced_assignmentContext):
 		global var, insert_data
 		variable = ctx.VAR(0).getText()
@@ -77,6 +97,11 @@ class fileBashListener(bashGrammarVisitor):
 		insert_data += [((line, -1), f"echo \"At line no. {line}, {variable}=${variable}\"\n")]
 		return self.visitChildren(ctx)
 
+	## Visit sed statements
+	## Appends tags and transformation string of the visited sed command to the global commands list
+	##
+	## @param self The object pointer
+	## @param ctx Context variable containing details of the children of the current node
 	def visitSed(self, ctx:bashGrammarParser.SedContext):
 		global commands,files
 		info = f"sed; flags: "
@@ -96,7 +121,11 @@ class fileBashListener(bashGrammarVisitor):
 			files.append(f"line : {ctx.start.line} : {ctx.FILENAME()}")
 
 		return self.visitChildren(ctx)
-		
+	
+	## Visit Increment Nodes 
+	## Looks for changes in a already declared variable and adds echo to global insert list
+	## @param self The object pointer
+	## @param ctx Context variable containing details of the children of the current node
 	def visitIncrement(self, ctx:bashGrammarParser.IncrementContext):
 		global var, insert_data
 		line = ctx.start.line
@@ -104,7 +133,10 @@ class fileBashListener(bashGrammarVisitor):
 		insert_data += [((line, -1), f"echo \"At line no. {line}, {variable}=${variable}\"\n")]
 		return self.visitChildren(ctx)
 
-
+	## Visit file redirections
+	## Adds the filenames of the redirects to the global files list, both input and the output files
+	## @param self The object pointer
+	## @param ctx Context variable containing details of the children of the current node
 	def visitRedirect(self, ctx:bashGrammarParser.RedirectContext):
 		global files
 
@@ -116,6 +148,10 @@ class fileBashListener(bashGrammarVisitor):
 
 		return self.visitChildren(ctx)
 
+	## Visit Funciton definitions
+	## On visiting function definitions, adds echos to the entry and well as the exit of the funcitons definitions and sets parent of corresponding variables to be funciton, so as to differentiate between global variables from the function variables
+	## @param self The object pointer
+	## @param ctx Context variable containing details of the children of the current node
 	def visitFunction_def(self, ctx:bashGrammarParser.Function_defContext):
 		global insert_data, file, parent
 		function_name = ctx.VAR().getText()
@@ -146,8 +182,8 @@ class fileBashListener(bashGrammarVisitor):
 		parent = "main"
 		return
 
- 
-
+	## Visit funciton calls
+	## Adds function calls to the corresponding global list so as to display where a particular function was called 
 	def visitFunction_call(self, ctx:bashGrammarParser.Function_callContext):
 		global var, parent
 		function = ctx.VAR(0)

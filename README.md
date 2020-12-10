@@ -44,66 +44,104 @@ This is an example of how the IDE region should look (in Dark Mode!!)
 * It cannot check for the correctness of the syntax. The bash syntax is quite diverse and writing a rule for each of them with proper arguments and flags would get quite difficult.
 * It assumes that the syntax is correct, and hence helps to fix the **logical errors**.
 
-## Phase 2 plans
-* Most of the time in phase 1 was spent in deciding the approach to be used, and we finally settled on ANTLR :)
-* The basic framework for the GUI is ready, but some extra features and overall polishing is yet to be done.
-* The basic parsing is done. We are able to parse **for/while loops, assignment operations, linux commands, nested loops, nested if-else statements** but still we have to work with **sed** scripts and **function calls**. Although we are hopeful that we'll be able to do them using ANTLR as well, but just in case any problems arise, we might resort to string search, but that is worst case scenario.
+## Phase 2 improvements
+* Added support for sed scripts
+* Parsed function calls
+* Made linux commands more descriptive by showing the options with which they are called.
+* Improvements in Grammar
+* Design improvements including separate lists for variables, files, and commands.
+* Added search functionality using string similarity algorithms
+
 
 ## Example
 For the following input,
 
-    #!bin/bash
+    # !bin/bash
 
-    a=2;
-    b=100;
+    a=$(ls)
 
-    for ((;a<b;a+=23));
+    b=10;
+
+    for((i=0,j=10;i<=10 && j>=0;i++,j-=2))
     do
-        echo "looping continues"
+        ((b=b-j));
     done
 
-    if ((a>110)); then
-        echo $(pwd)
-    else
-        echo "Better luck next time"
-    fi
+    sed 's/hello/world/' input.txt > output.txt;
+
+    sed -e 's/hello/world/' input.txt > output.txt
+
+    sed --expression='s/hello/world/' input.txt > output.txt;
+
+    cat encrypted.txt | tr a-zA-Z "$set2a$set2A" > decrypted.txt
+
+    echo $b;
 
 the abstract syntax tree that we get is <br>
 
-![](testcases/test4.png)
+![](testcases/test3.png)
 and the corresponding tokens generated are <br>
 
-    [@0,10:10='\r',<SPACE>,1:10]
-    [@1,11:11='\n',<SPACE>,1:11]
-    [@2,12:12='\r',<SPACE>,2:0]
-    [@3,13:13='\n',<SPACE>,2:1]
-    [@4,14:14='a',<VAR>,3:0]
-    [@5,15:15='=',<'='>,3:1]
-    [@6,16:16='2',<VAL>,3:2]
-    [@7,17:17=';',<';'>,3:3]
-    [@8,18:18='\r',<SPACE>,3:4]
-    [@9,19:19='\n',<SPACE>,3:5]
-    [@10,20:20='b',<VAR>,4:0]
-    [@11,21:21='=',<'='>,4:1]
-    [@12,22:24='100',<VAL>,4:2]
-    [@13,25:25=';',<';'>,4:5]
-    [@14,26:26='\r',<SPACE>,4:6]
-    [@15,27:27='\n',<SPACE>,4:7]
-    [@16,28:28='\r',<SPACE>,5:0]
-    [@17,29:29='\n',<SPACE>,5:1]
-    [@18,30:32='for',<'for'>,6:0]
-    [@19,33:33=' ',<SPACE>,6:3]
-    [@20,34:35='((',<OPEN_BRACKETS>,6:4]
-    [@21,36:36=';',<';'>,6:6]
-    [@22,37:37='a',<VAR>,6:7]
-    [@23,38:38='<',<COMPARE>,6:8]
-    [@24,39:39='b',<VAR>,6:9]
-    [@25,40:40=';',<';'>,6:10]
-    [@26,41:41='a',<VAR>,6:11]
-    [@27,42:43='+=',<INCREMENT>,6:12]
-    [@28,44:45='23',<VAL>,6:14]
-    [@29,46:47='))',<CLOSE_BRACKETS>,6:16]
-    [@30,48:48=';',<';'>,6:18]
+    [@58,89:91='sed',<'sed'>,12:0]
+    [@59,92:92=' ',<SPACE>,12:3]
+    [@60,93:108=''s/hello/world/'',<SINGLE_STRING>,12:4]
+    [@61,109:109=' ',<SPACE>,12:20]
+    [@62,110:118='input.txt',<FILENAME>,12:21]
+    [@63,119:119=' ',<SPACE>,12:30]
+    [@64,120:120='>',<COMPARE>,12:31]
+    [@65,121:121=' ',<SPACE>,12:32]
+    [@66,122:131='output.txt',<FILENAME>,12:33]
+    [@67,132:132=';',<';'>,12:43]
+    [@68,133:133='\n',<SPACE>,12:44]
+    [@69,134:134='\n',<SPACE>,13:0]
+    [@70,135:137='sed',<'sed'>,14:0]
+    [@71,138:138=' ',<SPACE>,14:3]
+    [@72,139:140='-e',<SINGLE_TAG>,14:4]
+    [@73,141:141=' ',<SPACE>,14:6]
+    [@74,142:157=''s/hello/world/'',<SINGLE_STRING>,14:7]
+    [@75,158:158=' ',<SPACE>,14:23]
+    [@76,159:167='input.txt',<FILENAME>,14:24]
+    [@77,168:168=' ',<SPACE>,14:33]
+    [@78,169:169='>',<COMPARE>,14:34]
+    [@79,170:170=' ',<SPACE>,14:35]
+    [@80,171:180='output.txt',<FILENAME>,14:36]
+    [@81,181:181='\n',<SPACE>,14:46]
+    [@82,182:182='\n',<SPACE>,15:0]
+    [@83,183:185='sed',<'sed'>,16:0]
+    [@84,186:186=' ',<SPACE>,16:3]
+    [@85,187:199='--expression=',<FULL_TAG>,16:4]
+    [@86,200:215=''s/hello/world/'',<SINGLE_STRING>,16:17]
+    [@87,216:216=' ',<SPACE>,16:33]
+    [@88,217:225='input.txt',<FILENAME>,16:34]
+    [@89,226:226=' ',<SPACE>,16:43]
+    [@90,227:227='>',<COMPARE>,16:44]
+    [@91,228:228=' ',<SPACE>,16:45]
+    [@92,229:238='output.txt',<FILENAME>,16:46]
+    [@93,239:239=';',<';'>,16:56]
+    [@94,240:240='\n',<SPACE>,16:57]
+    [@95,241:241='\n',<SPACE>,17:0]
+    [@96,242:244='cat',<COMMAND>,18:0]
+    [@97,245:245=' ',<SPACE>,18:3]
+    [@98,246:258='encrypted.txt',<FILENAME>,18:4]
+    [@99,259:259=' ',<SPACE>,18:17]
+    [@100,260:260='|',<'|'>,18:18]
+    [@101,261:261=' ',<SPACE>,18:19]
+    [@102,262:263='tr',<COMMAND>,18:20]
+    [@103,264:264=' ',<SPACE>,18:22]
+    [@104,265:270='a-zA-Z',<VAR>,18:23]
+    [@105,271:271=' ',<SPACE>,18:29]
+    [@106,272:285='"$set2a$set2A"',<DOUBLE_STRING>,18:30]
+    [@107,286:286=' ',<SPACE>,18:44]
+    [@108,287:287='>',<COMPARE>,18:45]
+    [@109,288:288=' ',<SPACE>,18:46]
+    [@110,289:301='decrypted.txt',<FILENAME>,18:47]
+    [@111,302:302='\n',<SPACE>,18:60]
+    [@112,303:303='\n',<SPACE>,19:0]
+    [@113,304:307='echo',<COMMAND>,20:0]
+    [@114,308:308=' ',<SPACE>,20:4]
+    [@115,309:310='$b',<BASH_VAR>,20:5]
+    [@116,311:311=';',<';'>,20:7]
+    [@117,312:311='<EOF>',<EOF>,20:8]
     
  
 The GUI generated using Tkinter, giving an idea of what we hope to accomplish<br>
